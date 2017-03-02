@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: rgba(38, 196, 210, 0.71);
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #20326f;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -79,9 +79,9 @@
 
 
 
-            <?php
-                    $pacientes = ["Ana"=> "09:30", "Antonio" => "11:25"]
-                    ?>
+                <?php
+                $pacientes = ["Ana"=> "09:30", "Antonio" => "11:25"]
+                ?>
                 <table>
                     <tr>
                         <th>Nombre</th>
