@@ -110,7 +110,7 @@
             <div class="content">
 
                     <div class="title m-b-md">
-                        ALVIR encuestas 3
+                        ALVIR encuestas
                     </div>
 
 
