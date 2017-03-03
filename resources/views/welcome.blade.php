@@ -116,17 +116,17 @@
 
                <table>
 
-                   - Poder llevar a cabo unas estadísticas sobre el tratamiento más adecuado para una enfermedad
+                  <th>- Poder llevar a cabo unas estadísticas sobre el tratamiento más adecuado para una enfermedad</th>
 
                </table>
                 <table>
 
-                    -	Valorar el tratamiento recibido
+                   <th>-  Valorar el tratamiento recibido</th>
 
                 </table>
                 <table>
 
-                    -	Hacer más eficientes las consultas
+                   <th> -  Hacer más eficientes las consultas</th>
 
                 </table>
 
