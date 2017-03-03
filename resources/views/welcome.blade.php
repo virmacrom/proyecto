@@ -80,7 +80,7 @@
 
 
                 <?php
-                $pacientes = ["Virginia"=> "09:30", "Antonio" => "11:25"]
+                $pacientes = ["Virginia"=> "09:30", "Alicia" => "11:25"]
                 ?>
                 <table>
                     <tr>
