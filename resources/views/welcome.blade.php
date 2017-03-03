@@ -68,40 +68,16 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Encuestas</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Registro</a>
-                    @endif
+
                 </div>
+                @if (Auth::check())
+                    <a href="{{ url('/home') }}">Encuestas</a>
+                @else
+                    <a href="{{ url('/login') }}">Login</a>
+                    <a href="{{ url('/register') }}">Registro</a>
+                @endif
             @endif
 
-
-
-                <?php
-                $pacientes = ["Ana"=> "09:30", "Antonio" => "11:25"]
-                ?>
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Hora</th>
-                    </tr>
-                    <?php
-                        foreach($pacientes as $nombre => $hora){
-                            ?>
-                    <tr>
-                        <td>
-                           <?php echo $nombre ?>
-                        </td>
-                        <td>
-                            <?php echo $hora ?>
-                        </td>
-                    </tr>
-                    <?php
-                        }
-                        ?>
-                </table>
 
 
 
@@ -113,6 +89,31 @@
                         ALVIR encuestas 3
                     </div>
 
+
+
+                <?php
+                $creadores = ["Virginia"=> "vmaciasromero@gmail.com", "Alicia" => "aliciazamorareina6@gmail.com"]
+                ?>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                    </tr>
+                    <?php
+                    foreach($creadores as $nombre => $email){
+                    ?>
+                    <tr>
+                        <td>
+                            <?php echo $nombre ?>
+                        </td>
+                        <td>
+                            <?php echo $email ?>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
 
 
                 <div class="links">
