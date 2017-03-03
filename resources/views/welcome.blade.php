@@ -114,6 +114,21 @@
                     </div>
 
 
+               <table>
+
+                   - Poder llevar a cabo unas estadísticas sobre el tratamiento más adecuado para una enfermedad
+
+               </table>
+                <table>
+
+                    -	Valorar el tratamiento recibido
+
+                </table>
+                <table>
+
+                    -	Hacer más eficientes las consultas
+
+                </table>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Descripción</a>
