@@ -80,7 +80,7 @@
 
 
                 <?php
-                $pacientes = ["Ana"=> "09:30", "Antonio" => "11:25"]
+                $pacientes = ["Virginia"=> "09:30", "Antonio" => "11:25"]
                 ?>
                 <table>
                     <tr>
@@ -110,7 +110,7 @@
             <div class="content">
 
                     <div class="title m-b-md">
-                        ALVIR encuestas 3
+                        ALVIR encuestas
                     </div>
 
 
