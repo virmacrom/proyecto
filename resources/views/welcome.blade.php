@@ -9,7 +9,7 @@
         <font size=4>ALVIR</font>
 
         <!-- Fonts -->
-        <font face="Comic Sans MS"></font>
+        <font face="Verdana"></font>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -48,6 +48,7 @@
                 color: #20326f;
                 text-align: center;
                 font-size: 17px;
+
             }
 
             .title {
@@ -57,7 +58,9 @@
 
             .links > a {
                 color: #26c4d2;
-                padding: 0 25px;
+                border: 4px solid;
+                background-color: rgba(38, 196, 210, 0.18);
+                padding: 0 35px;
                 font-size: 25px;
                 font-weight: 600;
                 letter-spacing: .1rem;
@@ -66,22 +69,16 @@
             }
 
             .m-b-md {
-                margin-bottom: 60px;
+                margin-bottom: 70px;
             }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
                 <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Encuestas</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Registro</a>
-                    @endif
-                </div>
-            @endif
+                    <font size=5><a href="{{ url('/login') }}">Login</a></font>
+                    <font size=5><a href="{{ url('/register') }}">Registro</a></font>
+                    </div>
 
 
 
@@ -91,19 +88,15 @@
             <div class="content">
 
 
-                <font face="Comic Sans MS">
+                <font face="Verdana">
                     <div class="title m-b-md">
                         ALVIR encuestas
                     </div>
                 </font>
 
+                "<br>"
 
-                <table>
-                    <th>  </th>
-                </table>
-                <table>
-                    <th>  </th>
-                </table>
+
 
 
 
@@ -115,7 +108,7 @@
                     <th> - Poder llevar a cabo unas estadísticas sobre el tratammiento más adecuado para una enfermedad</th>
                 </table>
                 <table>
-                    <th> - Valorara el tratamiento recibido</th>
+                    <th> - Valorar el tratamiento recibido</th>
                 </table>
                 <table>
                     <th> - Hacer más eficientes las consultas</th>
@@ -124,29 +117,7 @@
 
 
 
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
+                "<br>"
 
 
                 <div class="links">
@@ -157,22 +128,7 @@
                 </div>
 
 
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
-                <table>
-                    <th>  </th>
-                </table>
-
+                "<br>"
 
 
                 <?php
@@ -198,6 +154,7 @@
                     }
                     ?>
                 </table>
+
 
 
             </div>
