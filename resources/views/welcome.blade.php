@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>ALVIR</title>
-        <font size=4>ALVIR</font>
+
 
         <!-- Fonts -->
         <font face="Verdana"></font>
@@ -15,7 +15,7 @@
         <!-- Styles -->
         <style>
             html,body{
-                background-color: #fff;
+                background-color: #defef7;
                 color: rgba(38, 196, 210, 0.71);
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -51,12 +51,16 @@
 
             }
 
+            .contacto{
+                color: #263777;
+            }
             .title {
-                color: #26c4d2;
+                color: #216dd2;
                 font-size: 89px;
             }
 
             .links > a {
+                border-radius: 15px;
                 color: #26c4d2;
                 border: 4px solid;
                 background-color: rgba(38, 196, 210, 0.18);
@@ -76,7 +80,7 @@
     <body>
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
-                    <font size=5><a href="{{ url('/login') }}">Login</a></font>
+                    <font size =5><a href="{{ url('/login') }}">Login</a></font>
                     <font size=5><a href="{{ url('/register') }}">Registro</a></font>
                     </div>
 
@@ -85,7 +89,7 @@
 
 
 
-            <div class="content">
+                <div class="content">
 
 
                 <font face="Verdana">
@@ -100,7 +104,7 @@
 
 
 
-                <font face="Comic Sans MS">
+                <font face="Verdana">
                 <table>
                     <th> OBJETIVOS</th>
                 </table>
@@ -123,8 +127,8 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Descripción</a>
                     <a href="https://laracasts.com">Sugerencias</a>
-                    <a href="https://laravel-news.com">Contacto</a>
-                    <a href="https://forge.laravel.com">Encuestas</a>
+                    <a href="https://laravel-news.com">Encuestas</a>
+                    <a href="https://forge.laravel.com">Contacto</a>
                 </div>
 
 
@@ -134,7 +138,8 @@
                 <?php
                 $creadores = ["Virginia"=> "vmaciasromero@gmail.com", "Alicia" => "aliciazamorareina6@gmail.com"]
                 ?>
-                <table>
+                    <div class ="contacto">
+                <table style="position:absolute; bottom:50px;right:50px">
                     <tr>
                         <th>Nombre</th>
                         <th>Email</th>
@@ -143,20 +148,18 @@
                     foreach($creadores as $nombre => $email){
                     ?>
                     <tr>
-                        <td>
+                        <th>
                         <?php echo $nombre ?>
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                         <?php echo $email ?>
-                        </td>
+                        </th>
                     </tr>
                     <?php
                     }
                     ?>
                 </table>
-
-
-
+                </div>
             </div>
         </div>
     </body>
