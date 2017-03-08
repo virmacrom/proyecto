@@ -9,7 +9,6 @@
 
 
         <!-- Fonts -->
-        <font face="Verdana"></font>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -48,24 +47,22 @@
                 color: #20326f;
                 text-align: center;
                 font-size: 17px;
+                font-family: 'Raleway', Verdana;
 
             }
 
-            .contacto{
-                color: #263777;
-            }
             .title {
                 color: #216dd2;
                 font-size: 89px;
             }
 
             .links > a {
-                border-radius: 15px;
+                border-bottom-style: double;
                 color: #26c4d2;
-                border: 4px solid;
                 background-color: rgba(38, 196, 210, 0.18);
                 padding: 0 35px;
                 font-size: 25px;
+                font-family: 'Raleway', Verdana;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -74,14 +71,17 @@
 
             .m-b-md {
                 margin-bottom: 70px;
+                font-family: 'Raleway', Verdana;
+                font-size: 90px;
             }
+
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
-                    <font size =5><a href="{{ url('/login') }}">Login</a></font>
-                    <font size=5><a href="{{ url('/register') }}">Registro</a></font>
+                    <a href="{{ url('/login') }}">Login</a>
+                    <a href="{{ url('/register') }}">Registro</a>
                     </div>
 
 
@@ -92,19 +92,19 @@
                 <div class="content">
 
 
-                <font face="Verdana">
+
                     <div class="title m-b-md">
-                        ALVIR encuestas
+                        <b>ALVIR encuestas</b>
                     </div>
-                </font>
-
-                "<br>"
 
 
+                <br>
 
 
 
-                <font face="Verdana">
+
+
+
                 <table>
                     <th> OBJETIVOS</th>
                 </table>
@@ -121,7 +121,7 @@
 
 
 
-                "<br>"
+                <br>
 
 
                 <div class="links">
@@ -132,13 +132,12 @@
                 </div>
 
 
-                "<br>"
+                <br>
 
 
                 <?php
                 $creadores = ["Virginia"=> "vmaciasromero@gmail.com", "Alicia" => "aliciazamorareina6@gmail.com"]
                 ?>
-                    <div class ="contacto">
                 <table style="position:absolute; bottom:50px;right:50px">
                     <tr>
                         <th>Nombre</th>
@@ -159,7 +158,6 @@
                     }
                     ?>
                 </table>
-                </div>
             </div>
         </div>
     </body>
