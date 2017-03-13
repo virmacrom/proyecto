@@ -46,7 +46,7 @@
             .content {
                 color: #20326f;
                 text-align: center;
-                font-size: 17px;
+                font-size: 18px;
                 font-family: 'Raleway', Verdana;
 
             }
