@@ -12,4 +12,12 @@ class Encuesta extends Model
         return $this->belongsTo('App\TipoEncuesta');
     }
 
+    public function medico(){
+        return $this->belongsTo('App/medico');
+    }
+
+    public function paciente(){
+        return $this->belongsTo('App/Paciente');
+    }
+
 }
