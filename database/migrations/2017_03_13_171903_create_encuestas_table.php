@@ -23,7 +23,7 @@ class CreateEncuestasTable extends Migration
             para un tipo de encuesta puede haber muchas encuestas,
             la relacion es de uno a muchos
             */
-            $table->
+
             $table->timestamps();
         });
     }
