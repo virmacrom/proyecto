@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Enfermedad extends Model
 {
     public function pacientes(){
-        return $this->belongsToMany('App\paciente');
+        return $this->belongsToMany('App\Paciente');
     }
 }
