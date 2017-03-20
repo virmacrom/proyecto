@@ -20,7 +20,7 @@ class CreateMedicosTable extends Migration
             $table->date('fecha_nacimiento');
             $table->string('direccion');
             $table->string('telefono');
-            $table->string('especialidad');
+            $table->unsignedInteger('especialidad_id');
             $table->timestamps();
         });
     }
