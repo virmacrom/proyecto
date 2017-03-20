@@ -17,7 +17,7 @@ class medico extends Model
     }
 
     public function especialidad(){
-        return $this->belongsTo('App/Especialidad');
+        return $this->belongsTo('App/especialidad');
     }
 }
 
