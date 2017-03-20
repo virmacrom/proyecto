@@ -12,4 +12,7 @@ class Paciente extends Model
     public function encuestas(){
         return $this->hasMany('App/Encuesta');
     }
+    public function medicos(){
+        return $this->belongsToMany('App\medico');
+    }
 }
