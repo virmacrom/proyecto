@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resources('medico', 'MedicoController');
-Route::resources('Paciente','PacienteController');
+Route::resource('medico', 'MedicoController');
+Route::resource('Paciente','PacienteController');
