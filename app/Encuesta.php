@@ -19,5 +19,8 @@ class Encuesta extends Model
     public function paciente(){
         return $this->belongsTo('App/Paciente');
     }
+    public function respuestaselegidas(){
+        return $this->hasMany('App/respuestas_elegidas');
+    }
 
 }
