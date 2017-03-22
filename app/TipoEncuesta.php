@@ -10,4 +10,8 @@ class TipoEncuesta extends Model
     public function encuestas(){
         return $this->hasMany('App\Encuesta');
     }
+
+    public function Pregunta(){
+        return $this->hasMany('App\Pregunta');
+    }
 }

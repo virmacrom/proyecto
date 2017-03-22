@@ -10,4 +10,9 @@ class Pregunta extends Model
         return $this->belongsTo('App/respuestas');
     }
 
+
+    public function tipoEncuesta(){
+            return $this->belongsTo('App/TipoEncuesta');
+    }
+
 }
