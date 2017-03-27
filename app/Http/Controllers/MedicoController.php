@@ -30,7 +30,7 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        $especialidades = especialidad::all()->pluck('name','id');
+        $especialidades = especialidad::all()->pluck('nombre','id');
 
         return view('medicos/create',['especialidades'=>$especialidades]);
     }
@@ -67,9 +67,9 @@ class MedicoController extends Controller
      * @param  \App\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Medico $medico)
     {
-        //
+       return view('medicos/show', ['medico'=>$medico]);
     }
 
     /**
@@ -82,7 +82,7 @@ class MedicoController extends Controller
     {
         $medico = medico::find($id);
 
-        $especialidades = especialidad::all()->pluck('name','id');
+        $especialidades = especialidad::all()->pluck('nombre','id');
 
 
         return view('medicos/edit',['medico'=> $medico, 'especialidades'=>$especialidades ]);
@@ -122,7 +122,7 @@ class MedicoController extends Controller
      * @param  \App\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medico $medico)
+    public function destroy($id)
     {
         $medico = Medico::find($id);
         $medico->delete();

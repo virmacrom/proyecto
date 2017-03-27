@@ -58,8 +58,30 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="{{ url('/medicos') }}">
+                                            Medicos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/especialidades') }}">
+                                            Especialidades
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/pacientes') }}">
+                                            Pacientes
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/encuestas') }}">
+                                            Encuestas
+                                        </a>
+                                    </li>
+                                     </li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

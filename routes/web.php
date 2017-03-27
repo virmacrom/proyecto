@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('medico', 'MedicoController');
-Route::resource('Paciente','PacienteController');
+Route::resource('medicos', 'MedicoController');
+Route::resource('pacientes','PacienteController');
 
 Auth::routes();
 
