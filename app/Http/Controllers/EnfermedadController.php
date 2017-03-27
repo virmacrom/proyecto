@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Pregunta;
+use App\enfermedad;
 use Illuminate\Http\Request;
 
-class PreguntaController extends Controller
+class EnfermedadController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +19,10 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $pregunta = Pregunta::all();
+        $enfermedad = Enfermedad::all();
 
-        return view('preguntas/index')->with('preguntas', $pregunta);
+        return view('enfermedades/index')->with('enfermedades', $enfermedad);
+
     }
 
     /**
@@ -30,7 +32,7 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        return view ('preguntas/create');
+        return view ('enfermedades/create');
     }
 
     /**
@@ -42,23 +44,24 @@ class PreguntaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'texto' => 'required|max:255',
+            'nombre_enfermedad' => 'required|max:255',
         ]);
 
         //
-        $pregunta = new Pregunta($request->all());
-        $pregunta->save();
+        $enfermedad = new Enfermedad($request->all());
+        $enfermedad->save();
 
+        // return redirect('enfermedades');
 
-        flash('Pregunta creada correctamente');
+        flash('Enfermedad creada correctamente');
 
-        return redirect()->route('preguntas.index');
+        return redirect()->route('enfermedades.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pregunta  $pregunta
+     * @param  \App\enfermedad  $enfermedad
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,51 +72,51 @@ class PreguntaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pregunta  $pregunta
+     * @param  \App\enfermedad  $enfermedad
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $pregunta = Pregunta::find($id);
+        $enfermedad = Enfermedad::find($id);
 
-        return view('preguntas/edit')->with('preguntas', $pregunta);
+        return view('enfermedades/edit')->with('enfermedades', $enfermedad);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pregunta  $pregunta
+     * @param  \App\enfermedad  $enfermedad
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'texto' => 'required|max:255',
+            'nombre_enfermedad' => 'required|max:255',
         ]);
 
-        $pregunta = Pregunta::find($id);
-        $pregunta->fill($request->all());
+        $enfermedad = Enfermedad::find($id);
+        $enfermedad->fill($request->all());
 
-        $pregunta->save();
+        $enfermedad->save();
 
-        flash('Pregunta modificada correctamente');
+        flash('Enfermedad modificada correctamente');
 
-        return redirect()->route('preguntas.index');
+        return redirect()->route('enfermedades.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pregunta  $pregunta
+     * @param  \App\enfermedad  $enfermedad
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $pregunta = Pregunta::find($id);
-        $pregunta->delete();
-        flash('Pregunta borrada correctamente');
+        $enfermedad = Enfermedad::find($id);
+        $enfermedad->delete();
+        flash('Enfermedad borrada correctamente');
 
-        return redirect()->route('preguntas.index');
+        return redirect()->route('enfermedades.index');
     }
 }

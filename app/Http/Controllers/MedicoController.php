@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class MedicoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,9 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        //
+        $medicos = medico::all();
+
+        return view('medicos/index',['medicos'=>$medicos]);
     }
 
     /**
@@ -24,7 +30,9 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        //
+        $especialidades = especialidad::all()->pluck('name','id');
+
+        return view('medicos/create',['especialidades'=>$especialidades]);
     }
 
     /**
@@ -35,7 +43,22 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|max:255',
+            'apellidos' => 'required|max:255',
+            'especialidad_id' => 'required|exists:especialidads,id',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'required|max:255',
+            'telefono' => 'required|max:255'
+        ]);
+        $medico = new Medico($request->all());
+        $medico->save();
+
+        // return redirect('especialidades');
+
+        flash('Medico creado correctamente');
+
+        return redirect()->route('medicos.index');
     }
 
     /**
@@ -44,7 +67,7 @@ class MedicoController extends Controller
      * @param  \App\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function show(Medico $medico)
+    public function show($id)
     {
         //
     }
@@ -55,9 +78,14 @@ class MedicoController extends Controller
      * @param  \App\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medico $medico)
+    public function edit($id)
     {
-        //
+        $medico = medico::find($id);
+
+        $especialidades = especialidad::all()->pluck('name','id');
+
+
+        return view('medicos/edit',['medico'=> $medico, 'especialidades'=>$especialidades ]);
     }
 
     /**
@@ -67,9 +95,25 @@ class MedicoController extends Controller
      * @param  \App\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medico $medico)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|max:255',
+            'apellidos' => 'required|max:255',
+            'especialidad_id' => 'required|exists:especialidads,id',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'required|max:255',
+            'telefono' => 'required|max:255'
+        ]);
+
+        $medico = Medico::find($id);
+        $medico->fill($request->all());
+
+        $medico->save();
+
+        flash('Medico modificado correctamente');
+
+        return redirect()->route('medicos.index');
     }
 
     /**
@@ -80,6 +124,10 @@ class MedicoController extends Controller
      */
     public function destroy(Medico $medico)
     {
-        //
+        $medico = Medico::find($id);
+        $medico->delete();
+        flash('Medico borrado correctamente');
+
+        return redirect()->route('medicos.index');
     }
 }

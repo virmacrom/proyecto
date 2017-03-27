@@ -17,7 +17,7 @@ class CreatePacientesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellidos');
-            $table->string('nuss');
+            $table->string('nuhsa');
             $table->string('dni');
             $table->date('fecha_nacimiento');
             $table->string('direccion');

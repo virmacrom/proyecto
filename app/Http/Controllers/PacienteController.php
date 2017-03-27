@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class PacienteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,9 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        //
+        $pacientes = Paciente::all();
+
+        return view('pacientes/index',['pacientes'=>$pacientes]);
     }
 
     /**
@@ -24,7 +30,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('pacientes/create');
     }
 
     /**
@@ -35,7 +41,27 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|max:255',
+            'apellidos' => 'required|max:255',
+            'nuhsa' => 'required|nuhsa|max:255',
+            'dni' => 'required|max:255',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'required|max:255',
+            'telefono' => 'required|max:255',
+            'enfermedades' => 'required|max:255'
+
+        ]);
+
+        //TODO: crear validación propia para nuhsa
+        $paciente = new Paciente($request->all());
+        $paciente->save();
+
+        // return redirect('especialidades');
+
+        flash('Paciente creado correctamente');
+
+        return redirect()->route('pacientes.index');
     }
 
     /**
@@ -44,7 +70,7 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function show(Paciente $paciente)
+    public function show($id)
     {
         //
     }
@@ -55,10 +81,13 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
+    public function edit($id)
     {
-        //
+        $paciente = Paciente::find($id);
+
+        return view('pacientes/edit',['paciente'=> $paciente ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -67,9 +96,28 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paciente $paciente)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|max:255',
+            'apellidos' => 'required|max:255',
+            'nuhsa' => 'required|nuhsa|max:255',
+            'dni' => 'required|max:255',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'required|max:255',
+            'telefono' => 'required|max:255',
+            'enfermedades' => 'required|max:255'
+        ]);
+
+        $paciente = Paciente::find($id);
+        $paciente->fill($request->all());
+
+        $paciente->save();
+
+        flash('Paciente modificado correctamente');
+
+        return redirect()->route('pacientes.index');
+//
     }
 
     /**
@@ -78,8 +126,12 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paciente $paciente)
+    public function destroy($id)
     {
-        //
+        $paciente = Paciente::find($id);
+        $paciente->delete();
+        flash('Paciente borrado correctamente');
+
+        return redirect()->route('pacientes.index');
     }
 }
