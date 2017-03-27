@@ -14,6 +14,8 @@ class RespuestasController extends Controller
      */
     public function index()
     {
+        $respuestas= respuestas::all();
+        return view('respuestas/index',['respuestas'=>$respuestas]);
         //
     }
 
@@ -24,6 +26,7 @@ class RespuestasController extends Controller
      */
     public function create()
     {
+
         //
     }
 
