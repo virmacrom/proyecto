@@ -16,6 +16,7 @@ class CreateRespuestasElegidasTable extends Migration
         Schema::create('respuestas_elegidas', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('encuesta_id');
+            $table->foreign('encuesta_id')->references('id')->on('encuestas')->onDelete('cascade');
             $table->timestamps();
         });
     }

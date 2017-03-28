@@ -19,10 +19,13 @@ class CreateEncuestasTable extends Migration
             $table->string('apellidos');
             $table->date('fecha_nacimiento');
             $table->unsignedInteger('tipoencuesta_id');
+            $table->foreign('tipoencuesta_id')->references('id')->on('tipo_encuestas')->onDelete('cascade');
             /*Para una encuesta solo puede haber un tipo de encuesta, y
             para un tipo de encuesta puede haber muchas encuestas,
             la relacion es de uno a muchos
             */
+            $table->unsignedInteger('paciente_id');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -21,6 +21,8 @@ class CreateMedicosTable extends Migration
             $table->string('direccion');
             $table->string('telefono');
             $table->unsignedInteger('especialidad_id');
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

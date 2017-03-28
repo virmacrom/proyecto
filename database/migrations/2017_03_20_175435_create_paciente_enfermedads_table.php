@@ -16,7 +16,9 @@ class CreatePacienteEnfermedadsTable extends Migration
         Schema::create('paciente_enfermedads', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('paciente_id');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
             $table->unsignedInteger('enfermedad_id');
+            $table->foreign('enfermedad_id')->references('id')->on('enfermedads')->onDelete('cascade');
             $table->timestamps();
         });
     }

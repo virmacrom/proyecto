@@ -16,7 +16,10 @@ class CreateMedicoPacientesTable extends Migration
         Schema::create('medico_pacientes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('medico_id');
+            $table->foreign('medico_id')->references('id')->on('medicoss')->onDelete('cascade');
             $table->unsignedInteger('paciente_id');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class CreatePacientesTable extends Migration
             $table->date('fecha_nacimiento');
             $table->string('direccion');
             $table->string('telefono');
-            $table->string('enfermedades');
+
             $table->timestamps();
 
         });
