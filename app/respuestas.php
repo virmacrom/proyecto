@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class respuestas extends Model
 {
     public function preguntas(){
-        return $this->hasMany('App/Pregunta');
+        return $this->belongsTo('App/Pregunta');
     }
 
 }
