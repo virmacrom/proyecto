@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Encuesta;
 use App\respuestas_elegidas;
 use Illuminate\Http\Request;
 
 class RespuestasElegidasController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class RespuestasElegidasController extends Controller
      */
     public function index()
     {
-        //
+        $respuestaselegidas= RespuestasElegidas::all();
+        return view('respuestaselegidas/index',['respuestas'=>$respuestaselegidas]);
     }
 
     /**
@@ -24,7 +31,9 @@ class RespuestasElegidasController extends Controller
      */
     public function create()
     {
-        //
+        $encuestas= Encuesta::all()->pluck('name','id');
+        return view('respuestaselegidas/create',['encuestas'=>$encuestas]);
+
     }
 
     /**
@@ -35,7 +44,7 @@ class RespuestasElegidasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

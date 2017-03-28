@@ -50,8 +50,6 @@ class EncuestaController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
-            'fecha_nacimiento' => 'required|date',
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
         ]);
 
@@ -104,8 +102,6 @@ class EncuestaController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
-            'fecha_nacimiento' => 'required|date',
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
 
         ]);

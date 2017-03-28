@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Pregunta;
 use App\respuestas;
 use Illuminate\Http\Request;
 
 class RespuestasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +32,9 @@ class RespuestasController extends Controller
     public function create()
     {
 
-        //
+        $preguntas= Pregunta::all()->pluck('name','id');
+        return view('respuestas/create',['preguntas'=>$preguntas]);
+
     }
 
     /**
@@ -38,7 +45,16 @@ class RespuestasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'respuesta'=>'required|max:255',
+            'pregunta_id'=>'required|exists:preguntas,id'
+        ]);
+        $respuesta= new respuestas($request->all());
+        $respuesta->save();
+
+        flash('Respuesta creado correctamente');
+        return redirect()->route('respuestas.index');
+
     }
 
     /**
@@ -47,9 +63,9 @@ class RespuestasController extends Controller
      * @param  \App\respuestas  $respuestas
      * @return \Illuminate\Http\Response
      */
-    public function show(respuestas $respuestas)
+    public function show($id)
     {
-        //
+        return view('respuestas/show',['respuesta'=>$id]);
     }
 
     /**
@@ -58,9 +74,14 @@ class RespuestasController extends Controller
      * @param  \App\respuestas  $respuestas
      * @return \Illuminate\Http\Response
      */
-    public function edit(respuestas $respuestas)
+    public function edit($id)
     {
-        //
+        $respuesta = respuestas::find($id);
+
+        $preguntas = Pregunta::all()->pluck('full_name','id');
+
+        return view('respuestas/edit',['respuesta'=> $respuesta, 'preguntas'=>$preguntas]);
+
     }
 
     /**
@@ -70,9 +91,21 @@ class RespuestasController extends Controller
      * @param  \App\respuestas  $respuestas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, respuestas $respuestas)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'respuesta'=>'required|max:255',
+            'pregunta_id'=>'required|exists:preguntas,id'
+
+        ]);
+        $respuesta = Respuesta::find($id);
+        $respuesta->fill($request->all());
+
+        $respuesta->save();
+
+        flash('Respuesta modificada correctamente');
+
+        return redirect()->route('respuestas.index');
     }
 
     /**
@@ -81,8 +114,12 @@ class RespuestasController extends Controller
      * @param  \App\respuestas  $respuestas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(respuestas $respuestas)
+    public function destroy( $id)
     {
-        //
+        $respuesta = Respuesta::find($id);
+        $respuesta->delete();
+        flash('respuesta borrada correctamente');
+
+        return redirect()->route('respuestas.index');
     }
 }

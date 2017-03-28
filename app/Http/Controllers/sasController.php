@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class sasController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,9 @@ class sasController extends Controller
      */
     public function index()
     {
-        //
+        $sas = Sas::all();
+
+        return view('sas/index',['citas'=>$sas]);
     }
 
     /**
@@ -24,7 +31,7 @@ class sasController extends Controller
      */
     public function create()
     {
-        //
+        return view('sas/create');
     }
 
     /**
@@ -80,6 +87,10 @@ class sasController extends Controller
      */
     public function destroy(sas $sas)
     {
-        //
+        $sas = Sas::find($sas);
+        $sas->delete();
+        flash('sas borrada correctamente');
+
+        return redirect()->route('sas.index');
     }
 }

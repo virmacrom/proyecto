@@ -49,7 +49,7 @@ class PacienteController extends Controller
             'fecha_nacimiento' => 'required|date',
             'direccion' => 'required|max:255',
             'telefono' => 'required|max:255',
-            'enfermedades' => 'required|max:255'
+
 
         ]);
 
@@ -106,7 +106,7 @@ class PacienteController extends Controller
             'fecha_nacimiento' => 'required|date',
             'direccion' => 'required|max:255',
             'telefono' => 'required|max:255',
-            'enfermedades' => 'required|max:255'
+
         ]);
 
         $paciente = Paciente::find($id);

@@ -16,8 +16,6 @@ class CreateEncuestasTable extends Migration
         Schema::create('encuestas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('apellidos');
-            $table->date('fecha_nacimiento');
             $table->unsignedInteger('tipoencuesta_id');
             $table->foreign('tipoencuesta_id')->references('id')->on('tipo_encuestas')->onDelete('cascade');
             /*Para una encuesta solo puede haber un tipo de encuesta, y
@@ -26,6 +24,8 @@ class CreateEncuestasTable extends Migration
             */
             $table->unsignedInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
+            $table->unsignedInteger('medico_id');
+            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
 
             $table->timestamps();
         });

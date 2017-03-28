@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pregunta;
+use App\TipoEncuesta;
 use Illuminate\Http\Request;
 
 class PreguntaController extends Controller
@@ -18,7 +19,7 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $pregunta = Pregunta::all();
+        $pregunta = Pregunta::all()->pluck('name','id');
 
         return view('preguntas/index')->with('preguntas', $pregunta);
     }
@@ -30,7 +31,9 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        return view ('preguntas/create');
+        $tipoencuestas = TipoEncuesta::all();
+        return view ('preguntas/create',['tipoencuestas'=>$tipoencuestas]);
+
     }
 
     /**
@@ -43,6 +46,7 @@ class PreguntaController extends Controller
     {
         $this->validate($request, [
             'texto' => 'required|max:255',
+            'tipoencuesta_id'=>'required|exists:tipoencuestas,id'
         ]);
 
         //
@@ -61,9 +65,10 @@ class PreguntaController extends Controller
      * @param  \App\Pregunta  $pregunta
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pregunta $pregunta)
     {
-        //
+        return view('preguntas/show',['pregunta'=>$pregunta]);
+
     }
 
     /**
@@ -90,6 +95,7 @@ class PreguntaController extends Controller
     {
         $this->validate($request, [
             'texto' => 'required|max:255',
+            'tipoencuesta_id'=>'required|exists:tipoencuestas,id'
         ]);
 
         $pregunta = Pregunta::find($id);
