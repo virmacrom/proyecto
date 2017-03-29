@@ -46,7 +46,7 @@ class PacienteController extends Controller
             'apellidos' => 'required|max:255',
             'nuhsa' => 'required|nuhsa|max:255',
             'dni' => 'required|max:255',
-            'fecha_nacimiento' => 'required|date',
+            'fecha_nacimiento' => 'required|date|before:now',
             'direccion' => 'required|max:255',
             'telefono' => 'required|max:255',
 
