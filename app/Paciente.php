@@ -18,4 +18,9 @@ class Paciente extends Model
     public function enfermedades(){
         return $this->belongsToMany('App\Enfermedad');
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->nombre .' '.$this->apellidos;
+    }
 }
