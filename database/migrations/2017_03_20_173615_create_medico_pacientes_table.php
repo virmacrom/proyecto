@@ -15,6 +15,7 @@ class CreateMedicoPacientesTable extends Migration
     {
         Schema::create('medico_pacientes', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('fecha de cita');
             $table->unsignedInteger('medico_id');
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->unsignedInteger('paciente_id');
