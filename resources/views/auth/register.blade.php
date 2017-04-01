@@ -52,15 +52,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('nusha') ? ' has-error' : '' }}">
-                            <label for="dni" class="col-md-4 control-label">Nusha</label>
+                        <div class="form-group{{ $errors->has('nuhsa') ? ' has-error' : '' }}">
+                            <label for="nuhsa" class="col-md-4 control-label">Nuhsa</label>
 
                             <div class="col-md-6">
-                                <input id="nusha" type="text" class="form-control" name="nusha" value="{{ old('nusha') }}" required autofocus>
+                                <input id="nuhsa" type="text" class="form-control" name="nuhsa" value="{{ old('nuhsa') }}" required autofocus>
 
-                                @if ($errors->has('nusha'))
+                                @if ($errors->has('nuhsa'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nusha') }}</strong>
+                                        <strong>{{ $errors->first('nuhsa') }}</strong>
                                     </span>
                                 @endif
                             </div>
