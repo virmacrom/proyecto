@@ -50,10 +50,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nombre' => 'required|max:255',
             'apellidos' => 'required|max:255',
-            'dni' => 'required|email|max:255|unique:users',
-            'nuhsa' => 'required|email|max:255|unique:users',
+            'dni' => 'required|dni|max:255|unique:users',
+            'nuhsa' => 'required|nusha|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
-            'usuario' => 'required|email|max:255|unique:users',
+            'usuario' => 'required|usuario|max:255|unique:users',
             'contraseña' => 'required|min:6|confirmed',
         ]);
     }
