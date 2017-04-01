@@ -50,7 +50,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Entrar</a></li>
+                            <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
                             <li><a href="{{ route('register') }}">Registro</a></li>
                         @else
                             <li class="dropdown">
@@ -85,7 +85,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Cerrar sesión
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
