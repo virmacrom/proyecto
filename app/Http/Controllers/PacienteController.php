@@ -44,8 +44,8 @@ class PacienteController extends Controller
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'apellidos' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255',
-            'dni' => 'required|max:255',
+            'nuhsa' => 'required|nuhsa|max:12',
+            'dni' => 'required|max:9',
             'fecha_nacimiento' => 'required|date|before:now',
             'direccion' => 'required|max:255',
             'telefono' => 'required|max:255',
@@ -111,8 +111,8 @@ class PacienteController extends Controller
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'apellidos' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255',
-            'dni' => 'required|max:255',
+            'nuhsa' => 'required|nuhsa|max:12',
+            'dni' => 'required|max:9',
             'fecha_nacimiento' => 'required|date',
             'direccion' => 'required|max:255',
             'telefono' => 'required|max:255',
