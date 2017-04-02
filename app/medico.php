@@ -20,9 +20,5 @@ class medico extends Model
         return $this->belongsTo('App/especialidad');
     }
 
-    public function getFullNameAttribute()
-    {
-        return $this->nombre .' '.$this->apellidos;
-    }
 }
 

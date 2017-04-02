@@ -10,29 +10,29 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('nombre') }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('nombre'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('apellidos') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
                             <label for="surname" class="col-md-4 control-label">Apellidos</label>
 
                             <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('apellidos') }}" required autofocus>
+                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required autofocus>
 
-                                @if ($errors->has('apellidos'))
+                                @if ($errors->has('surname'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('apellidos') }}</strong>
+                                        <strong>{{ $errors->first('surname') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -94,15 +94,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('contraseña') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('contraseña'))
+                                @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('contraseña') }}</strong>
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>

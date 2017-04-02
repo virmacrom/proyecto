@@ -43,6 +43,12 @@
                 top: 18px;
             }
 
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 18px;
+            }
+
             .content {
                 color: #20326f;
                 text-align: center;
@@ -86,7 +92,9 @@
 
 
 
-
+                 <div class="top-left">
+                     <img src = "http://maxsilva.bligoo.com/media/users/13/674240/images/public/80475/encuesta.png"/>
+                     </div>
 
 
                 <div class="content">
@@ -99,10 +107,6 @@
 
 
                 <br>
-
-
-
-
 
 
                 <table>

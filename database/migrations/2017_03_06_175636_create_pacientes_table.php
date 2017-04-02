@@ -17,8 +17,8 @@ class CreatePacientesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellidos');
-            $table->string('nuhsa')->unique();
             $table->string('dni')->unique();
+            $table->string('nuhsa')->unique();
             $table->date('fecha_nacimiento');
             $table->string('direccion');
             $table->string('telefono');
