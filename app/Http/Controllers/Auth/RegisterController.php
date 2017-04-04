@@ -48,15 +48,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
-            'dni' => 'required|dni|max:255|unique:users',
-            'nuhsa' => 'required|nusha|max:255|unique:users',
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'usuario' => 'required|usuario|max:255|unique:users',
-            'contraseña' => 'required|min:6|confirmed',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -66,16 +66,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // $user =
+        // $medico = 'user_id' => $user->id
         return User::create([
-            'nombre' => $data['nombre'],
-            'apellidos' => $data['apellidos'],
-            'dni' => $data['dni'],
-            'nuhsa' => $data['nuhsa'],
+            'name' => $data['name'],
+            'surname' => $data['surname'],
+            'address' => $data['address'],
+            'telephone' => $data['telephone'],
             'email' => $data['email'],
-            'usuario' => $data['usuario'],
-            'contraseña' => bcrypt($data['contraseña']),
-
-
+            'password' => bcrypt($data['password']),
         ]);
     }
 }

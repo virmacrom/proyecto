@@ -58,7 +58,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <li class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/medicos') }}">
                                             Medicos
@@ -81,7 +81,7 @@
                                             Encuestas
                                         </a>
                                     </li>
-                                     </li>
+                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -99,6 +99,20 @@
                 </div>
             </div>
         </nav>
+        @if (count($errors) > 0)
+            <div class="container">
+                <div class="row ">
+                    <div class="alert alert-danger col-md-8 col-md-offset-2">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        @endif
 
         @yield('content')
     </div>

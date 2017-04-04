@@ -15,7 +15,7 @@ class CreateTipoEncuestasTable extends Migration
     {
         Schema::create('tipo_encuestas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('name');
             $table->timestamps();
         });
     }

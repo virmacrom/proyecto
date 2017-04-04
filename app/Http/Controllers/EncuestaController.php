@@ -31,7 +31,7 @@ class EncuestaController extends Controller
      */
     public function create()
     {
-        $medicos = medico::all()->pluck('full_name','id');
+        $medicos = Medico::all()->pluck('full_name','id');
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
@@ -49,7 +49,7 @@ class EncuestaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre' => 'required|max:255',
+            'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
         ]);
 
@@ -83,7 +83,7 @@ class EncuestaController extends Controller
     {
         $encuesta = Encuesta::find($id);
 
-        $medicos = medico::all()->pluck('full_name','id');
+        $medicos = Medico::all()->pluck('full_name','id');
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
@@ -101,7 +101,7 @@ class EncuestaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nombre' => 'required|max:255',
+            'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
 
         ]);

@@ -43,7 +43,7 @@ class TipoEncuestaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nombre'=>'required|max:255'
+            'name'=>'required|max:255'
         ]);
         $tipoencuesta= new TipoEncuesta($request->all());
         $tipoencuesta->save();
@@ -87,7 +87,7 @@ class TipoEncuestaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'nombre'=>'required|max:255'
+            'name'=>'required|max:255'
         ]);
         $tipoencuesta= new TipoEncuesta($request->all());
         $tipoencuesta->save();

@@ -17,7 +17,7 @@ class CreateRespuestasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('pregunta_id');
             $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');
-            $table->string('texto');
+            $table->string('text');
             $table->timestamps();
         });
     }

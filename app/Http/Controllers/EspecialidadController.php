@@ -18,7 +18,7 @@ class EspecialidadController extends Controller
      */
     public function index()
     {
-        $especialidades = especialidad::all();
+        $especialidades = Especialidad::all();
 
         return view('especialidades/index')->with('especialidades', $especialidades);
 
@@ -78,7 +78,7 @@ class EspecialidadController extends Controller
      */
     public function edit($id)
     {
-        $especialidad = especialidad::find($id);
+        $especialidad = Especialidad::find($id);
 
         return view('especialidades/edit')->with('especialidad', $especialidad);
     }
@@ -97,7 +97,7 @@ class EspecialidadController extends Controller
             'medico_especialista' => 'required|max:255'
         ]);
 
-        $especialidad = especialidad::find($id);
+        $especialidad = Especialidad::find($id);
         $especialidad->fill($request->all());
 
         $especialidad->save();
@@ -115,7 +115,7 @@ class EspecialidadController extends Controller
      */
     public function destroy($id)
     {
-        $especialidad = especialidad::find($id);
+        $especialidad = Especialidad::find($id);
         $especialidad->delete();
         flash('Especialidad borrada correctamente');
 
@@ -124,7 +124,7 @@ class EspecialidadController extends Controller
 
     public function destroyAll()
     {
-        especialidad::truncate();
+        Especialidad::truncate();
         flash('Todas las especialidades borradas correctamente');
 
         return redirect()->route('especialidades.index');

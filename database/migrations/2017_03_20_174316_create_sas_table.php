@@ -15,8 +15,8 @@ class CreateSasTable extends Migration
     {
         Schema::create('sas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('apellidos');
+            $table->string('name');
+            $table->string('surname');
             $table->string('dni');
             $table->timestamps();
         });

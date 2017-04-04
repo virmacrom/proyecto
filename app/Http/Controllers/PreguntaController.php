@@ -45,7 +45,7 @@ class PreguntaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'texto' => 'required|max:255',
+            'text' => 'required|max:255',
             'tipoencuesta_id'=>'required|exists:tipoencuestas,id'
         ]);
 
@@ -94,7 +94,7 @@ class PreguntaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'texto' => 'required|max:255',
+            'text' => 'required|max:255',
             'tipoencuesta_id'=>'required|exists:tipoencuestas,id'
         ]);
 

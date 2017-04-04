@@ -106,24 +106,6 @@
                     </div>
 
 
-                <br>
-
-
-                <table>
-                    <th> OBJETIVOS</th>
-                </table>
-                <table>
-                    <th> - Poder llevar a cabo unas estadísticas sobre el tratammiento más adecuado para una enfermedad</th>
-                </table>
-                <table>
-                    <th> - Valorar el tratamiento recibido</th>
-                </table>
-                <table>
-                    <th> - Hacer más eficientes las consultas</th>
-                </table>
-                </font>
-
-
 
                 <br>
 
@@ -137,31 +119,6 @@
 
 
                 <br>
-
-
-                <?php
-                $creadores = ["Virginia"=> "vmaciasromero@gmail.com", "Alicia" => "aliciazamorareina6@gmail.com"]
-                ?>
-                <table style="position:absolute; bottom:50px;right:50px">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                    </tr>
-                    <?php
-                    foreach($creadores as $nombre => $email){
-                    ?>
-                    <tr>
-                        <th>
-                        <?php echo $nombre ?>
-                        </th>
-                        <th>
-                        <?php echo $email ?>
-                        </th>
-                    </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
             </div>
         </div>
     </body>

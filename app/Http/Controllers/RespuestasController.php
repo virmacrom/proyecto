@@ -19,7 +19,7 @@ class RespuestasController extends Controller
      */
     public function index()
     {
-        $respuestas= respuestas::all();
+        $respuestas= Respuestas::all();
         return view('respuestas/index',['respuestas'=>$respuestas]);
         //
     }
@@ -32,7 +32,7 @@ class RespuestasController extends Controller
     public function create()
     {
 
-        $preguntas= Pregunta::all()->pluck('name','id');
+        $preguntas= Pregunta::all()->pluck('text');
         return view('respuestas/create',['preguntas'=>$preguntas]);
 
     }
@@ -76,9 +76,9 @@ class RespuestasController extends Controller
      */
     public function edit($id)
     {
-        $respuesta = respuestas::find($id);
+        $respuesta = Respuestas::find($id);
 
-        $preguntas = Pregunta::all()->pluck('full_name','id');
+        $preguntas = Pregunta::all()->pluck('full_text');
 
         return view('respuestas/edit',['respuesta'=> $respuesta, 'preguntas'=>$preguntas]);
 
@@ -98,7 +98,7 @@ class RespuestasController extends Controller
             'pregunta_id'=>'required|exists:preguntas,id'
 
         ]);
-        $respuesta = Respuesta::find($id);
+        $respuesta = Respuestas::find($id);
         $respuesta->fill($request->all());
 
         $respuesta->save();
@@ -116,7 +116,7 @@ class RespuestasController extends Controller
      */
     public function destroy( $id)
     {
-        $respuesta = Respuesta::find($id);
+        $respuesta = Respuestas::find($id);
         $respuesta->delete();
         flash('respuesta borrada correctamente');
 

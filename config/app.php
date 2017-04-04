@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
 
+
         /*
          * Application Service Providers...
          */

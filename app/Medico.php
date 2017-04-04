@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class medico extends Model
+class Medico extends Model
 {
     //
-    protected $fillable = ['nombre','apellidos','id'];
+    protected $fillable = ['name','surname','id'];
 
     public function encuestas(){
         return $this->hasMany('App/Encuesta');
@@ -16,8 +16,12 @@ class medico extends Model
         return $this->belongsToMany('App\Paciente');
     }
 
+    public function users(){
+        return $this->belongsTo('App\User');
+    }
+
     public function especialidad(){
-        return $this->belongsTo('App/especialidad');
+        return $this->belongsTo('App/Especialidad');
     }
 
 }

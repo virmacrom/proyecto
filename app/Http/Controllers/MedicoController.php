@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Medico;
+use App\especialidad;
 use Illuminate\Http\Request;
 
 class MedicoController extends Controller
@@ -18,7 +19,7 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        $medicos = medico::all();
+        $medicos = Medico::all();
 
         return view('medicos/index',['medicos'=>$medicos]);
     }
@@ -30,7 +31,7 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        $especialidades = especialidad::all()->pluck('nombre','id');
+        $especialidades = Especialidad::all()->pluck('name','id');
 
         return view('medicos/create',['especialidades'=>$especialidades]);
     }
@@ -44,12 +45,11 @@ class MedicoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
-            'fecha_nacimiento' => 'required|date',
-            'direccion' => 'required|max:255',
-            'telefono' => 'required|max:255'
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255'
         ]);
         $medico = new Medico($request->all());
         $medico->save();
@@ -80,9 +80,9 @@ class MedicoController extends Controller
      */
     public function edit($id)
     {
-        $medico = medico::find($id);
+        $medico = Medico::find($id);
 
-        $especialidades = especialidad::all()->pluck('nombre','id');
+        $especialidades = Especialidad::all()->pluck('name','id');
 
 
         return view('medicos/edit',['medico'=> $medico, 'especialidades'=>$especialidades ]);
@@ -98,12 +98,11 @@ class MedicoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
-            'fecha_nacimiento' => 'required|date',
-            'direccion' => 'required|max:255',
-            'telefono' => 'required|max:255'
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255'
         ]);
 
         $medico = Medico::find($id);

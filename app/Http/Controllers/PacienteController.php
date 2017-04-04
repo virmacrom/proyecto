@@ -42,13 +42,12 @@ class PacienteController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255',
-            'dni' => 'required|dni|max:255',
-            'fecha_nacimiento' => 'required|date|before:now',
-            'direccion' => 'required|max:255',
-            'telefono' => 'required|max:255',
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'nuhsa' => 'required|max:255',
+            'dni' => 'required|max:255',
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255',
 
 
         ]);
@@ -62,17 +61,11 @@ class PacienteController extends Controller
         flash('Paciente creado correctamente');
 
         return redirect()->route('pacientes.index');
+
+
     }
 
-    /*public function validar_dni($dni){
-        $letra = substr($dni, -1);
-        $numeros = substr($dni, 0, -1);
-        if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
-            echo 'valido';
-        }else{
-            echo 'no valido';
-        }
-    }*/
+
 
     /**
      * Display the specified resource.
@@ -109,13 +102,12 @@ class PacienteController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nombre' => 'required|max:255',
-            'apellidos' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255',
-            'dni' => 'required|dni|max:255',
-            'fecha_nacimiento' => 'required|date',
-            'direccion' => 'required|max:255',
-            'telefono' => 'required|max:255',
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'nuhsa' => 'required|max:255',
+            'dni' => 'required|max:255',
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255',
 
         ]);
 
