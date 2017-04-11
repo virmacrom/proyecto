@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Encuesta;
+use App\TipoEncuesta;
 use Illuminate\Http\Request;
 
 class EncuestaController extends Controller
@@ -35,8 +36,9 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
+        $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
 
-        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes]);
+        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuestas'=>$tipo_encuesta]);
 
     }
 
@@ -51,6 +53,8 @@ class EncuestaController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
+            'medico_id'=>'required|exits:medicos,id',
+            'paciente_id'=>'required|exits:pacientes,id',
         ]);
 
         $encuesta = new Encuesta($request->all());
@@ -87,8 +91,9 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
+        $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
 
-        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes]);
+        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuesta'=>$tipo_encuesta]);
     }
 
     /**
@@ -103,6 +108,9 @@ class EncuestaController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
+            'medico_id'=>'required|exits:medicos,id',
+            'paciente_id'=>'required|exits:pacientes,id',
+
 
         ]);
         $encuesta = Encuesta::find($id);

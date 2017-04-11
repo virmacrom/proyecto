@@ -9,4 +9,8 @@ class Enfermedad extends Model
     public function pacientes(){
         return $this->belongsToMany('App\Paciente');
     }
+    public function especialidad(){
+        return $this->belongsTo('App/Especialidad');
+    }
+
 }

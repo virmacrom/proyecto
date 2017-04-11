@@ -17,6 +17,9 @@ class CreateEnfermedadsTable extends Migration
             $table->increments('id');
             $table->string('nombre_enfermedad');
             $table->timestamps();
+            $table->unsignedInteger('user_id');
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
+
         });
     }
 

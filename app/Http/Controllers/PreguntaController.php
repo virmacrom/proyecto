@@ -80,8 +80,9 @@ class PreguntaController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
+        $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
 
-        return view('preguntas/edit')->with('preguntas', $pregunta);
+        return view('preguntas/edit',[ 'tipo_encuesta'=>$tipo_encuesta]);
     }
 
     /**

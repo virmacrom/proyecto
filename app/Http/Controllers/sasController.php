@@ -42,7 +42,7 @@ class sasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
