@@ -34,4 +34,7 @@ class User extends Authenticatable
     public function medicos(){
         return $this->hasOne('App/Medico');
     }
+    public function sas(){
+        return $this->hasOne('App/Sas');
+    }
 }
