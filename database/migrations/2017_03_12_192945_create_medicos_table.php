@@ -15,6 +15,8 @@ class CreateMedicosTable extends Migration
     {
         Schema::create('medicos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('codigo');
+            $table->string('consulta');
             $table->unsignedInteger('especialidad_id');
             $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
             $table->unsignedInteger('user_id');
