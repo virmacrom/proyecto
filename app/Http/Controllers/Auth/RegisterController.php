@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Medico;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -76,19 +77,20 @@ class RegisterController extends Controller
          ]);
 
         if($data['code'] != null){
-           // $medico = 'user_id' => $user->id
-            $medico = $user ->medicos()->create([
-                'message' => 'A new doctor',
-            ]);
-            $user=$medico;
+            $medico= new Medico();
+            $medico->code = $data['code'];
+            $medico->consulta = $data['consulta'];
+            $medico->especialidad_id =$data['especialidad_id'];
+            $medico->save();
         }
-        else{
-            $paciente = $user ->pacientes() ->create([
-                'message' => 'A new patient',
-            ]);
-            $user=$paciente;
+        else if($data['nuhsa'] != null){
+            $paciente= new Paciente();
+            $paciente->nuhsa = $data['nuhsa'];
+            $paciente->dni = $data['dni'];
+            $paciente->operado =$data['operado'];
+            $paciente->save();
         }
-        return user;
+        return $user;
     }
         //$medico = 'user_id' => $user->id
 
