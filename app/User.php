@@ -37,4 +37,8 @@ class User extends Authenticatable
     public function sas(){
         return $this->hasOne('App/Sas');
     }
+
+    public function rolUser(){
+        return $this->hasOne('App/RolUser');
+    }
 }

@@ -81,10 +81,10 @@ class EnfermedadController extends Controller
     public function edit($id)
     {
         $enfermedad = Enfermedad::find($id);
-        $especialidades = Especialidad::all()->pluck('name','id');
+        $especialidad = Especialidad::all()->pluck('name','id');
 
 
-        return view('enfermedades/edit',['enfermedad'=>$enfermedad,'especialidad'=>$especialidades]);
+        return view('enfermedades/edit',['enfermedad'=>$enfermedad,'especialidad'=>$especialidad]);
     }
 
     /**

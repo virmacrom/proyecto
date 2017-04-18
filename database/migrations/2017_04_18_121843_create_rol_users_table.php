@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEnfermedadsTable extends Migration
+class CreateRolUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateEnfermedadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('enfermedads', function (Blueprint $table) {
+        Schema::create('rol_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_enfermedad');
+            $table->string('name');
             $table->timestamps();
-            $table->unsignedInteger('user_id');
-            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
-
         });
     }
 
@@ -30,6 +27,6 @@ class CreateEnfermedadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enfermedads');
+        Schema::dropIfExists('rol_users');
     }
 }
