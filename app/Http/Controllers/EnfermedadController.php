@@ -32,9 +32,9 @@ class EnfermedadController extends Controller
      */
     public function create()
     {
-        $especialidades = Especialidad::all()->pluck('name','id');
+        $especialidad = Especialidad::all()->pluck('name','id');
 
-        return view ('enfermedades/create',['especialidades'=>$especialidades]);
+        return view ('enfermedades/create',['especialidades'=>$especialidad]);
     }
 
     /**
