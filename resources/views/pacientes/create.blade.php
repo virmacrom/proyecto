@@ -5,24 +5,24 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Crear medico</div>
+                    <div class="panel-heading">Crear paciente</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'medicos.store']) !!}
+                        {!! Form::open(['route' => 'pacientes.store']) !!}
+
                         <div class="form-group">
-                            {!! Form::label('code', 'Codigo del medico') !!}
-                            {!! Form::text('code',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('nuhsa', 'NUHSA del paciente') !!}
+                            {!! Form::text('nuhsa',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('consulta', 'Consulta del medico') !!}
-                            {!! Form::text('Consulta',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('dni', 'DNI del paciente') !!}
+                            {!! Form::text('dni',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
-                            {!!Form::label('especialidad_id', 'Especialidad medico') !!}
-                            <br>
-                            {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::label('operado', 'Si el paciente se ha operado paciente') !!}
+                            {!! Form::text('operado',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
