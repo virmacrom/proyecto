@@ -14,12 +14,22 @@
         <!-- Styles -->
         <style>
             html,body{
+                background-image: url("http://systemweb.co/wp-content/uploads/2015/04/encuesta.png");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
                 background-color: #defef7;
                 color: rgba(38, 196, 210, 0.71);
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+
+
+
+            ;
+
             }
 
 
@@ -51,28 +61,30 @@
 
             .content {
                 color: #20326f;
-                text-align: center;
+                text-align:center;
                 font-size: 18px;
                 font-family: 'Raleway', Verdana;
+
 
             }
 
             .title {
                 color: #216dd2;
-                font-size: 89px;
+                font-size: 80px;
             }
 
             .links > a {
                 border-bottom-style: double;
-                color: #26c4d2;
+                color: #636b6f;
                 background-color: rgba(38, 196, 210, 0.18);
-                padding: 0 35px;
-                font-size: 25px;
+                padding: 0 40px;
+                font-size: 30px;
                 font-family: 'Raleway', Verdana;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+
             }
 
             .m-b-md {
@@ -84,7 +96,11 @@
         </style>
     </head>
     <body>
+
+
         <div class="flex-center position-ref full-height">
+
+
                 <div class="top-right links">
                     <a href="{{ url('/login') }}">Entrar</a>
                     <a href="{{ url('/register') }}">Registro</a>
@@ -93,29 +109,17 @@
 
 
                  <div class="top-left">
-                     <img src = "http://maxsilva.bligoo.com/media/users/13/674240/images/public/80475/encuesta.png"/>
+
+                     <div class="title m-b-md">
+                         <b>ALVIR encuestas</b>
                      </div>
 
 
                 <div class="content">
 
 
+                    <br>
 
-                    <div class="title m-b-md">
-                        <b>ALVIR encuestas</b>
-                    </div>
-
-
-
-                <br>
-
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Descripción</a>
-                    <a href="https://laracasts.com">Sugerencias</a>
-                    <a href="https://laravel-news.com">Encuestas</a>
-                    <a href="https://forge.laravel.com">Contacto</a>
-                </div>
 
 
                 <br>
