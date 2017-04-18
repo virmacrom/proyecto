@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('blade', function () {
+    return view('child');
+});
+
 Route::resource('medicos', 'MedicoController');
 Route::resource('pacientes','PacienteController');
 

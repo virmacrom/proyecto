@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Medico;
-use App\especialidad;
+use App\Especialidad;
 use Illuminate\Http\Request;
 
 class MedicoController extends Controller
