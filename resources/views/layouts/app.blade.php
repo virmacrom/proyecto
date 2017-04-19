@@ -59,34 +59,17 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/medicos') }}">
-                                            Medicos
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/especialidades') }}">
-                                            Especialidades
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ url('/pacientes') }}">
-                                            Pacientes
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ url('/encuestas') }}">
-                                            Encuestas
-                                        </a>
-                                    </li>
-                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                    @if(auth()->user()->medicos)
+                                        <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
+                                        <li><a href="{{ url ('enfermedades') }}"> Enfermedades></a></li>
+                                        <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
+                                    @elseif(auth()->user()->pacientes)
+                                        <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
+                                        <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
+                                    @endif
+                                    <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Cerrar sesión
-                                        </a>
+                                                     document.getElementById('logout-form').submit();">Cerrar sesión</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}

@@ -15,13 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('blade', function () {
-    return view('child');
+////////////////
+//MEDICO
+Route::group(['middleware' => ['auth', 'medico'], 'prefix' => 'medico'], function(){
+    Route::get('/', function () {
+        return view('medico.index');
+    });
 });
+
+//PACIENTE
+Route::group(['middleware' => ['auth', 'paciente'], 'prefix' => 'paciente'], function(){
+    Route::get('/', function () {
+        return view('paciente.index');
+    });
+});
+
 
 Route::resource('medicos', 'MedicoController');
 Route::resource('pacientes','PacienteController');
 
 Auth::routes();
+
+/////////
+Route::get('medicos/login', 'MedicosController@show');
 
 Route::get('/home', 'HomeController@index');

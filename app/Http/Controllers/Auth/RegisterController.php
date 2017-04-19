@@ -92,7 +92,18 @@ class RegisterController extends Controller
         }
         return $user;
     }
-        //$medico = 'user_id' => $user->id
+
+    public function redirectPath()
+    {
+        if(auth()->user()->medico){
+            return '/especialidades';
+        }
+
+        return '/home';
+    }
+
+
+    //$medico = 'user_id' => $user->id
 
 
         /*return User::create([
