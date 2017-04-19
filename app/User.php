@@ -27,11 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function pacientes(){
+    public function paciente(){
         return $this->hasOne('App/Paciente');
     }
 
-    public function medicos(){
+    public function medico(){
         return $this->hasOne('App/Medico');
     }
     public function sas(){

@@ -10,7 +10,7 @@ class RolUser extends Model
         'id', 'name',
     ];
 
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
     }
 

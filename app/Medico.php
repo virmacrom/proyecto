@@ -12,11 +12,11 @@ class Medico extends Model
     public function encuestas(){
         return $this->hasMany('App/Encuesta');
     }
-    public function pacientes(){
+    public function paciente(){
         return $this->belongsToMany('App\Paciente');
     }
 
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
     }
 

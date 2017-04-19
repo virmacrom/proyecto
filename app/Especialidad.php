@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Especialidad extends Model
 {
     //
-    public function medico(){
+    public function medicos(){
         return $this->hasMany('App/Medico');
     }
 
-    public function enfermedad(){
+    public function enfermedades(){
         return $this->hasMany('App/Enfermedad');
     }
 }

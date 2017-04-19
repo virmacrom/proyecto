@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 class Encuesta extends Model
 {
     //
-    public function tipoencuestas(){
+    public function tipoencuesta(){
         return $this->belongsTo('App\TipoEncuesta');
     }
 

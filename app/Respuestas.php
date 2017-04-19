@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Respuestas extends Model
 {
-    public function preguntas(){
+    public function pregunta(){
         return $this->belongsTo('App/Pregunta');
     }
 
