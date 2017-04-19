@@ -59,11 +59,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    @if(auth()->user()->medicos)
+                                    @if(Auth::user()) has $medico
                                         <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
                                         <li><a href="{{ url ('enfermedades') }}"> Enfermedades></a></li>
                                         <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
-                                    @elseif(auth()->user()->pacientes)
+
+                                    @elseif(Auth::user()) has $paciente
                                         <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
                                         <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
                                     @endif

@@ -93,14 +93,14 @@ class RegisterController extends Controller
         return $user;
     }
 
-    public function redirectPath()
+   /* public function redirectPath()
     {
         if(auth()->user()->medico){
             return '/especialidades';
         }
 
         return '/home';
-    }
+    }*/
 
 
     //$medico = 'user_id' => $user->id
