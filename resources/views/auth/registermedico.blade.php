@@ -94,6 +94,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('especialidad_id') ? ' has-error' : '' }}">
+                            <label for="consulta" class="col-md-4 control-label">Especialidad</label>
+
+                            <div class="col-md-6">
+                                <input id="especialidad_id" type="text" class="form-control" name="especialidad_id" value="{{ old('especialidad_id') }}" required autofocus>
+
+                                @if ($errors->has('especialidad_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('especialidad_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
