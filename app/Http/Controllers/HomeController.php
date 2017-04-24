@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
        // dd(Auth::user()->medico);
-        dd(Auth::user()->medico());
+      //  dd(Auth::user()->medico());
 
         return view('home');
         /*if(Auth::user()->medico){
