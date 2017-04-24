@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('proyecto.app/registermedico', function () {
+Route::get('/registermedico', function () {
     return view('Auth/registermedico');
 });
 
-Route::get('proyecto.app/register', function () {
+Route::get('/register', function () {
     return view('Auth/register');
 });
 

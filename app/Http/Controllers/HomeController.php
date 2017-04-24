@@ -28,14 +28,14 @@ class HomeController extends Controller
        // dd(Auth::user()->medico);
       //  dd(Auth::user()->medico());
 
-        return view('home');
-        /*if(Auth::user()->medico){
+        //return view('home');
+        if(Auth::user()->medico){
             return view('/homemedico');
         }
 
         else if (Auth::user()->paciente){
             return view('/homepaciente');
-        }*/
+        }
 
     }
 }

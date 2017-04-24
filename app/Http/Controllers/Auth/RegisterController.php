@@ -71,7 +71,7 @@ class RegisterController extends Controller
         //Pasarle el array de especialidadees, es un array de clave valor, string numero
 
 
-        return view('auth.registermedico');
+        return view('auth.register');
 
 
     }
