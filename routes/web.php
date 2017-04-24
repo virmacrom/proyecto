@@ -19,8 +19,8 @@ Route::get('proyecto.app/registermedico', function () {
     return view('Auth/registermedico');
 });
 
-Route::get('proyecto.app/registerpaciente', function () {
-    return view('Auth/registerpaciente');
+Route::get('proyecto.app/register', function () {
+    return view('Auth/register');
 });
 
 Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')->name('especialidades.destroyAll');
