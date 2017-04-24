@@ -103,7 +103,8 @@
 
                 <div class="top-right links">
                     <a href="{{ url('/login') }}">Entrar</a>
-                    <a href="{{ url('/register') }}">Registro</a>
+                    <a href="{{ url('/register') }}">RegistroPaciente</a>
+                    <a href="{{ url('/registermedico') }}">RegistroMédico</a>
                     </div>
 
 
