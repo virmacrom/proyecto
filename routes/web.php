@@ -23,20 +23,8 @@ Route::get('proyecto.app/registerpaciente', function () {
     return view('Auth/registerpaciente');
 });
 
-////////////////
-//MEDICO
-/*Route::group(['middleware' => ['auth', 'medico'], 'prefix' => 'medico'], function(){
-    Route::get('/', function () {
-        return view('medico.index');
-    });
-});
-
-//PACIENTE
-Route::group(['middleware' => ['auth', 'paciente'], 'prefix' => 'paciente'], function(){
-    Route::get('/', function () {
-        return view('paciente.index');
-    });
-});*/
+Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')->name('especialidades.destroyAll');
+Route::resource('especialidades', 'EspecialidadController');
 
 
 Route::resource('medicos', 'MedicoController');

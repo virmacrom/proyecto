@@ -15,8 +15,7 @@ class CreateEspecialidadsTable extends Migration
     {
         Schema::create('especialidads', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('medico_cabecera');
-            $table->string('medico_especialista');
+            $table->string('name');
             $table->timestamps();
         });
     }

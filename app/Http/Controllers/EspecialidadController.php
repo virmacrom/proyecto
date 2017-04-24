@@ -44,8 +44,7 @@ class EspecialidadController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'medico_cabecera' => 'required|max:255',
-            'medico_especialista' => 'required|max:255'
+            'name' => 'required|max:255',
         ]);
 
         //
@@ -93,8 +92,7 @@ class EspecialidadController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'medico_cabecera' => 'required|max:255',
-            'medico_especialista' => 'required|max:255'
+            'name' => 'required|max:255',
         ]);
 
         $especialidad = Especialidad::find($id);
