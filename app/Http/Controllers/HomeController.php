@@ -24,7 +24,11 @@ class HomeController extends Controller
     public function index()
     {
        // Auth::user();
-        //@if()
-        return view('/home');
+
+
+        //@if(Auth::user()->code)
+        return view('/homemedico');
+        //@else if (Auth::user()->nuhsa)
+        //return view('/homepaciente);
     }
 }
