@@ -13,14 +13,14 @@ class Encuesta extends Model
     }
 
     public function medico(){
-        return $this->belongsTo('App/Medico');
+        return $this->belongsTo('App\Medico');
     }
 
     public function paciente(){
-        return $this->belongsTo('App/Paciente');
+        return $this->belongsTo('App\Paciente');
     }
     public function respuestaselegidas(){
-        return $this->hasMany('App/RespuestasElegidas');
+        return $this->hasMany('App\RespuestasElegidas');
     }
 
 }

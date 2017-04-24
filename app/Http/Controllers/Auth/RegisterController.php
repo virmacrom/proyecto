@@ -66,6 +66,16 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
+    public function showRegistrationForm()
+    {
+        //Pasarle el array de especialidadees, es un array de clave valor, string numero
+
+
+        return view('auth.registermedico');
+
+
+    }
+
     protected function create(array $data)
     {
          $user = User::create([

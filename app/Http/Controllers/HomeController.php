@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Medico;
 
 class HomeController extends Controller
 {
@@ -23,12 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-       // Auth::user();
+       // dd(Auth::user()->medico);
+        dd(Auth::user()->medico());
 
+        return view('home');
+        /*if(Auth::user()->medico){
+            return view('/homemedico');
+        }
 
-        //@if(Auth::user()->code)
-        return view('/homemedico');
-        //@else if (Auth::user()->nuhsa)
-        //return view('/homepaciente);
+        else if (Auth::user()->paciente){
+            return view('/homepaciente');
+        }*/
+
     }
 }

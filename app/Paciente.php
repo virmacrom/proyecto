@@ -10,7 +10,7 @@ class Paciente extends Model
     protected $fillable = ['name','surname','dni','nuhsa'];
 
     public function encuestas(){
-        return $this->hasMany('App/Encuesta');
+        return $this->hasMany('App\Encuesta');
     }
     public function medicos(){
         return $this->belongsToMany('App\Medico');

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Medico;
 
 class User extends Authenticatable
 {
@@ -28,14 +29,14 @@ class User extends Authenticatable
     ];
 
     public function paciente(){
-        return $this->hasOne('App/Paciente');
+        return $this->hasOne('App\Paciente');
     }
 
     public function medico(){
-        return $this->hasOne('App/Medico');
+        return $this->hasOne('App\Medico');
     }
     public function sas(){
-        return $this->hasOne('App/Sas');
+        return $this->hasOne('App\Sas');
     }
 
 }

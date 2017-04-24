@@ -10,7 +10,7 @@ class Medico extends Model
     protected $fillable = ['name','surname','id'];
 
     public function encuestas(){
-        return $this->hasMany('App/Encuesta');
+        return $this->hasMany('App\Encuesta');
     }
     public function paciente(){
         return $this->belongsToMany('App\Paciente');
@@ -21,7 +21,7 @@ class Medico extends Model
     }
 
     public function especialidad(){
-        return $this->belongsTo('App/Especialidad');
+        return $this->belongsTo('App\Especialidad');
     }
 
 }

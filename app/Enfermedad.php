@@ -10,7 +10,7 @@ class Enfermedad extends Model
         return $this->belongsToMany('App\Paciente');
     }
     public function especialidad(){
-        return $this->belongsTo('App/Especialidad');
+        return $this->belongsTo('App\Especialidad');
     }
 
 }
