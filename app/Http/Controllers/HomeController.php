@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Medico;
+use App\Paciente;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,7 @@ class HomeController extends Controller
         //dd(Auth::user()->paciente());
 
        //return view('home');
-        if(Auth::user()->medico){
+       if(Auth::user()->medico){
             return view('homemedico');
         }
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\especialidad;
+use App\Especialidad;
 use Illuminate\Http\Request;
 
 class EspecialidadController extends Controller
@@ -16,11 +16,13 @@ class EspecialidadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $especialidad = Especialidad::all();
 
-        return view('especialidades/index')->with('especialidades', $especialidad);
+        $especialidades = Especialidad::all();
+
+        return view('especialidades/index')->with('especialidades', $especialidades);
 
 
     }
@@ -38,7 +40,7 @@ class EspecialidadController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,7 +50,7 @@ class EspecialidadController extends Controller
         ]);
 
         //
-        $especialidad = new especialidad($request->all());
+        $especialidad = new Especialidad($request->all());
         $especialidad->save();
 
         // return redirect('especialidades');
@@ -61,7 +63,7 @@ class EspecialidadController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\especialidad  $especialidad
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -72,11 +74,12 @@ class EspecialidadController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\especialidad  $especialidad
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
+
         $especialidad = Especialidad::find($id);
 
         return view('especialidades/edit')->with('especialidad', $especialidad);
@@ -85,8 +88,8 @@ class EspecialidadController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\especialidad  $especialidad
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -108,7 +111,7 @@ class EspecialidadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\especialidad  $especialidad
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -127,4 +130,5 @@ class EspecialidadController extends Controller
 
         return redirect()->route('especialidades.index');
     }
+
 }

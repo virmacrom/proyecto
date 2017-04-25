@@ -33,6 +33,6 @@ Route::resource('pacientes','PacienteController');
 Auth::routes();
 
 /////////
-Route::get('medicos/login', 'MedicoController@show');
-Route::get('pacientes/login', 'PacienteController@show');
+//Route::get('medicos/login', 'MedicoController@show');
+//Route::get('pacientes/login', 'PacienteController@show');
 Route::get('/home', 'HomeController@index');
