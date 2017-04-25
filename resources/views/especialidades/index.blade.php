@@ -34,7 +34,7 @@
                                 </td>
                                 <td>
                                     {!! Form::open(['route' => ['especialidades.destroy',$especialidad->id], 'method' => 'delete']) !!}
-                                    {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                                    {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro de borrar la especialidad?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 
                                 </td>
