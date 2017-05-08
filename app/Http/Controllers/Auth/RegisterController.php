@@ -49,14 +49,33 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+
+        Validator::make($data, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
             'address' => 'required|max:255',
             'telephone' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+            'password' => 'required|min:6|confirmed']);
+
+        if($data['code'] != null){
+            $medico= new Medico();
+            $medico->code = $data['code'];
+            $medico->consulta = $data['consulta'];
+            $medico->especialidad_id =$data['especialidad_id'];
+            //$medico->user_id= $validator->id;
+
+            return Validator;
+        }
+        else if($data['nuhsa'] != null){
+            $paciente= new Paciente();
+            $paciente->nuhsa = $data['nuhsa'];
+            $paciente->dni = $data['dni'];
+            $paciente->operado =$data['operado'];
+           // $paciente->user_id= $validator->id;
+            return Validator;
+        }
+
     }
 
 
@@ -92,6 +111,7 @@ class RegisterController extends Controller
             $medico->code = $data['code'];
             $medico->consulta = $data['consulta'];
             $medico->especialidad_id =$data['especialidad_id'];
+            $medico->user_id= $user->id;
             $medico->save();
         }
         else if($data['nuhsa'] != null){
@@ -99,6 +119,7 @@ class RegisterController extends Controller
             $paciente->nuhsa = $data['nuhsa'];
             $paciente->dni = $data['dni'];
             $paciente->operado =$data['operado'];
+            $paciente->user_id= $user->id;
             $paciente->save();
         }
         return $user;

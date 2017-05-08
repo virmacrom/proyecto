@@ -36,3 +36,5 @@ Auth::routes();
 //Route::get('medicos/login', 'MedicoController@show');
 //Route::get('pacientes/login', 'PacienteController@show');
 Route::get('/home', 'HomeController@index');
+Route::get('/homemedico', 'HomeController@index');
+
