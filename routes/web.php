@@ -27,6 +27,9 @@ Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')-
 Route::resource('especialidades', 'EspecialidadController');
 
 
+Route::delete('enfermedades/destroyAll', 'EnfermedadController@destroyAll')->name('enfermedades.destroyAll');
+Route::resource('enfermedades', 'EnfermedadController');
+
 Route::resource('medicos', 'MedicoController');
 Route::resource('pacientes','PacienteController');
 

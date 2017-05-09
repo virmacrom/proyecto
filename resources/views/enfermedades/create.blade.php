@@ -5,22 +5,19 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Crear medico</div>
+                    <div class="panel-heading">Crear enfermedad</div>
 
                     <div class="panel-body">
                         @include('flash::message')
+                        <P> Ingrese por favor la   ... </p>
 
-                        {!! Form::open(['route' => 'medicos.store']) !!}
+                        {!! Form::open(['route' => 'enfermedades.store', 'class'=>'form-inline']) !!}
                         <div class="form-group">
-                            {!! Form::label('code', 'Codigo del medico') !!}
-                            {!! Form::text('code',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        {!! Form::label('name', 'Nombre de la enfermedad') !!}
+                        {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('consulta', 'Consulta del medico') !!}
-                            {!! Form::text('Consulta',null,['class'=>'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!!Form::label('especialidad_id', 'Especialidad medico') !!}
+                            {!!Form::label('especialidad_id', 'Especialidad ') !!}
                             <br>
                             {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
                         </div>
