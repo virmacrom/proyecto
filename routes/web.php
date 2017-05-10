@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registermedico', function () {
-    return view('Auth/registermedico');
-});
+Route::get('/registermedico', 'auth\RegisterController@showRegistrationMedico')->name('registermedico');
+
 
 Route::get('/register', function () {
     return view('Auth/register');

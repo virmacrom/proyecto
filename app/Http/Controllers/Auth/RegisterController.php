@@ -99,12 +99,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    public function showRegistrationForm()
+    public function showRegistrationMedico()
     {
         //Pasarle el array de especialidadees, es un array de clave valor, string numero
 
 
-        return view('auth.register');
+        return view('auth.registermedico');
 
 
     }
