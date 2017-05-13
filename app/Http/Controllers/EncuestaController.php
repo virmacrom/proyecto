@@ -135,6 +135,6 @@ class EncuestaController extends Controller
         $encuesta->delete();
         flash('Encuesta borrada correctamente');
 
-        return redirect()->route('encuesta.index');
+        return redirect()->route('encuestas.index');
     }
 }

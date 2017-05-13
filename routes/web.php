@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/registermedico', 'auth\RegisterController@showRegistrationMedico')->name('registermedico');
 
+Route::get('medicos/{id}', 'MedicoController@show');  /////////
 
 Route::get('/register', function () {
     return view('Auth/register');
@@ -28,6 +29,10 @@ Route::resource('especialidades', 'EspecialidadController');
 
 Route::delete('enfermedades/destroyAll', 'EnfermedadController@destroyAll')->name('enfermedades.destroyAll');
 Route::resource('enfermedades', 'EnfermedadController');
+
+Route::delete('encuestas/destroyAll', 'EncuestaController@destroyAll')->name('encuestas.destroyAll');
+Route::resource('encuestas', 'EncuestaController');
+
 
 Route::resource('medicos', 'MedicoController');
 Route::resource('pacientes','PacienteController');

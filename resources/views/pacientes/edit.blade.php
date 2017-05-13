@@ -22,8 +22,8 @@
                             {!! Form::text('dni',$paciente->dni,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('operado', 'Si el paciente se ha operado paciente') !!}
-                            {!! Form::text('operado',$paciente->operado,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('operado', 'Si el paciente se ha operado') !!}
+                            {!! Form::text('operado',$paciente->operado,['class'=>'form-control']) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

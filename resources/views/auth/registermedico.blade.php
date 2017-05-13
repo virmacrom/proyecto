@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registro</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('registermedico') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('especialidad_id') ? ' has-error' : '' }}">
-                            <label for="consulta" class="col-md-4 control-label">Especialidad</label>
+                            <label for="especialidad" class="col-md-4 control-label">Especialidad</label>
 
                             <div class="col-md-6">
                                 <input id="especialidad_id" type="text" class="form-control" name="especialidad_id" value="{{ old('especialidad_id') }}" required autofocus>

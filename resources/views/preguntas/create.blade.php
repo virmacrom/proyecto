@@ -9,7 +9,6 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        <P> Ingrese por favor la   ... </p>
 
                         {!! Form::open(['route' => 'preguntas.store', 'class'=>'form-inline']) !!}
                         <div class="form-group">

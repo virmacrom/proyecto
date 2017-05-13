@@ -13,7 +13,7 @@
                         {!! Form::model($medico, [ 'route' => ['medicos.update',$medico->id], 'method'=>'PUT']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('code', 'Consulta del medico') !!}
+                            {!! Form::label('code', 'Código del medico') !!}
                             {!! Form::text('code',$medico->code,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
