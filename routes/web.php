@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/registermedico', 'auth\RegisterController@showRegistrationMedico')->name('registermedico');
 
-Route::get('medicos/{id}', 'MedicoController@show');  /////////
+//Route::get('medicos/{id}', 'MedicoController@show');  /////////
 
 Route::get('/register', function () {
     return view('Auth/register');

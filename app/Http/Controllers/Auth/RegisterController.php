@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Medico;
 use App\Paciente;
 use App\User;
+use App\Especialidad;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;

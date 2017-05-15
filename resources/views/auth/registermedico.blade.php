@@ -95,9 +95,15 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="especialidad" class="col-md-4 control-label">
+
                             {!!Form::label('especialidad_id', 'Especialidad medico') !!}
                             <br>
+                            </label>
                             {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
+
+
+
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
