@@ -47,7 +47,7 @@ class EnfermedadController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre_enfermedad' => 'required|max:255',
+            'name' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
         ]);
 
@@ -98,7 +98,7 @@ class EnfermedadController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nombre_enfermedad' => 'required|max:255',
+            'name' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
         ]);
 
