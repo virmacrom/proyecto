@@ -1,5 +1,20 @@
 @extends('layouts.app')
-
+<style>
+    .panel-heading{
+        color: #3869d4;
+        background-color: #ace9ec;
+        font-family: 'Raleway', Verdana;
+        font-size: 18px;
+        font-weight: 200;
+    }
+    .panel-body{
+        color: #3869d4;
+        background-color: #ace9ec;
+        font-family: 'Raleway', Verdana;
+        font-size: 18px;
+        font-weight: 100;
+    }
+</style>
 @section('content')
 
     <div class="container">
