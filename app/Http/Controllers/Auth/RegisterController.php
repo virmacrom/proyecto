@@ -102,10 +102,9 @@ class RegisterController extends Controller
     public function showRegistrationMedico()
     {
         //Pasarle el array de especialidadees, es un array de clave valor, string numero
+        $especialidades = Especialidad::all()->pluck('name','id');
 
-
-        return view('auth.registermedico');
-
+        return view('auth.registermedico',['especialidades'=>$especialidades]);
 
     }
 

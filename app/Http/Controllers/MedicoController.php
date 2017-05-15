@@ -49,7 +49,9 @@ class MedicoController extends Controller
             'surname' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
             'address' => 'required|max:255',
-            'telephone' => 'required|max:255'
+            'telephone' => 'required|max:255',
+            'code'=> 'required|max:255',
+            'consulta'=>'required|max:255'
         ]);
         $medico = new Medico($request->all());
         $medico->save();
