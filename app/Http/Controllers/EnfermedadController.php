@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\enfermedad;
+use App\Enfermedad;
+use App\Especialidad;
 use Illuminate\Http\Request;
 
 class EnfermedadController extends Controller
