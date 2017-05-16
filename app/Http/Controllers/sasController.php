@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\sas;
 use Illuminate\Http\Request;
+use League\Flysystem\SafeStorage;
 
 class sasController extends Controller
 {
@@ -21,7 +22,7 @@ class sasController extends Controller
     {
         $sas = Sas::all();
 
-        return view('sas/index',['citas'=>$sas]);
+        return view('sas/index',['sas'=>$sas]);
     }
 
     /**
@@ -42,6 +43,24 @@ class sasController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'code' => 'required|max:255',
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255',
+
+
+        ]);
+
+
+        $sas = new Sas($request->all());
+        $sas->save();
+
+
+        flash('Sas creado correctamente');
+
+        return redirect()->route('sas.index');
 
     }
 
@@ -62,9 +81,11 @@ class sasController extends Controller
      * @param  \App\sas  $sas
      * @return \Illuminate\Http\Response
      */
-    public function edit(sas $sas)
+    public function edit(sas $id)
     {
-        //
+        $sas = Sas::find($id);
+
+        return view('sas/edit',['sas'=> $sas ]);
     }
 
     /**
@@ -74,9 +95,26 @@ class sasController extends Controller
      * @param  \App\sas  $sas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sas $sas)
+    public function update(Request $request, sas $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'code' => 'required|max:255',
+            'address' => 'required|max:255',
+            'telephone' => 'required|max:255',
+
+
+        ]);
+
+        $sas = Sas::find($id);
+        $sas->fill($request->all());
+
+        $sas->save();
+
+        flash('Sas modificado correctamente');
+
+        return redirect()->route('Sas.index');
     }
 
     /**
