@@ -15,8 +15,8 @@
 
                         <div class="form-group">
 
-                            {!! Form::label('code', 'codigo del medico') !!}
-                            {!! Form::text('code',$sas->code,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('codesas', 'codigo del medico') !!}
+                            {!! Form::text('codesas',$sas->codesas,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}

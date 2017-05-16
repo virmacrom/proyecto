@@ -20,13 +20,13 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>Code</th>
+                                <th>CodeSas</th>
 
                                 <th colspan="2">Acciones</th>
                             </tr>
                             @foreach ($sas as $sas)
                             <tr>
-                                <td>{{ $sas->code }}</td>
+                                <td>{{ $sas->codesas }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['sas.edit',$sas->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

@@ -88,6 +88,16 @@ class RegisterController extends Controller
                     ]);
 
                  }
+            else if(isset($data['codesas'])){
+                return Validator::make($data, [
+                    'name' => 'required|max:255',
+                    'surname' => 'required|max:255',
+                    'address' => 'required|max:255',
+                    'telephone' => 'required|max:255',
+                    'codesas' => 'required|max:255',
+                    'user_id' => 'exists:users,id',
+                ]);
+            }
 
 
 
@@ -135,6 +145,13 @@ class RegisterController extends Controller
             $paciente->operado =$data['operado'];
             $paciente->user_id= $user->id;
             $paciente->save();
+        }
+        else if(isset($data['codesas'])){
+            $sas= new Sas();
+            $sas->codesas=$data['codesas'];
+            $sas->user_id=$user->id;
+            $sas->save();
+
         }
         return $user;
     }

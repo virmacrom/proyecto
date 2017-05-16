@@ -46,7 +46,7 @@ class sasController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            'code' => 'required|max:255',
+            'codesas' => 'required|max:255',
             'address' => 'required|max:255',
             'telephone' => 'required|max:255',
 
@@ -100,7 +100,7 @@ class sasController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            'code' => 'required|max:255',
+            'codesas' => 'required|max:255',
             'address' => 'required|max:255',
             'telephone' => 'required|max:255',
 
