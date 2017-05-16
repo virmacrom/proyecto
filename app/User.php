@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Medico;
+use App\Sas;
+use App\Paciente;
 
 class User extends Authenticatable
 {

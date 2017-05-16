@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Encuesta;
 use App\TipoEncuesta;
+use App\Sas;
+use App\Medico;
+use App\Paciente;
 use Illuminate\Http\Request;
 
 class EncuestaController extends Controller
@@ -36,9 +39,11 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
+        $sas = Sas::all()->pluck('full_name','id');
+
         $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
 
-        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuestas'=>$tipo_encuesta]);
+        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuestas'=>$tipo_encuesta, 'sas'=>$sas]);
 
     }
 
@@ -91,9 +96,11 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
+        $sas = Sas::all()->pluck('full_name','id');
+
         $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
 
-        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuesta'=>$tipo_encuesta]);
+        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuesta'=>$tipo_encuesta,  'sas'=>$sas]);
     }
 
     /**

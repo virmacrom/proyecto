@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\sas;
+use App\Sas;
 use Illuminate\Http\Request;
 use League\Flysystem\SafeStorage;
 
