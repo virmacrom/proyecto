@@ -16,4 +16,8 @@ class Especialidad extends Model
     public function enfermedades(){
         return $this->hasMany('App\Enfermedad');
     }
+
+    public function sas(){
+        return $this->belongsTo('App\Sas');
+    }
 }

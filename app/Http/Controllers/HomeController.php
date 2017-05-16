@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Medico;
 use App\Paciente;
+use App\Sas;
 
 class HomeController extends Controller
 {
@@ -36,6 +37,10 @@ class HomeController extends Controller
 
         else if (Auth::user()->paciente){
             return view('home');
+        }
+
+        else if (Auth::user()->sas){
+            return view('homesas');
         }
 
     }

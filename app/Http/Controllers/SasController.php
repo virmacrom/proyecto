@@ -114,7 +114,7 @@ class sasController extends Controller
 
         flash('Sas modificado correctamente');
 
-        return redirect()->route('Sas.index');
+        return redirect()->route('sas.index');
     }
 
     /**

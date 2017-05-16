@@ -26,6 +26,8 @@ class CreateEncuestasTable extends Migration
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
             $table->unsignedInteger('medico_id');
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
+            $table->unsignedInteger('sas_id');
+            $table->foreign('sas_id')->references('id')->on('sas')->onDelete('cascade');
 
             $table->timestamps();
         });

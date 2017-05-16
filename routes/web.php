@@ -23,6 +23,10 @@ Route::get('/register', function () {
     return view('Auth/register');
 });
 
+Route::get('/registersas', function () {
+    return view('Auth/registersas');
+});
+
 Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')->name('especialidades.destroyAll');
 Route::resource('especialidades', 'EspecialidadController');
 
@@ -39,9 +43,8 @@ Route::resource('pacientes','PacienteController');
 
 Auth::routes();
 
-/////////
-//Route::get('medicos/login', 'MedicoController@show');
-//Route::get('pacientes/login', 'PacienteController@show');
+
 Route::get('/home', 'HomeController@index');
 Route::get('/homemedico', 'HomeController@index');
+Route::get('/homesas', 'HomeController@index');
 

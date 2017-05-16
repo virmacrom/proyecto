@@ -108,6 +108,7 @@
                     <br>
 
                     <a href="{{ url('/registermedico') }}">RegistroMédico</a>
+                    <a href="{{ url('/registersas') }}">RegistroSas</a>
                     </div>
 
 

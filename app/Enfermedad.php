@@ -13,4 +13,8 @@ class Enfermedad extends Model
         return $this->belongsTo('App\Especialidad');
     }
 
+    public function sas(){
+        return $this->belongsTo('App\Sas');
+    }
+
 }

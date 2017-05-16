@@ -21,6 +21,12 @@
                             <br>
                             {!! Form::select('especialidad_id', $especialidades, $enfermedad->especialidad_id, ['class' => 'form-control', 'required']) !!}
                         </div>
+                        <div class="form-group">
+
+                            {!!Form::label('sas_id', 'Sas que edita la enfermedad') !!}
+                            <br>
+                            {!! Form::select('sas_id', $sas, $enfermedad->sas_id, ['class' => 'form-control', 'required']) !!}
+                        </div>
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
                     </div>

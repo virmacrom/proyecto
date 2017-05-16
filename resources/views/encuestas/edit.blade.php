@@ -32,6 +32,12 @@
                             <br>
                             {!! Form::select('tipoEncuesta_id', $tipoEncuestas, $encuesta->tipoEncuesta_id, ['class' => 'form-control', 'required']) !!}
                         </div>
+                        <div class="form-group">
+
+                            {!!Form::label('sas_id', 'Sas que edita la encuesta') !!}
+                            <br>
+                            {!! Form::select('sas_id', $sas, $encuesta->sas_id, ['class' => 'form-control', 'required']) !!}
+                        </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}
