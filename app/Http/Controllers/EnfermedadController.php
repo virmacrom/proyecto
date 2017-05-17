@@ -51,6 +51,7 @@ class EnfermedadController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
+            'sas_id' => 'required|exists:sas,id',
         ]);
 
         //
@@ -103,6 +104,7 @@ class EnfermedadController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
+            'sas_id' => 'required|exists:sass,id',
         ]);
 
         $enfermedad = Enfermedad::find($id);
