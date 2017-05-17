@@ -21,13 +21,11 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
-                                <th>Sas</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
                             @foreach ($especialidades as $especialidad)
                             <tr>
                                 <td>{{ $especialidad->name }}</td>
-                                <td>{{ $sas->name }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['especialidades.edit',$especialidad->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

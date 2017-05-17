@@ -23,8 +23,9 @@ class EspecialidadController extends Controller
     {
 
         $especialidades = Especialidad::all();
+        $sas = Sas::all();
 
-        return view('especialidades/index')->with('especialidades', $especialidades);
+        return view('especialidades/index',['sas'=>$sas])->with('especialidades', $especialidades);
 
 
     }
