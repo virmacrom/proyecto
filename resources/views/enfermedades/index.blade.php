@@ -22,14 +22,14 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Especialidad</th>
-                                <th>Sas</th>
+
                                 <th colspan="2">Acciones</th>
                             </tr>
                             @foreach ($enfermedades as $enfermedad)
                             <tr>
                                 <td>{{ $enfermedad->name }}</td>
-                                <td>{{ $medico->especialidad->name }}</td>
-                                <td>{{ $medico->sas->name }}</td>
+                                <td>{{ $enfermedad->especialidad->name }}</td>
+
                                 <td>
                                     {!! Form::open(['route' => ['enfermedades.edit',$enfermedad->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
