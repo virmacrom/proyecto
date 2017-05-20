@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     //
-    protected $fillable = ['name','surname','dni','nuhsa'];
+    protected $fillable = ['name','surname','user_id','dni','nuhsa'];
 
     public function encuestas(){
         return $this->hasMany('App\Encuesta');

@@ -37,7 +37,7 @@ class EspecialidadController extends Controller
      */
     public function create()
     {
-        $sas = Sas::all()->pluck('full_name','id');
+        $sas = Sas::all()->pluck('name','id');
         return view('especialidades/create',['sas'=>$sas]);
 
     }
@@ -52,7 +52,6 @@ class EspecialidadController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'sas_id' => 'required|exists:sas,id',
         ]);
 
         //
@@ -87,7 +86,7 @@ class EspecialidadController extends Controller
     {
 
         $especialidad = Especialidad::find($id);
-        $sas = Sas::all()->pluck('full_name','id');
+        $sas = Sas::all()->pluck('name','id');
 
         return view('especialidades/edit', ['sas'=>$sas])->with('especialidad', $especialidad);
     }
@@ -103,7 +102,6 @@ class EspecialidadController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'sas_id' => 'required|exists:sass,id',
         ]);
 
         $especialidad = Especialidad::find($id);
