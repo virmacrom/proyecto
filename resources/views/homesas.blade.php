@@ -33,7 +33,7 @@
                     <li><a href="{{ url ('/enfermedades') }}"> Enfermedades</a></li>
                     <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
                     <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
-                    <li><a href="{{ url('/tipoEncuestas') }}">Tipo Encuestas</a></li>
+                    <li><a href="{{ url('tipoencuestas') }}">Tipo Encuestas</a></li>
                     <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                     <li><a href="{{ url('/respuestas') }}">Respuestas</a></li>
 

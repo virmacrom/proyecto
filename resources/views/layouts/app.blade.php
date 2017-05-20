@@ -73,7 +73,7 @@
                                     <li><a href="{{ url('/medicos') }}"> Medicos</a></li>
                                     <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
                                     <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
-                                    <li><a href="{{ url('/tipoEncuestas') }}">Tipo de Encuestas</a></li>
+                                    <li><a href="{{ url('tipoencuestas') }}">Tipo de Encuestas</a></li>
                                     <li><a href="{{ url('/encuestas') }}">Encuestas</a></li> {{--tiene que estar?¿--}}
                                     <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                                     <li><a href="{{ url ('/respuestas') }}"> Enfermedades</a></li>

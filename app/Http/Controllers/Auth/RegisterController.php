@@ -83,7 +83,7 @@ class RegisterController extends Controller
                     'password' => 'required|min:6|confirmed',
                     'nuhsa' => 'required|max:255',
                     'dni' => 'required|max:255',
-                    'operado' => 'max:255',
+                    'operado' => 'required|max:255',
                     'user_id' => 'exists:users,id',
 
                     ]);

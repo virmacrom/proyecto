@@ -48,7 +48,7 @@ class PacienteController extends Controller
             'dni' => 'required|max:255',
             'address' => 'required|max:255',
             'telephone' => 'required|max:255',
-            'operado' => 'max:255',
+            'operado' => 'required|max:255',
 
         ]);
 
@@ -108,7 +108,7 @@ class PacienteController extends Controller
             'dni' => 'required|max:255',
             'address' => 'required|max:255',
             'telephone' => 'required|max:255',
-            'operado' => 'max:255',
+            'operado' => 'required|max:255',
 
 
 

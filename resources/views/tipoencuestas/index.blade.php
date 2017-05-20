@@ -9,11 +9,11 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'tipoEncuestas.create', 'method' => 'get', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'tipoencuestas.create', 'method' => 'get', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Crear tipo Encuesta', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
-                        {!! Form::open(['route' => 'tipoEncuestas.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'tipoencuestas.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                         {!! Form::close() !!}
 
@@ -23,17 +23,17 @@
                                 <th>Nombre</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($tipoEncuestas as $tipoEncuesta)
+                            @foreach ($tipoencuestas as $tipoencuesta)
                             <tr>
-                                <td>{{ $tipoEncuesta->name }}</td>
+                                <td>{{ $tipoencuesta->name }}</td>
                                 <td>
-                                    {!! Form::open(['route' => ['tipoEncuestas.edit',$tipoEncuesta->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['tipoencuestas.edit',$tipoencuesta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
 
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['tipoEncuestas.destroy',$tipoEncuesta->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['tipoencuestas.destroy',$tipoencuesta->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro de borrar el tipo de encuesta?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 

@@ -71,7 +71,7 @@ class MedicoController extends Controller
      */
     public function show(Medico $medico)
     {
-       return view('medicos/show', ['medico'=>$medico]);
+
     }
 
     /**

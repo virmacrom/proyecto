@@ -123,6 +123,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('Operado ') ? ' has-error' : '' }}">
+                            <label for="telephone" class="col-md-4 control-label">¿Se ha operado?</label>
+
+                            <div class="col-md-6">
+                                <input id="operado" type="text" class="form-control" name="operado" value="{{ old('operado') }}" required autofocus>
+
+                                @if ($errors->has('operado'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('operado') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Contraseña</label>

@@ -31,7 +31,7 @@ class TipoEncuestaController extends Controller
      */
     public function create()
     {
-        return view('tiposencuestas/create');
+        return view('tipoencuestas/create');
     }
 
     /**
@@ -73,7 +73,6 @@ class TipoEncuestaController extends Controller
     {
         $tipoencuesta = TipoEncuesta::find($id);
 
-        return view('tipoencuestas/edit',['tipoencuesta'=> $tipoencuesta]);
 
     }
 

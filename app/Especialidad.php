@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Especialidad extends Model
 {
 
-    protected $fillable = ['name'];  ///no se si va sas_id o no
-
+    protected $fillable = ['name','sas_id'];
     public function medicos(){
         return $this->hasMany('App\Medico');
     }

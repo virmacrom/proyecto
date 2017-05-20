@@ -5,18 +5,18 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Editar tipo de Encuesta</div>
+                    <div class="panel-heading">Crear tipo de Encuesta</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($tipoEncuesta, [ 'route' => ['tipoEncuestas.update',$tipoEncuesta->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
+                        {!! Form::open(['route' => 'tipoencuestas.store', 'class'=>'form-inline']) !!}
                         <div class="form-group">
-
-                        {!! Form::label('name', 'Nombre del tipo de Encuesta') !!}
-                        {!! Form::text('name',$tipoEncuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        {!! Form::label('name', 'Nombre del tipo de ecuesta') !!}
+                        {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
-                        {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
+                        {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
+
                         {!! Form::close() !!}
                     </div>
                 </div>

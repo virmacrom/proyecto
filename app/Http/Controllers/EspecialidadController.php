@@ -52,6 +52,7 @@ class EspecialidadController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'sas_id' => 'required|exists:sas,id',
         ]);
 
         //
@@ -102,6 +103,7 @@ class EspecialidadController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'sas_id' => 'required|exists:sas,id',
         ]);
 
         $especialidad = Especialidad::find($id);
