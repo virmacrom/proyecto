@@ -35,16 +35,15 @@ class EncuestaController extends Controller
      */
     public function create()
     {
-        $medicos = Medico::all()->pluck('full_name','id');
+        $medicos = Medico::all()->pluck('name','id');
 
-        $pacientes = Paciente::all()->pluck('full_name','id');
+        $pacientes = Paciente::all()->pluck('name','id');
 
-        $sas = Sas::all()->pluck('full_name','id');
+        $sas = Sas::all()->pluck('name','id');
 
-        $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
+        $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuestas'=>$tipo_encuesta, 'sas'=>$sas]);
-
+        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta, 'sas'=>$sas]);
     }
 
     /**
@@ -93,15 +92,15 @@ class EncuestaController extends Controller
     {
         $encuesta = Encuesta::find($id);
 
-        $medicos = Medico::all()->pluck('full_name','id');
+        $medicos = Medico::all()->pluck('name','id');
 
-        $pacientes = Paciente::all()->pluck('full_name','id');
+        $pacientes = Paciente::all()->pluck('name','id');
 
-        $sas = Sas::all()->pluck('full_name','id');
+        $sas = Sas::all()->pluck('name','id');
 
-        $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
+        $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipo_encuesta'=>$tipo_encuesta,  'sas'=>$sas]);
+        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta,  'sas'=>$sas]);
     }
 
     /**

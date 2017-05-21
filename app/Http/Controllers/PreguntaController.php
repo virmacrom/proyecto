@@ -31,8 +31,8 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        $tipoencuestas = TipoEncuesta::all();
-        return view ('preguntas/create',['tipoencuestas'=>$tipoencuestas]);
+        $tipoencuesta = TipoEncuesta::all();
+        return view ('preguntas/create',['tipoencuesta'=>$tipoencuesta]);
 
     }
 
@@ -80,9 +80,9 @@ class PreguntaController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
-        $tipo_encuesta = TipoEncuesta::all()->pluck('full_name','id');
+        $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        return view('preguntas/edit',[ 'tipo_encuesta'=>$tipo_encuesta]);
+        return view('preguntas/edit',[ 'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**

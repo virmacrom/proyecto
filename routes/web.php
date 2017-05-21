@@ -42,6 +42,12 @@ Route::delete('encuestas/destroyAll', 'EncuestaController@destroyAll')->name('en
 Route::resource('encuestas', 'EncuestaController');
 
 
+Route::delete('preguntas/destroyAll', 'PreguntaController@destroyAll')->name('preguntas.destroyAll');
+Route::resource('preguntas', 'PreguntaController');
+
+Route::delete('respuestas/destroyAll', 'RespuestasController@destroyAll')->name('respuestas.destroyAll');
+Route::resource('respuestas', 'respuestasController');
+
 Route::resource('medicos', 'MedicoController');
 Route::resource('pacientes','PacienteController');
 

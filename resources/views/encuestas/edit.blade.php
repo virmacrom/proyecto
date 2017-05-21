@@ -13,8 +13,8 @@
                         {!! Form::model($encuesta, [ 'route' => ['encuestas.update',$encuesta->id], 'method'=>'PUT']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('nombre', 'nombre de la encuesta') !!}
-                            {!! Form::text('nombre',$encuesta->nombre,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('name', 'nombre de la encuesta') !!}
+                            {!! Form::text('name',$encuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('medico_id', 'Medico sobre el que se hace la encuesta') !!}
@@ -28,9 +28,9 @@
                         </div>
                         <div class="form-group">
 
-                            {!!Form::label('tipoEncuesta_id', 'Tipo encuesta que se realiza') !!}
+                            {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
                             <br>
-                            {!! Form::select('tipoEncuesta_id', $tipoEncuestas, $encuesta->tipoEncuesta_id, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('tipoencuesta_id', $tipoencuesta, $encuesta->tipoencuesta_id, ['class' => 'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
 

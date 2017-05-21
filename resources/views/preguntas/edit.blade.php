@@ -17,9 +17,9 @@
                         {!! Form::text('texto',$pregunta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!!Form::label('tipoEncuesta_id', 'tipo de encuesta') !!}
+                            {!!Form::label('tipoencuesta_id', 'tipo de encuesta') !!}
                             <br>
-                            {!! Form::select('tipoEncuesta_id', $tipoEncuestas, $pregunta->tipoEncuesta_id, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('tipoencuesta_id', $tipoencuestas, $pregunta->tipoencuesta_id, ['class' => 'form-control', 'required']) !!}
                         </div>
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}

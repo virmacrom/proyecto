@@ -28,10 +28,10 @@
 
 
                                 <tr>
-                                    <td>{{ $encuesta->nombre }}</td>
+                                    <td>{{ $encuesta->name }}</td>
                                     <td>{{ $encuesta->medico->name }}</td>
                                     <td>{{ $encuesta->paciente->name }}</td>
-                                    <td>{{ $encuesta->tipoEncuesta->name }}</td>
+                                    <td>{{ $encuesta->tipoencuesta->name }}</td>
                                     <td>{{ $encuesta->sas->name }}</td>
 
                                     <td>
