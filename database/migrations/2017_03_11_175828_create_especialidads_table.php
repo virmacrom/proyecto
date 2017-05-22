@@ -16,8 +16,8 @@ class CreateEspecialidadsTable extends Migration
         Schema::create('especialidads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->unsignedInteger('sas_id');
-            $table->foreign('sas_id')->references('id')->on('sas')->onDelete('cascade');
+            //$table->unsignedInteger('sas_id');
+           // $table->foreign('sas_id')->references('id')->on('sas')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -18,8 +18,8 @@ class CreateEnfermedadsTable extends Migration
             $table->string('name');
             $table->unsignedInteger('especialidad_id');
             $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
-            $table->unsignedInteger('sas_id');
-            $table->foreign('sas_id')->references('id')->on('sas')->onDelete('cascade');
+            //$table->unsignedInteger('sas_id');
+           // $table->foreign('sas_id')->references('id')->on('sas')->onDelete('cascade');
 
             $table->timestamps();
 

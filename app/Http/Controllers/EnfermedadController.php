@@ -22,8 +22,7 @@ class EnfermedadController extends Controller
     public function index()
     {
         $enfermedad = Enfermedad::all();
-        $sas = Sas::all();
-        return view('enfermedades/index',['sas'=>$sas])->with('enfermedades', $enfermedad);
+        return view('enfermedades/index')->with('enfermedades', $enfermedad);
 
     }
 
@@ -35,9 +34,9 @@ class EnfermedadController extends Controller
     public function create()
     {
         $especialidad = Especialidad::all()->pluck('name','id');
-        $sas = Sas::all()->pluck('name','id');
+        //$sas = Sas::all()->pluck('name','id');
 
-        return view ('enfermedades/create',['especialidades'=>$especialidad,  'sas'=>$sas]);
+        return view ('enfermedades/create',['especialidades'=>$especialidad]);
     }
 
     /**
@@ -51,7 +50,7 @@ class EnfermedadController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
-            'sas_id' => 'required|exists:sas,id',
+            //'sas_id' => 'required|exists:sas,id',
         ]);
 
         //
@@ -86,10 +85,10 @@ class EnfermedadController extends Controller
     {
         $enfermedad = Enfermedad::find($id);
         $especialidad = Especialidad::all()->pluck('name','id');
-        $sas = Sas::all()->pluck('name','id');
+        //$sas = Sas::all()->pluck('name','id');
 
 
-        return view('enfermedades/edit',['enfermedad'=>$enfermedad,'especialidad'=>$especialidad, 'sas'=>$sas]);
+        return view('enfermedades/edit',['enfermedad'=>$enfermedad,'especialidad'=>$especialidad]);
     }
 
     /**
@@ -104,7 +103,7 @@ class EnfermedadController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id',
-            'sas_id' => 'required|exists:sass,id',
+            //'sas_id' => 'required|exists:sass,id',
         ]);
 
         $enfermedad = Enfermedad::find($id);

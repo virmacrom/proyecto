@@ -15,11 +15,11 @@
                         {!! Form::label('name', 'Nombre de la especialidad') !!}
                         {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
-                        <div class="form-group">
+                        {{--<div class="form-group">
                               {!!Form::label('sas_id', 'Sas que crea la encuesta') !!}
                              <br>
                            {!! Form::select('sas_id', $sas, ['class' => 'form-control', 'required']) !!}
-                         </div>
+                         </div>--}}
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

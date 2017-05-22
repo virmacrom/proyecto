@@ -20,12 +20,12 @@
                             <br>
                             {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
                         </div>
-                        <div class="form-group">
+                        {{--<div class="form-group">
                             {!!Form::label('sas_id', 'Sas que crea la encuesta') !!}
                             <br>
                             {!! Form::select('sas_id', $sas, ['class' => 'form-control', 'required']) !!}
                         </div>
-
+--}}
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}
