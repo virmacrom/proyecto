@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pregunta extends Model
 {
+    protected $fillable = ['name', 'id_tipoencuesta'];
+
      public function respuestas(){
         return $this->hasMany('App\Respuestas');
     }
