@@ -14,7 +14,7 @@
                         <div class="form-group">
 
                         {!! Form::label('texto', 'pregunta') !!}
-                        {!! Form::text('texto',$pregunta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        {!! Form::text('texto',$pregunta->text,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('tipoencuesta_id', 'tipo de encuesta') !!}
