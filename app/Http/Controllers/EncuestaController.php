@@ -39,11 +39,11 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('name','id');
 
-        $sas = Sas::all()->pluck('name','id');
+
 
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta, 'sas'=>$sas]);
+        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
@@ -59,7 +59,7 @@ class EncuestaController extends Controller
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
             'medico_id'=>'required|exits:medicos,id',
             'paciente_id'=>'required|exits:pacientes,id',
-            'sas_id'=>'required|exits:sas,id',
+
         ]);
 
         $encuesta = new Encuesta($request->all());
@@ -96,11 +96,11 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('name','id');
 
-        $sas = Sas::all()->pluck('name','id');
+
 
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta,  'sas'=>$sas]);
+        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
@@ -117,7 +117,7 @@ class EncuestaController extends Controller
             'tipoencuesta_id' => 'required|exits:tipoencuestas,id',
             'medico_id'=>'required|exits:medicos,id',
             'paciente_id'=>'required|exits:pacientes,id',
-            'sas_id'=>'required|exits:sas,id',
+
 
 
         ]);

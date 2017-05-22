@@ -20,7 +20,7 @@
                                 <th>Medico</th>
                                 <th>Paciente</th>
                                 <th>TipoEncuesta</th>
-                                <th>Sas</th>
+
                                 <th colspan="2">Acciones</th>
                             </tr>
 
@@ -31,8 +31,8 @@
                                     <td>{{ $encuesta->name }}</td>
                                     <td>{{ $encuesta->medico->name }}</td>
                                     <td>{{ $encuesta->paciente->name }}</td>
-                                    <td>{{ $encuesta->tipoencuesta->name }}</td>
-                                    <td>{{ $encuesta->sas->name }}</td>
+                                    <td>{{ $encuesta->tipoencuesta }}</td>
+
 
                                     <td>
                                         {!! Form::open(['route' => ['encuestas.edit',$encuesta->id], 'method' => 'get']) !!}

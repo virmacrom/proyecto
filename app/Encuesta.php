@@ -23,8 +23,6 @@ class Encuesta extends Model
         return $this->hasMany('App\RespuestasElegidas');
     }
 
-    public function sas(){
-        return $this->belongsTo('App\Sas');
-    }
+
 
 }

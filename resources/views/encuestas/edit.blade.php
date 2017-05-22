@@ -16,7 +16,7 @@
                             {!! Form::label('name', 'nombre de la encuesta') !!}
                             {!! Form::text('name',$encuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
-                        <div class="form-group">
+                       {{-- <div class="form-group">
                             {!!Form::label('medico_id', 'Medico sobre el que se hace la encuesta') !!}
                             <br>
                             {!! Form::select('medico_id', $medicos, $encuesta->medico_id, ['class' => 'form-control', 'required']) !!}
@@ -25,19 +25,14 @@
                             {!!Form::label('paciente_id', 'Paciente que hace la encuesta') !!}
                             <br>
                             {!! Form::select('paciente_id', $pacientes, $encuesta->paciente_id, ['class' => 'form-control', 'required']) !!}
-                        </div>
+                        </div>--}}
                         <div class="form-group">
 
                             {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
                             <br>
                             {!! Form::select('tipoencuesta_id', $tipoencuesta, $encuesta->tipoencuesta_id, ['class' => 'form-control', 'required']) !!}
                         </div>
-                        <div class="form-group">
 
-                            {!!Form::label('sas_id', 'Sas que edita la encuesta') !!}
-                            <br>
-                            {!! Form::select('sas_id', $sas, $encuesta->sas_id, ['class' => 'form-control', 'required']) !!}
-                        </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

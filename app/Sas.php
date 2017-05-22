@@ -11,9 +11,7 @@ class sas extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function encuestas(){
-        return $this->hasMany('App\Encuesta');
-    }
+
 /*
     public function enfermedades(){
         return $this->hasMany('App\Enfermedad');
