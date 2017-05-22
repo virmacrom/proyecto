@@ -19,9 +19,9 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $pregunta = Pregunta::all()->pluck('text','id');
+        $preguntas = Pregunta::all()->pluck('text','id');
 
-        return view('preguntas/index')->with('preguntas', $pregunta);
+        return view('encuestas/index',['preguntas'=>$preguntas]);
     }
 
     /**
