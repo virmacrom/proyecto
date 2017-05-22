@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pregunta;
-use App\TipoEncuesta;
+use App\Tipoencuesta;
 use Illuminate\Http\Request;
 
 class PreguntaController extends Controller
@@ -31,7 +31,7 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        $tipoencuesta = TipoEncuesta::all();
+        $tipoencuesta = Tipoencuesta::all();
         return view ('preguntas/create',['tipoencuesta'=>$tipoencuesta]);
 
     }
@@ -80,7 +80,7 @@ class PreguntaController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
-        $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
+        $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
 
         return view('preguntas/edit',[ 'tipoencuesta'=>$tipoencuesta]);
     }
