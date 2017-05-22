@@ -15,17 +15,8 @@
                             {!! Form::label('name', 'Nombre de la encuesta') !!}
                             {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
-                    {{--    <div class="form-group">
-                            {!!Form::label('medico_id', 'Medico sobre el que se hace la encuesta') !!}
-                            <br>
-                            {!! Form::select('medico_id', $medicos,['class' => 'form-control', 'required']) !!}
-                        </div>
+
                         <div class="form-group">
-                            {!!Form::label('paciente_id', 'Paciente que hace la encuesta') !!}
-                            <br>
-                            {!! Form::select('paciente_id', $pacientes, ['class' => 'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">--}}
 
                             {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
                             <br>
