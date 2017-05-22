@@ -18,7 +18,7 @@
                         <div class="form-group">
                             {!!Form::label('tipoencuesta_id', 'tipo de encuesta') !!}
                             <br>
-                            {!! Form::select('tipoencuesta_id', $tipoencuestas, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
