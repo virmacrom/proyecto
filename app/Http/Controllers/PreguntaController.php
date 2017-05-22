@@ -31,7 +31,7 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        $tipoencuesta = Tipoencuesta::all();
+        $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
         return view ('preguntas/create',['tipoencuesta'=>$tipoencuesta]);
 
     }
