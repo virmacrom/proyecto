@@ -19,7 +19,7 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $pregunta = Pregunta::all()->pluck('name','id');
+        $pregunta = Pregunta::all()->pluck('text','id');
 
         return view('preguntas/index')->with('preguntas', $pregunta);
     }
