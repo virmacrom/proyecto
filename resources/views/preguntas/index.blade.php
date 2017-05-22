@@ -26,7 +26,7 @@
                             </tr>
                             @foreach ($preguntas as $pregunta)
                             <tr>
-                                <td>{{ $pregunta->texto }}</td>
+                                <td>{{ $pregunta->text }}</td>
                                 <td>{{ $pregunta->tipoencuesta }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['preguntas.edit',$pregunta->id], 'method' => 'get']) !!}
