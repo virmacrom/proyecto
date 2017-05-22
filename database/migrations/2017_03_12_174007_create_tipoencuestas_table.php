@@ -13,7 +13,7 @@ class CreateTipoEncuestasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_encuestas', function (Blueprint $table) {
+        Schema::create('tipoencuestas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTipoEncuestasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_encuestas');
+        Schema::dropIfExists('tipoencuestas');
     }
 }
