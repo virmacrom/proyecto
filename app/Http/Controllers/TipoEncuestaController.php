@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoEncuesta;
+use App\Tipoencuesta;
 use Illuminate\Http\Request;
 
 class TipoEncuestaController extends Controller
@@ -20,7 +20,7 @@ class TipoEncuestaController extends Controller
      */
     public function index()
     {
-        $tipoencuestas= TipoEncuesta::all();
+        $tipoencuestas= Tipoencuesta::all();
         return view('tipoencuestas/index',['tipoencuestas'=>$tipoencuestas]);
     }
 
@@ -45,7 +45,7 @@ class TipoEncuestaController extends Controller
         $this->validate($request,[
             'name'=>'required|max:255'
         ]);
-        $tipoencuesta= new TipoEncuesta($request->all());
+        $tipoencuesta= new Tipoencuesta($request->all());
         $tipoencuesta->save();
 
         flash('Tipo encuesta creado correctamente');
@@ -71,7 +71,7 @@ class TipoEncuestaController extends Controller
      */
     public function edit($id)
     {
-        $tipoencuesta = TipoEncuesta::find($id);
+        $tipoencuesta = Tipoencuesta::find($id);
 
 
     }
@@ -88,7 +88,7 @@ class TipoEncuestaController extends Controller
         $this->validate($request,[
             'name'=>'required|max:255'
         ]);
-        $tipoencuesta= new TipoEncuesta($request->all());
+        $tipoencuesta= new Tipoencuesta($request->all());
         $tipoencuesta->save();
 
         flash('Tipo encuesta creado correctamente');
@@ -105,7 +105,7 @@ class TipoEncuestaController extends Controller
      */
     public function destroy($id)
     {
-        $tipoencuesta = TipoEncuesta::find($id);
+        $tipoencuesta = Tipoencuesta::find($id);
         $tipoencuesta->delete();
         flash('Tipo encuesta borrada correctamente');
 

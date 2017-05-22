@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoEncuesta extends Model
+class Tipoencuesta extends Model
 {
     protected $fillable = ['name'];
 
