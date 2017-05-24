@@ -82,7 +82,7 @@ class PreguntaController extends Controller
         $pregunta = Pregunta::find($id);
         $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
 
-        return view('preguntas/edit',[ 'tipoencuesta'=>$tipoencuesta]);
+        return view('preguntas/edit',[ 'pregunta'=>$pregunta,'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
