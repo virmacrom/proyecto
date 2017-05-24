@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pregunta;
-use App\respuestas;
+use App\Respuestas;
 use Illuminate\Http\Request;
 
 class RespuestasController extends Controller
@@ -32,7 +32,7 @@ class RespuestasController extends Controller
     public function create()
     {
 
-        $preguntas= Pregunta::all()->pluck('text');
+        $preguntas= Pregunta::all()->pluck('text','id');
         return view('respuestas/create',['preguntas'=>$preguntas]);
 
     }
@@ -46,10 +46,10 @@ class RespuestasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'respuesta'=>'required|max:255',
+            'text'=>'required|max:255',
             'pregunta_id'=>'required|exists:preguntas,id'
         ]);
-        $respuesta= new respuestas($request->all());
+        $respuesta= new Respuestas($request->all());
         $respuesta->save();
 
         flash('Respuesta creado correctamente');
@@ -94,7 +94,7 @@ class RespuestasController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'respuesta'=>'required|max:255',
+            'text'=>'required|max:255',
             'pregunta_id'=>'required|exists:preguntas,id'
 
         ]);

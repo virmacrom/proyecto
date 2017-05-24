@@ -12,14 +12,15 @@
 
                         {!! Form::open(['route' => 'respuestas.store', 'class'=>'form-inline']) !!}
                         <div class="form-group">
-                        {!! Form::label('texto', 'respuesta') !!}
-                        {!! Form::text('texto',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        {!! Form::label('text', 'respuesta') !!}
+                        {!! Form::text('text',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('pregunta_id', 'pregunta') !!}
                             <br>
-                            {!! Form::select('pregunta_id', $preguntas, $respuesta->tipoEncuesta_id, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('pregunta_id', $preguntas, ['class' => 'form-control', 'required']) !!}
                         </div>
+
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

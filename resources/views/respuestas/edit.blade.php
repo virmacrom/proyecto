@@ -13,8 +13,8 @@
                         {!! Form::model($respuesta, [ 'route' => ['respuestas.update',$respuesta->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
 
-                        {!! Form::label('texto', 'respuesta') !!}
-                        {!! Form::text('texto',$respuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        {!! Form::label('text', 'respuesta') !!}
+                        {!! Form::text('text',$respuesta->text,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('pregunta_id', 'pregunta') !!}
