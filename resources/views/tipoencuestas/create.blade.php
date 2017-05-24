@@ -12,7 +12,7 @@
 
                         {!! Form::open(['route' => 'tipoencuestas.store', 'class'=>'form-inline']) !!}
                         <div class="form-group">
-                        {!! Form::label('name', 'Nombre del tipo de ecuesta') !!}
+                        {!! Form::label('name', 'Nombre del tipo de encuesta') !!}
                         {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
