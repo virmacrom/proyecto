@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'preguntas.create', 'method' => 'get']) !!}
+                        {!! Form::open(['route' => 'preguntas.create', 'method' => 'get', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Crear pregunta', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 

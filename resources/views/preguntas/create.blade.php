@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'preguntas.store']) !!}
+                        {!! Form::open(['route' => 'preguntas.store', 'class'=>'form-inline']) !!}
                         <div class="form-group">
                         {!! Form::label('text', 'pregunta') !!}
                         {!! Form::text('text',null,['class'=>'form-control', 'required', 'autofocus']) !!}

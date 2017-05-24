@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($pregunta, [ 'route' => ['preguntas.update',$pregunta->id], 'method'=>'PUT']) !!}
+                        {!! Form::model($pregunta, [ 'route' => ['preguntas.update',$pregunta->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
 
                         {!! Form::label('text', 'pregunta') !!}
