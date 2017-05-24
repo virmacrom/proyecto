@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Pregunta;
-
 use App\Tipoencuesta;
 use Illuminate\Http\Request;
 

@@ -26,8 +26,8 @@
                             </tr>
                             @foreach ($respuestas as $respuesta)
                             <tr>
-                                <td>{{ $respuesta->text->name }}</td>
-                                <td>{{ $respuesta->tipoEncuesta }}</td>
+                                <td>{{ $respuesta->text }}</td>
+                                <td>{{ $respuesta->tipoencuesta }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['respuestas.edit',$respuesta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
