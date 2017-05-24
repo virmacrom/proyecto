@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tipoencuesta extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name','encuesta_id','pregunta_id'];
 
     public function encuestas(){
         return $this->hasMany('App\Encuesta');
