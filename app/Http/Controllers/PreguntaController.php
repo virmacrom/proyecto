@@ -21,7 +21,7 @@ class PreguntaController extends Controller
     {
         $preguntas = Pregunta::all()->pluck('text','id');
 
-        return view('encuestas/index',['preguntas'=>$preguntas]);
+        return view('tipoencuestas/index',['preguntas'=>$preguntas]);
     }
 
     /**
