@@ -11,10 +11,10 @@
                         @include('flash::message')
 
                         {!! Form::open(['route' => 'encuestas.store']) !!}
-                        <div class="form-group">
+                       {{-- <div class="form-group">
                             {!! Form::label('name', 'Nombre de la encuesta') !!}
                             {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
-                        </div>
+                        </div>--}}
 
                         <div class="form-group">
 

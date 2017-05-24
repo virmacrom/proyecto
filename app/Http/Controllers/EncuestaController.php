@@ -53,7 +53,7 @@ class EncuestaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+           // 'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
             'medico_id'=>'required|exists:medicos,id',
             'paciente_id'=>'required|exists:pacientes,id',
@@ -111,7 +111,7 @@ class EncuestaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+           // 'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
             'medico_id'=>'required|exists:medicos,id',
             'paciente_id'=>'required|exists:pacientes,id',

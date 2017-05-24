@@ -15,7 +15,7 @@ class CreateEncuestasTable extends Migration
     {
         Schema::create('encuestas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+        //    $table->string('name');
             $table->unsignedInteger('tipoencuesta_id');
             $table->foreign('tipoencuesta_id')->references('id')->on('tipoencuestas')->onDelete('cascade');
             /*Para una encuesta solo puede haber un tipo de encuesta, y

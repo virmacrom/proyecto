@@ -12,10 +12,11 @@
 
                         {!! Form::model($encuesta, [ 'route' => ['encuestas.update',$encuesta->id], 'method'=>'PUT']) !!}
 
-                        <div class="form-group">
+
+                        {{--<div class="form-group">
                             {!! Form::label('name', 'nombre de la encuesta') !!}
                             {!! Form::text('name',$encuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
-                        </div>
+                        </div>--}}
                        {{-- <div class="form-group">
                             {!!Form::label('medico_id', 'Medico sobre el que se hace la encuesta') !!}
                             <br>
