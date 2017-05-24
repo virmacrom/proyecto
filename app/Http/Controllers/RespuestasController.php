@@ -32,8 +32,8 @@ class RespuestasController extends Controller
     public function create()
     {
 
-        $preguntas= Pregunta::all()->pluck('text','id');
-        return view('respuestas/create',['preguntas'=>$preguntas]);
+        $pregunta= Pregunta::all()->pluck('text','id');
+        return view('respuestas/create',['pregunta'=>$pregunta]);
 
     }
 
@@ -78,9 +78,9 @@ class RespuestasController extends Controller
     {
         $respuesta = Respuestas::find($id);
 
-        $preguntas = Pregunta::all()->pluck('full_text');
+        $pregunta = Pregunta::all()->pluck('text','id');
 
-        return view('respuestas/edit',['respuesta'=> $respuesta, 'preguntas'=>$preguntas]);
+        return view('respuestas/edit',['respuesta'=> $respuesta, 'pregunta'=>$pregunta]);
 
     }
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Especialidad;
 use App\Enfermedad;
-use App\Sas;
 use Illuminate\Http\Request;
 
 class EspecialidadController extends Controller
@@ -23,10 +22,9 @@ class EspecialidadController extends Controller
     {
 
         $especialidades = Especialidad::all();
-//        $sas = Sas::all();
+
 
         return view('especialidades/index')->with('especialidades', $especialidades);
-//['sas'=>$sas]
 
     }
 
@@ -37,8 +35,8 @@ class EspecialidadController extends Controller
      */
     public function create()
     {
-       // $sas = Sas::all()->pluck('name','id');
-        return view('especialidades/create');  //,['sas'=>$sas]
+
+        return view('especialidades/create');
 
     }
 
@@ -52,7 +50,6 @@ class EspecialidadController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            //'sas_id' => 'required|exists:sas,id',
         ]);
 
         //

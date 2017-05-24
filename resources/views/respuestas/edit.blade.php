@@ -19,7 +19,7 @@
                         <div class="form-group">
                             {!!Form::label('pregunta_id', 'pregunta') !!}
                             <br>
-                            {!! Form::select('pregunta_id', $preguntas, $respuesta->tipoEncuesta_id, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('pregunta_id', $pregunta, $respuesta->tipoEncuesta_id, ['class' => 'form-control', 'required']) !!}
                         </div>
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
