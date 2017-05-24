@@ -13,7 +13,7 @@ class Pregunta extends Model
     }
 
 
-    public function tipoEncuesta(){
+    public function tipoencuesta(){
             return $this->belongsTo('App\TipoEncuesta');
     }
 

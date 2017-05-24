@@ -25,7 +25,7 @@
 
                             <tr>
                                 <td>{{ $pregunta->text }}</td>
-                                <td>{{ $pregunta->tipoencuesta }}</td>
+                                <td>{{ $pregunta->tipoencuesta->name }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['preguntas.edit',$pregunta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
