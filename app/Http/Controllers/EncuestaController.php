@@ -94,8 +94,6 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('name','id');
 
-
-
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
         return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta]);

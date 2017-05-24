@@ -13,12 +13,16 @@
                         {!!   Form::submit('Crear encuesta', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
+                        {!! Form::open(['route' => 'encuestas.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
+                        {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                        {!! Form::close() !!}
+
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                {{--<th>Nombre</th>--}}
-                                {{--<th>Medico</th>--}}
-                                {{--<th>Paciente</th>--}}
+
+                                <th>Medico</th>
+                                <th>Paciente</th>
                                 <th>TipoEncuesta</th>
 
                                 <th colspan="2">Acciones</th>
@@ -28,9 +32,9 @@
 
 
                                 <tr>
-                                    {{--<td>{{ $encuesta->name }}</td>--}}
-                                  {{--//  <td>{{ $encuesta->medico }}</td>--}}
-                                  {{--//  <td>{{ $encuesta->paciente }}</td>--}}
+
+                                    <td>{{ $encuesta->paciente }}</td>
+                                   <td>{{ $encuesta->medico}}</td>
                                     <td>{{ $encuesta->tipoencuesta }}</td>
 
 
