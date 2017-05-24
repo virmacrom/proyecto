@@ -17,8 +17,8 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
-                                <th>Medico</th>
-                                <th>Paciente</th>
+                                {{--<th>Medico</th>--}}
+                                {{--<th>Paciente</th>--}}
                                 <th>TipoEncuesta</th>
 
                                 <th colspan="2">Acciones</th>
@@ -29,8 +29,8 @@
 
                                 <tr>
                                     <td>{{ $encuesta->name }}</td>
-                                    <td>{{ $encuesta->medico->name }}</td>
-                                    <td>{{ $encuesta->paciente->name }}</td>
+                                  {{--//  <td>{{ $encuesta->medico }}</td>--}}
+                                  {{--//  <td>{{ $encuesta->paciente }}</td>--}}
                                     <td>{{ $encuesta->tipoencuesta }}</td>
 
 

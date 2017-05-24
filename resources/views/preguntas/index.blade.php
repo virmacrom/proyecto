@@ -25,6 +25,7 @@
                                 <th colspan="2">Acciones</th>
                             </tr>
                             @foreach ($preguntas as $pregunta)
+
                             <tr>
                                 <td>{{ $pregunta->text }}</td>
                                 <td>{{ $pregunta->tipoencuesta }}</td>
