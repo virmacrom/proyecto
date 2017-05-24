@@ -19,8 +19,8 @@ class RespuestasController extends Controller
      */
     public function index()
     {
-        $respuestas= Respuestas::all();
-        return view('respuestas/index',['respuestas'=>$respuestas]);
+        $respuesta= Respuestas::all();
+        return view('respuestas/index',['respuestas'=>$respuesta]);
         //
     }
 
@@ -33,7 +33,7 @@ class RespuestasController extends Controller
     {
 
         $pregunta= Pregunta::all()->pluck('text','id');
-        return view('respuestas/create',['pregunta'=>$pregunta]);
+        return view('respuestas/create',['preguntas'=>$pregunta]);
 
     }
 
@@ -65,7 +65,7 @@ class RespuestasController extends Controller
      */
     public function show($id)
     {
-        return view('respuestas/show',['respuesta'=>$id]);
+       // return view('respuestas/show',['respuesta'=>$id]);
     }
 
     /**

@@ -20,7 +20,7 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>Texto</th>
+                                <th>Respuesta</th>
                                 <th>Pregunta</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
