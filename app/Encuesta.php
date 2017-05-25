@@ -8,10 +8,10 @@ use Illuminate\Notifications\Notifiable;
 class Encuesta extends Model
 {
     protected $fillable = ['tipoencuesta_id','medico_id','paciente_id'];
+
     public function tipoencuesta(){
         return $this->belongsTo('App\TipoEncuesta');
     }
-
     public function medicos(){
         return $this->belongsTo('App\Medico');
     }

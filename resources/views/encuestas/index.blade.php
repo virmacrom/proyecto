@@ -7,6 +7,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Encuestas</div>
 
+
+
                     <div class="panel-body">
                         @include('flash::message')
                         {!! Form::open(['route' => 'encuestas.create', 'method' => 'get']) !!}
@@ -28,13 +30,15 @@
                                 <th colspan="2">Acciones</th>
                             </tr>
 
+
+
                             @foreach ($encuestas as $encuesta)
 
 
                                 <tr>
 
                                     {{--<td>{{ $encuesta->paciente}}</td>--}}
-                                    {{--<td>{{ $encuesta->medico->code}}</td>--}}
+                                    {{--<td{{ $encuesta->medico->code}}</td>--}}
                                     <td>{{ $encuesta->tipoencuesta->name }}</td>
 
 
@@ -50,6 +54,12 @@
 
                                     </td>
                                 </tr>
+
+                                <ul class="dropdown-menu">
+                                    @foreach ($tipoencuestas as $tipoencuesta)
+                                        <li><a href="'/encuestas/create'/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}">Tipo Encuesta</a></li>
+                                    @endforeach
+                                </ul>
 
                                 {{--      @foreach($tipoencuesta as $tipoencuesta)
 
@@ -103,10 +113,11 @@
                                                         </tr>
                                                     @endforeach
 
-                                                @endforeach--}}
-                                         @endforeach
+                                                @endforeach
+                                         @endforeach--}}
                             @endforeach
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>

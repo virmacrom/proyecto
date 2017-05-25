@@ -76,7 +76,7 @@
                                     <li><a href="{{ url('tipoencuestas') }}">Tipo de Encuestas</a></li>
                                     <li><a href="{{ url('/encuestas') }}">Encuestas</a></li> {{--tiene que estar?¿--}}
                                     <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
-                                    <li><a href="{{ url ('/respuestas') }}"> Enfermedades</a></li>
+                                    <li><a href="{{ url ('/respuestas') }}"> Respuestas</a></li>
 
                                     @endif
                                     <li><a href="{{ route('logout') }}"
