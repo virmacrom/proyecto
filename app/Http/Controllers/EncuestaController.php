@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Encuesta;
-use App\Respuestas;
 use App\TipoEncuesta;
-use App\Pregunta;
 use App\Medico;
 use App\Paciente;
 use Illuminate\Http\Request;
@@ -23,7 +21,7 @@ class EncuestaController extends Controller
         $encuestas = Encuesta::all();
         $tipoencuestas = TipoEncuesta::all();
 
-        return view('encuestas/index',['encuestas'=>$encuestas],['tipoencuesta'=>$tipoencuestas]);
+        return view('encuestas/index',['encuestas'=>$encuestas],['tipoencuestas'=>$tipoencuestas]);
 
     }
 
@@ -42,7 +40,7 @@ class EncuestaController extends Controller
 
 
         return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuestas]);
+            'tipoencuestas'=>$tipoencuestas]);
     }
 
     /**
@@ -100,7 +98,7 @@ class EncuestaController extends Controller
 
 
         return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuestas]);
+            'tipoencuestas'=>$tipoencuestas]);
     }
 
     /**

@@ -73,7 +73,7 @@ class TipoEncuestaController extends Controller
     {
         $tipoencuesta = Tipoencuesta::find($id);
 
-
+        return view('tipoencuestas/edit',['tipoencuesta'=> $tipoencuesta]);
     }
 
     /**
