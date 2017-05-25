@@ -60,15 +60,15 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     {{--{{dd(Auth::user())}}--}}
-                                    @if (Auth::user()->medico())   {{--hacer que solo vea sus cosas--}}
+                                    @if (Auth::user()->medico)   {{--hacer que solo vea sus cosas--}}
                                         <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
                                         <li><a href="{{ url ('/enfermedades') }}"> Enfermedades</a></li>
                                         <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
 
-                                    @elseif (Auth::user()->paciente()))
+                                    @elseif (Auth::user()->paciente)
                                         <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
 
-                                    @elseif (Auth::user()->sas()))
+                                    @elseif (Auth::user()->sas)
                                     <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
                                     <li><a href="{{ url('/medicos') }}"> Medicos</a></li>
                                     <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>

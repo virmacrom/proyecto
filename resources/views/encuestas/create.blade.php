@@ -23,7 +23,12 @@
                             {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control', 'required']) !!}
                         </div>
 
-                         <div class="form-group">
+                        <div class="form-group">
+                           {!! Form::label('name', 'Nombre de la encuesta') !!}
+                           {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                       </div>
+
+                        <div class="form-group">
                            {!! Form::label('paciente_id', 'Nombre del paciente que realiza la encuesta') !!}
                              {!! Form::select('paciente_id', $pacientes, ['class' => 'form-control', 'required']) !!}
 
