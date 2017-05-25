@@ -13,6 +13,8 @@
                         {!! Form::model($tipoencuesta, [ 'route' => ['tipoencuestas.update',$tipoencuesta->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
 
+
+
                         {!! Form::label('name', 'Nombre del tipo de Encuesta') !!}
                         {!! Form::text('name',$tipoencuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>

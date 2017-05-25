@@ -15,6 +15,7 @@
                         {!! Form::label('name', 'Nombre del tipo de encuesta') !!}
                         {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
+
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

@@ -21,6 +21,8 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
+
+
                                 <th colspan="2">Acciones</th>
                             </tr>
                             @foreach ($tipoencuestas as $tipoencuesta)
