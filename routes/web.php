@@ -38,6 +38,7 @@ Route::resource('enfermedades', 'EnfermedadController');
 Route::delete('tipoencuestas/destroyAll', 'TipoEncuestaController@destroyAll')->name('tipoencuestas.destroyAll');
 Route::resource('tipoencuestas', 'TipoEncuestaController');
 
+Route::get('encuestas/create/{id}','EncuestaController@createConTipoEncuesta')->name('encuestas.createConTipoEncuesta');
 Route::delete('encuestas/destroyAll', 'EncuestaController@destroyAll')->name('encuestas.destroyAll');
 Route::resource('encuestas', 'EncuestaController');
 

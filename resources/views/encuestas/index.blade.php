@@ -51,60 +51,60 @@
                                     </td>
                                 </tr>
 
-                                @foreach($tipoencuesta as $tipoencuesta)
+                                {{--      @foreach($tipoencuesta as $tipoencuesta)
 
-                                    <tr>
-                                        <td>{{ $tipoencuesta->pregunta->text }}</td>
+                                       <tr>
+                                           <td>{{ $tipoencuesta->pregunta->text }}</td>
 
-                                        <td>
-                                            {!! Form::open(['route' => ['tipoencuestas.edit',$tipoencuesta->id], 'method' => 'get']) !!}
-                                            {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
-                                            {!! Form::close() !!}
-                                        </td>
-                                        <td>
-                                            {!! Form::open(['route' => ['tipoencuestas.destroy',$tipoencuesta->id], 'method' => 'delete']) !!}
-                                            {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                                            {!! Form::close() !!}
+                                           <td>
+                                               {!! Form::open(['route' => ['tipoencuestas.edit',$tipoencuesta->id], 'method' => 'get']) !!}
+                                               {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+                                               {!! Form::close() !!}
+                                           </td>
+                                           <td>
+                                               {!! Form::open(['route' => ['tipoencuestas.destroy',$tipoencuesta->id], 'method' => 'delete']) !!}
+                                               {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                                               {!! Form::close() !!}
 
-                                        </td>
-                                    </tr>
-                                    @foreach($preguntas as $pregunta)
-                                        <tr>
-                                            <td>{{ $pregunta->respuesta->text }}</td>
-                                            <td>
-                                                {!! Form::open(['route' => ['preguntas.edit',$pregunta->id], 'method' => 'get']) !!}
-                                                {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
-                                                {!! Form::close() !!}
-                                            </td>
-                                            <td>
-                                                {!! Form::open(['route' => ['preguntas.destroy',$pregunta->id], 'method' => 'delete']) !!}
-                                                {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                                                {!! Form::close() !!}
+                                           </td>
+                                       </tr>
+                                           @foreach($preguntas as $pregunta)
+                                                    <tr>
+                                                        <td>{{ $pregunta->respuesta->text }}</td>
+                                                        <td>
+                                                            {!! Form::open(['route' => ['preguntas.edit',$pregunta->id], 'method' => 'get']) !!}
+                                                            {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+                                                            {!! Form::close() !!}
+                                                        </td>
+                                                        <td>
+                                                            {!! Form::open(['route' => ['preguntas.destroy',$pregunta->id], 'method' => 'delete']) !!}
+                                                            {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                                                            {!! Form::close() !!}
 
-                                            </td>
-                                        </tr>
+                                                        </td>
+                                                    </tr>
 
-                                        @foreach($respuestas as $respuesta)
+                                                    @foreach($respuestas as $respuesta)
 
-                                            <tr>
-                                                <td>{{ $respuesta->text }}</td>
+                                                        <tr>
+                                                            <td>{{ $respuesta->text }}</td>
 
-                                                <td>
-                                                    {!! Form::open(['route' => ['respuestas.edit',$respuesta->id], 'method' => 'get']) !!}
-                                                    {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
-                                                    {!! Form::close() !!}
-                                                </td>
-                                                <td>
-                                                    {!! Form::open(['route' => ['respuestas.destroy',$respuesta->id], 'method' => 'delete']) !!}
-                                                    {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                                                    {!! Form::close() !!}
+                                                            <td>
+                                                                {!! Form::open(['route' => ['respuestas.edit',$respuesta->id], 'method' => 'get']) !!}
+                                                                {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+                                                                {!! Form::close() !!}
+                                                            </td>
+                                                            <td>
+                                                                {!! Form::open(['route' => ['respuestas.destroy',$respuesta->id], 'method' => 'delete']) !!}
+                                                                {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                                                                {!! Form::close() !!}
 
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
 
-                                    @endforeach
-                                @endforeach
+                                                @endforeach--}}
+                                         @endforeach
                             @endforeach
                         </table>
                     </div>

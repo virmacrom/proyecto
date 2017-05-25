@@ -39,12 +39,9 @@ class EncuestaController extends Controller
 
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        $preguntas = Pregunta::all()->pluck('text','id');
-
-       $respuestas=Respuestas::all()->pluck('text','id');
 
         return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuesta, 'preguntas'=>$preguntas , 'respuestas'=>$respuestas]);
+            'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
@@ -99,13 +96,10 @@ class EncuestaController extends Controller
 
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
-        $preguntas = Pregunta::all()->pluck('text','id');
-
-        $respuestas=Respuestas::all()->pluck('text','id');
 
 
         return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuesta, 'preguntas'=>$preguntas , 'respuestas'=>$respuestas]);
+            'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
@@ -149,5 +143,10 @@ class EncuestaController extends Controller
         flash('Encuesta borrada correctamente');
 
         return redirect()->route('encuestas.index');
+    }
+
+    public function createConTipoEncuesta($id){
+        $tipoencuesta = TipoEncuesta::find($id);
+        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
     }
 }
