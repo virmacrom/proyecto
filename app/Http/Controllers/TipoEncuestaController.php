@@ -21,7 +21,7 @@ class TipoEncuestaController extends Controller
     public function index()
     {
         $tipoencuestas= Tipoencuesta::all();
-        return view('tipoencuestas/index',['tipoencuestas'=>$tipoencuestas]);
+        return view('tipoencuestas/index')->with('tipoencuestas',$tipoencuestas);
     }
 
     /**
@@ -60,7 +60,7 @@ class TipoEncuestaController extends Controller
      */
     public function show($id)
     {
-        return view('tipoencuestas/show',['tipoencuesta'=>$id]);
+      //  return view('tipoencuestas/show',['tipoencuesta'=>$id]);
     }
 
     /**
@@ -88,10 +88,11 @@ class TipoEncuestaController extends Controller
         $this->validate($request,[
             'name'=>'required|max:255'
         ]);
-        $tipoencuesta= new Tipoencuesta($request->all());
+        $tipoencuesta= Tipoencuesta::find($id);
+        $tipoencuesta->fill($request->all());
         $tipoencuesta->save();
 
-        flash('Tipo encuesta creado correctamente');
+        flash('Tipo encuesta modificada correctamente');
         return redirect()->route('tipoencuestas.index');
 
 
@@ -108,6 +109,14 @@ class TipoEncuestaController extends Controller
         $tipoencuesta = Tipoencuesta::find($id);
         $tipoencuesta->delete();
         flash('Tipo encuesta borrada correctamente');
+
+        return redirect()->route('tipoencuestas.index');
+    }
+
+    public function destroyAll()
+    {
+        Tipoencuesta::truncate();
+        flash('Todas las tipo encuestas borradas correctamente');
 
         return redirect()->route('tipoencuestas.index');
     }

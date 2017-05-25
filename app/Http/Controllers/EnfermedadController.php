@@ -130,4 +130,12 @@ class EnfermedadController extends Controller
 
         return redirect()->route('enfermedades.index');
     }
+
+    public function destroyAll()
+    {
+        Enfermedad::truncate();
+        flash('Todas las enfermedades borradas correctamente');
+
+        return redirect()->route('enfermedades.index');
+    }
 }

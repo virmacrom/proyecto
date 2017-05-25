@@ -14,10 +14,11 @@
                         <div class="form-group">
 
 
-
                         {!! Form::label('name', 'Nombre del tipo de Encuesta') !!}
                         {!! Form::text('name',$tipoencuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
+
+
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
                     </div>
