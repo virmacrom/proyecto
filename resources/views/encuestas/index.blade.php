@@ -22,22 +22,14 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-
-
                                 <th>TipoEncuesta</th>
 
                                 <th colspan="2">Acciones</th>
                             </tr>
 
-
-
                             @foreach ($encuestas as $encuesta)
-
-
                                 <tr>
-
                                     <td>{{ $encuesta->tipoencuesta->name }}</td>
-
 
                                     <td>
                                         {!! Form::open(['route' => ['encuestas.edit',$encuesta->id], 'method' => 'get']) !!}
@@ -114,7 +106,7 @@
                                            @endforeach--}}
                             @endforeach
                         </table>
-                    </div>
+
                     </div>
                 </div>
             </div>

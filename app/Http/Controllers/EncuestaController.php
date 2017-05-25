@@ -19,9 +19,9 @@ class EncuestaController extends Controller
     public function index()
     {
         $encuestas = Encuesta::all();
-        $tipoencuestas = Tipoencuesta::all();
+      //  $tipoencuestas = Tipoencuesta::all();
 
-        return view('encuestas/index',['encuestas'=>$encuestas],['tipoencuestas'=>$tipoencuestas]);
+        return view('encuestas/index',['encuestas'=>$encuestas]);//,['tipoencuestas'=>$tipoencuestas]
 
     }
 
