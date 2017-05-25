@@ -35,9 +35,9 @@ class EncuestaController extends Controller
      */
     public function create()
     {
-        $medicos = Medico::all()->pluck('name','id');
+        $medicos = Medico::all()->pluck('code','id');
 
-        $pacientes = Paciente::all()->pluck('name','id');
+        $pacientes = Paciente::all()->pluck('nuhsa','id');
 
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 
@@ -90,9 +90,9 @@ class EncuestaController extends Controller
     {
         $encuesta = Encuesta::find($id);
 
-        $medicos = Medico::all()->pluck('name','id');
+        $medicos = Medico::all()->pluck('code','id');
 
-        $pacientes = Paciente::all()->pluck('name','id');
+        $pacientes = Paciente::all()->pluck('nuhsa','id');
 
         $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
 

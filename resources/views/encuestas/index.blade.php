@@ -33,9 +33,9 @@
 
                                 <tr>
 
-                                    <td>{{ $encuesta->paciente }}</td>
-                                   <td>{{ $encuesta->medico}}</td>
-                                    <td>{{ $encuesta->tipoencuesta }}</td>
+                                    <td>{{ $encuesta->paciente->nuhsa}}</td>
+                                   <td>{{ $encuesta->medico->code}}</td>
+                                    <td>{{ $encuesta->tipoencuesta->name }}</td>
 
 
                                     <td>
