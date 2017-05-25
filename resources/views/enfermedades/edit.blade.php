@@ -19,7 +19,7 @@
                         <div class="form-group">
                             {!!Form::label('especialidad_id', 'Especialidad medico') !!}
                             <br>
-                            {!! Form::select('especialidad_id', $especialidades, $enfermedad->especialidad_id, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('especialidad_id', $especialidad, $enfermedad->especialidad_id, ['class' => 'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
