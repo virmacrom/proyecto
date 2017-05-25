@@ -31,7 +31,7 @@
 
                             {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
                             <br>
-                            {!! Form::select('tipoencuesta_id', $tipoencuesta, $encuesta->tipoencuesta_id, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('tipoencuesta_id', $tipoencuestas, $encuesta->tipoencuesta_id, ['class' => 'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

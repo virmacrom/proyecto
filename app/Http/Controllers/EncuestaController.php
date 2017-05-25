@@ -21,9 +21,9 @@ class EncuestaController extends Controller
     public function index()
     {
         $encuestas = Encuesta::all();
-        $tipoencuesta = TipoEncuesta::all();
+        $tipoencuestas = TipoEncuesta::all();
 
-        return view('encuestas/index',['encuestas'=>$encuestas],['tipoencuesta'=>$tipoencuesta]);
+        return view('encuestas/index',['encuestas'=>$encuestas],['tipoencuesta'=>$tipoencuestas]);
 
     }
 
@@ -38,11 +38,11 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('nuhsa','id');
 
-        $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
+        $tipoencuestas = TipoEncuesta::all()->pluck('name','id');
 
 
         return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuesta]);
+            'tipoencuesta'=>$tipoencuestas]);
     }
 
     /**
@@ -95,12 +95,12 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('nuhsa','id');
 
-        $tipoencuesta = TipoEncuesta::all()->pluck('name','id');
+        $tipoencuestas = TipoEncuesta::all()->pluck('name','id');
 
 
 
         return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuesta]);
+            'tipoencuesta'=>$tipoencuestas]);
     }
 
     /**
@@ -147,7 +147,7 @@ class EncuestaController extends Controller
     }
 
     public function createConTipoEncuesta($id){
-        $tipoencuesta = TipoEncuesta::find($id);
-        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
+        $tipoencuestas = TipoEncuesta::find($id);
+        return view('encuestas/create',['tipoencuesta'=>$tipoencuestas]);
     }
 }

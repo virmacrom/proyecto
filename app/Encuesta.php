@@ -9,7 +9,7 @@ class Encuesta extends Model
 {
     protected $fillable = ['tipoencuesta_id','medico_id','paciente_id'];
 
-    public function tipoencuesta(){
+    public function tipoencuestas(){
         return $this->belongsTo('App\TipoEncuesta');
     }
     public function medicos(){
