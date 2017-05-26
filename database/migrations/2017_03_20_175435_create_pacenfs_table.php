@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMedicoPacientesTable extends Migration
+class CreatePacenfsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateMedicoPacientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('medico_pacientes', function (Blueprint $table) {
+        Schema::create('pacenfs', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fechacita');
-            $table->unsignedInteger('medico_id');
-            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->unsignedInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
-
+            $table->unsignedInteger('enfermedad_id');
+            $table->foreign('enfermedad_id')->references('id')->on('enfermedads')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateMedicoPacientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medico_pacientes');
+        Schema::dropIfExists('pacenfs');
     }
 }

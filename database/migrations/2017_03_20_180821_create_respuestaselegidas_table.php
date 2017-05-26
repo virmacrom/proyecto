@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRespuestasElegidasTable extends Migration
+class CreateRespuestaselegidasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRespuestasElegidasTable extends Migration
      */
     public function up()
     {
-        Schema::create('respuestas_elegidas', function (Blueprint $table) {
+        Schema::create('respuestaselegidas', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('encuesta_id');
             $table->foreign('encuesta_id')->references('id')->on('encuestas')->onDelete('cascade');
@@ -28,6 +28,6 @@ class CreateRespuestasElegidasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('respuestas_elegidas');
+        Schema::dropIfExists('respuestaselegidas');
     }
 }
