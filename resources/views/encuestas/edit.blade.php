@@ -27,13 +27,12 @@
                             <br>
                             {!! Form::select('paciente_id', $pacientes, $encuesta->paciente_id, ['class' => 'form-control', 'required']) !!}
                         </div>--}}
-                        <div class="form-group">
+                       {{-- <div class="form-group">
 
                             {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
                             <br>
                             {!! Form::select('tipoencuesta_id', $tipoencuesta, $encuesta->tipoencuesta_id, ['class' => 'form-control', 'required']) !!}
-                        </div>
-
+                        </div>--}}
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}
