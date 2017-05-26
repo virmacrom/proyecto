@@ -25,11 +25,6 @@
                             <br>
                             {!! Form::select('medico_id', $medicos, ['class' => 'form-control']) !!}
                         </div>
-                        <div class="form-group">
-                            {!!Form::label('paciente_id', 'Paciente') !!}
-                            <br>
-                            {!! Form::select('paciente_id', $pacientes, ['class' => 'form-control']) !!}
-                        </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

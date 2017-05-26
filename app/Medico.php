@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Medico extends Model
 {
 
-    protected $fillable = ['name','surname','user_id','especialidad_id'];
+    protected $fillable = ['user_id','especialidad_id'];
 
     public function encuestas(){
         return $this->hasMany('App\Encuesta');
@@ -27,6 +27,10 @@ class Medico extends Model
 
     public function especialidad(){
         return $this->belongsTo('App\Especialidad');
+    }
+
+    public function getFullnameAttribute(){
+        return $this->user->name . ' ' . $this->user->surname . ' - ' . $this->especialidad->name;
     }
 
 }

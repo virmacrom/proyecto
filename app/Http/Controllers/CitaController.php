@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Cita;
 use App\Medico;
 use App\Paciente;
+use Illuminate\Support\Facades\Auth;
 
 
 class CitaController extends Controller
@@ -36,12 +37,9 @@ class CitaController extends Controller
      */
     public function create()
     {
-        $medicos = Medico::all()->pluck('name','id');
+        $medicos = Medico::all()->pluck('fullname','id');
 
-        $pacientes = Paciente::all()->pluck('name','id');
-
-
-        return view('citas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes]);
+        return view('citas/create',['medicos'=>$medicos]);
     }
 
     /**
@@ -54,12 +52,12 @@ class CitaController extends Controller
     {
         $this->validate($request, [
             'medico_id' => 'required|exists:medicos,id',
-            'paciente_id' => 'required|exists:pacientes,id',
             'fechacita' => 'required|date|after:now',
 
         ]);
 
         $cita = new Cita($request->all());
+        $cita->paciente_id = Auth::user()->paciente->id;
         $cita->save();
 
 
@@ -90,12 +88,9 @@ class CitaController extends Controller
 
         $cita = Cita::find($id);
 
-        $medicos = Medico::all()->pluck('name','id');
+        $medicos = Medico::all()->pluck('fullname','id');
 
-        $pacientes = Paciente::all()->pluck('name','id');
-
-
-        return view('citas/edit',['cita'=> $cita, 'medicos'=>$medicos, 'pacientes'=>$pacientes]);
+        return view('citas/edit',['cita'=> $cita, 'medicos'=>$medicos]);
     }
 
     /**
@@ -109,13 +104,12 @@ class CitaController extends Controller
     {
         $this->validate($request, [
             'medico_id' => 'required|exists:medicos,id',
-            'paciente_id' => 'required|exists:pacientes,id',
             'fechacita' => 'required|date|after:now',
 
         ]);
         $cita = Cita::find($id);
         $cita->fill($request->all());
-
+        $cita->paciente_id = Auth::user()->paciente->id;
         $cita->save();
 
         flash('Cita modificada correctamente');

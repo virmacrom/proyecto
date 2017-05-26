@@ -13,7 +13,7 @@ class CreateCitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('cita', function (Blueprint $table) {
+        Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fechacita');
             $table->unsignedInteger('medico_id');
@@ -32,6 +32,6 @@ class CreateCitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cita');
+        Schema::dropIfExists('citas');
     }
 }

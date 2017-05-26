@@ -27,8 +27,8 @@
 
                                 <tr>
                                     <td>{{ $cita->fechacita }}</td>
-                                    <td>{{ $cita->medico->name }}</td>
-                                    <td>{{ $cita->paciente->name}}</td>
+                                    <td>{{ $cita->medico->fullname }}</td>
+                                    <td>{{ $cita->paciente->nuhsa}}</td>
                                     <td>
                                         {!! Form::open(['route' => ['citas.edit',$cita->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
