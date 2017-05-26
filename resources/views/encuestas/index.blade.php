@@ -17,7 +17,7 @@
                             </button>
                             <ul class="dropdown-menu">
                                 @foreach ($tipoencuestas as $tipoencuesta)
-                                    <li><a href="/encuestas/create/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}">Tipo Encuesta</a></li>
+                                    <li><a href="/encuestas/create/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -29,8 +29,8 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>TipoEncuesta</th>
-                                <th colspan="2">Acciones</th>
+                                {{--<th>TipoEncuesta</th>
+                                <th colspan="2">Acciones</th>  --}}
                             </tr>
 
                             @foreach ($encuestas as $encuesta)

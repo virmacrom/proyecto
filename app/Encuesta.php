@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Encuesta extends Model
 {
-    protected $fillable = ['medico_id','paciente_id'];
+    protected $fillable = ['medico_id','paciente_id','tipoencuesta_id'];
 
     public function tipoencuesta(){
         return $this->belongsTo('App\TipoEncuesta');

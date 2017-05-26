@@ -51,7 +51,7 @@ class EncuestaController extends Controller
     {
         $this->validate($request, [
            // 'name' => 'required|max:255',
-           // 'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
+            'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
            // 'medico_id'=>'required|exists:medicos,id',
             //'paciente_id'=>'required|exists:pacientes,id',
 

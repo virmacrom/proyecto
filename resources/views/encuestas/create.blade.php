@@ -10,15 +10,13 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'encuestas.store']) !!}
+                       {!! Form::open(['route' => 'encuestas.store']) !!}
 
-{{--
-                <div class="form-group">
-
-                            {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
+                        <div class="form-group">
+                            {!!Form::label('tipoencuesta_id', 'tipo encuesta') !!}
                             <br>
-                            {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control', 'required']) !!}
-                        </div>--}}
+                            {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control']) !!}
+                        </div>
 
 
                       {{--  <div class="form-group">

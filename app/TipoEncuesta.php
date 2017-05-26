@@ -15,4 +15,8 @@ class Tipoencuesta extends Model
     public function preguntas(){
         return $this->hasMany('App\Pregunta');
     }
+
+    public function getFullnameAttribute(){
+        return $this->pregunta->text;
+    }
 }
