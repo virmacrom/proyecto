@@ -11,9 +11,16 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'encuestas.create', 'method' => 'get', 'class'=>'inline-important']) !!}
-                        {!!   Form::submit('Crear encuesta', ['class'=> 'btn btn-primary'])!!}
-                        {!! Form::close() !!}
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Crear encuesta <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                @foreach ($tipoencuestas as $tipoencuesta)
+                                    <li><a href="/encuestas/create/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}">Tipo Encuesta</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
 
                         {!! Form::open(['route' => 'encuestas.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
@@ -42,17 +49,11 @@
 
                                     </td>
                                 </tr>
-                                  <ul class="dropdown-menu">
-                                        @foreach ($tipoencuestas as $tipoencuesta)
-                                            <li><a href="'/encuestas/create'/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}">Tipo Encuesta</a></li>
-                                        @endforeach
-                                    </ul>
 
      {{--
                                        @foreach($tipoencuesta as $tipoencuesta)
 
                                          <tr>
-                                             <td>{{ $tipoencuesta->pregunta->text }}</td>
 
                                              <td>
                                                  {!! Form::open(['route' => ['tipoencuestas.edit',$tipoencuesta->id], 'method' => 'get']) !!}

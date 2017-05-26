@@ -21,8 +21,7 @@ class EncuestaController extends Controller
     {
         $encuestas = Encuesta::all();
       $tipoencuestas = Tipoencuesta::all();
-
-        return view('encuestas/index',['encuestas'=>$encuestas,['tipoencuesta'=>$tipoencuestas]]);
+        return view('encuestas/index',['encuestas'=>$encuestas,'tipoencuestas'=>$tipoencuestas]);
 
     }
 
@@ -153,6 +152,7 @@ class EncuestaController extends Controller
 
     public function createConTipoEncuesta($id){
         $tipoencuesta = Tipoencuesta::find($id);
+        dd($tipoencuesta);
         return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
     }
 }
