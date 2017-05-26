@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Encuesta;
 use App\Tipoencuesta;
+
 use App\Medico;
 use App\Paciente;
 use Illuminate\Http\Request;
@@ -19,9 +20,9 @@ class EncuestaController extends Controller
     public function index()
     {
         $encuestas = Encuesta::all();
-      //  $tipoencuestas = Tipoencuesta::all();
+      $tipoencuestas = Tipoencuesta::all();
 
-        return view('encuestas/index',['encuestas'=>$encuestas]);//,['tipoencuestas'=>$tipoencuestas]
+        return view('encuestas/index',['encuestas'=>$encuestas,['tipoencuesta'=>$tipoencuestas]]);
 
     }
 
@@ -33,14 +34,12 @@ class EncuestaController extends Controller
     public function create()
     {
         $medicos = Medico::all()->pluck('code','id');
-
         $pacientes = Paciente::all()->pluck('nuhsa','id');
-
-        $tipoencuestas = Tipoencuesta::all()->pluck('name','id');
+        $tipoencuesta = Tipoencuesta::all();
 
 
         return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuestas'=>$tipoencuestas]);
+            'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
@@ -93,12 +92,12 @@ class EncuestaController extends Controller
 
         $pacientes = Paciente::all()->pluck('nuhsa','id');
 
-        $tipoencuestas = Tipoencuesta::all()->pluck('name','id');
+        $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
 
 
 
         return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuestas'=>$tipoencuestas]);
+            'tipoencuesta'=>$tipoencuesta]);
     }
 
     /**
@@ -153,7 +152,7 @@ class EncuestaController extends Controller
     }
 
     public function createConTipoEncuesta($id){
-        $tipoencuestas = Tipoencuesta::find($id);
-        return view('encuestas/create',['tipoencuesta'=>$tipoencuestas]);
+        $tipoencuesta = Tipoencuesta::find($id);
+        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
     }
 }

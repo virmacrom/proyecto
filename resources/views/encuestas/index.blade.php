@@ -11,7 +11,7 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'encuestas.create', 'method' => 'get']) !!}
+                        {!! Form::open(['route' => 'encuestas.create', 'method' => 'get', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Crear encuesta', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
@@ -23,13 +23,12 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>TipoEncuesta</th>
-
                                 <th colspan="2">Acciones</th>
                             </tr>
 
                             @foreach ($encuestas as $encuesta)
                                 <tr>
-                                    <td>{{ $encuesta->tipoencuesta->name }}</td>
+                                    <td>{{ $encuesta->tipoencuesta->name}}</td>
 
                                     <td>
                                         {!! Form::open(['route' => ['encuestas.edit',$encuesta->id], 'method' => 'get']) !!}
@@ -43,13 +42,13 @@
 
                                     </td>
                                 </tr>
+                                  <ul class="dropdown-menu">
+                                        @foreach ($tipoencuestas as $tipoencuesta)
+                                            <li><a href="'/encuestas/create'/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}">Tipo Encuesta</a></li>
+                                        @endforeach
+                                    </ul>
 
-                                {{--   <ul class="dropdown-menu">
-                                      @foreach ($tipoencuestas as $tipoencuesta)
-                                          <li><a href="'/encuestas/create'/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}">Tipo Encuesta</a></li>
-                                      @endforeach
-                                  </ul>
-
+     {{--
                                        @foreach($tipoencuesta as $tipoencuesta)
 
                                          <tr>

@@ -20,7 +20,7 @@
 
                             {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}
                             <br>
-                            {!! Form::select('tipoencuesta_id', $tipoencuestas, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control', 'required']) !!}
                         </div>
 
 
