@@ -23,6 +23,8 @@ class Encuesta extends Model
         return $this->hasMany('App\RespuestasElegidas');
     }
 
-
+    public function getFullnameAttribute(){
+        return $this->tipoencuesta->name;
+    }
 
 }
