@@ -45,9 +45,9 @@
                             </tr>
                             @endforeach
                         </table>
-                </div>
-            </div>
+                     </div>
+                 </div>
+             </div>
         </div>
-    </div>
     </div>
 @endsection

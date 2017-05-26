@@ -30,8 +30,8 @@
 
 
                 <div class="links">
-                    <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
                     <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
+                    <li><a href="{{ url('/citas') }}">Citas</a></li>
                 </div>
             </div>
         </div>

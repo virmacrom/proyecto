@@ -16,6 +16,11 @@ class Medico extends Model
         return $this->belongsToMany('App\Paciente');
     }
 
+    public function citas()
+    {
+        return $this->hasMany('App\Cita');
+    }
+
     public function user(){
         return $this->belongsTo('App\User');
     }

@@ -64,19 +64,22 @@
                                         <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
                                         <li><a href="{{ url ('/enfermedades') }}"> Enfermedades</a></li>
                                         <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
+                                        <li><a href="{{ url('/citas') }}">Citas</a></li>
 
                                     @elseif (Auth::user()->paciente)
                                         <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
+                                        <li><a href="{{ url('/citas') }}">Citas</a></li>
 
                                     @elseif (Auth::user()->sas)
-                                    <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
-                                    <li><a href="{{ url('/medicos') }}"> Medicos</a></li>
-                                    <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
-                                    <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
-                                    <li><a href="{{ url('tipoencuestas') }}">Tipo de Encuestas</a></li>
-                                    <li><a href="{{ url('/encuestas') }}">Encuestas</a></li> {{--tiene que estar?¿--}}
-                                    <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
-                                    <li><a href="{{ url ('/respuestas') }}"> Respuestas</a></li>
+                                         <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
+                                         <a href="{{ url('/medicos') }}"> Medicos</a></li>
+                                         <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
+                                         <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
+                                         <li><a href="{{ url('tipoencuestas') }}">Tipo de Encuestas</a></li>
+                                         <li><a href="{{ url('/encuestas') }}">Encuestas</a></li> {{--tiene que estar?¿--}}
+                                         <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
+                                         <li><a href="{{ url ('/respuestas') }}"> Respuestas</a></li>
+                                         <li><a href="{{ url('/citas') }}">Citas</a></li>
 
                                     @endif
                                     <li><a href="{{ route('logout') }}"
