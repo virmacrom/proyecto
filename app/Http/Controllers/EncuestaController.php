@@ -32,13 +32,13 @@ class EncuestaController extends Controller
      */
     public function create()
     {
-        $medicos = Medico::all()->pluck('code','id');
-        $pacientes = Paciente::all()->pluck('nuhsa','id');
+      //  $medicos = Medico::all()->pluck('code','id');
+       // $pacientes = Paciente::all()->pluck('nuhsa','id');
         $tipoencuesta = Tipoencuesta::all();
 
 
-        return view('encuestas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuesta]);
+        return view('encuestas/create',[
+            'tipoencuesta'=>$tipoencuesta]);//'medicos'=>$medicos, 'pacientes'=>$pacientes,
     }
 
     /**
@@ -52,8 +52,8 @@ class EncuestaController extends Controller
         $this->validate($request, [
            // 'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
-            'medico_id'=>'required|exists:medicos,id',
-            'paciente_id'=>'required|exists:pacientes,id',
+           // 'medico_id'=>'required|exists:medicos,id',
+            //'paciente_id'=>'required|exists:pacientes,id',
 
         ]);
 
@@ -87,16 +87,16 @@ class EncuestaController extends Controller
     {
         $encuesta = Encuesta::find($id);
 
-        $medicos = Medico::all()->pluck('code','id');
+     //   $medicos = Medico::all()->pluck('code','id');
 
-        $pacientes = Paciente::all()->pluck('nuhsa','id');
+       // $pacientes = Paciente::all()->pluck('nuhsa','id');
 
         $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
 
 
 
-        return view('encuestas/edit',['encuesta'=> $encuesta, 'medicos'=>$medicos, 'pacientes'=>$pacientes,
-            'tipoencuesta'=>$tipoencuesta]);
+        return view('encuestas/edit',['encuesta'=> $encuesta,
+            'tipoencuesta'=>$tipoencuesta]);//, 'medicos'=>$medicos, 'pacientes'=>$pacientes,
     }
 
     /**
@@ -111,8 +111,8 @@ class EncuestaController extends Controller
         $this->validate($request, [
            // 'name' => 'required|max:255',
             'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
-            'medico_id'=>'required|exists:medicos,id',
-            'paciente_id'=>'required|exists:pacientes,id',
+          //  'medico_id'=>'required|exists:medicos,id',
+         //   'paciente_id'=>'required|exists:pacientes,id',
 
 
 
@@ -152,7 +152,7 @@ class EncuestaController extends Controller
 
     public function createConTipoEncuesta($id){
         $tipoencuesta = Tipoencuesta::find($id);
-        dd($tipoencuesta);
+        //dd($tipoencuesta);
         return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
     }
 }

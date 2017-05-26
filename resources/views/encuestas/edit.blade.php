@@ -17,16 +17,16 @@
                             {!! Form::label('name', 'nombre de la encuesta') !!}
                             {!! Form::text('name',$encuesta->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>--}}
-                       <div class="form-group">
+                     {{--  <div class="form-group">
                             {!!Form::label('medico_id', 'Medico sobre el que se hace la encuesta') !!}
                             <br>
                             {!! Form::select('medico_id', $medicos, $encuesta->medico_id, ['class' => 'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">
+                        </div>--}}
+                     {{--   <div class="form-group">
                             {!!Form::label('paciente_id', 'Paciente que hace la encuesta') !!}
                             <br>
                             {!! Form::select('paciente_id', $pacientes, $encuesta->paciente_id, ['class' => 'form-control', 'required']) !!}
-                        </div>
+                        </div>--}}
                         <div class="form-group">
 
                             {!!Form::label('tipoencuesta_id', 'Tipo encuesta que se realiza') !!}

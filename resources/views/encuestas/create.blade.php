@@ -25,15 +25,15 @@
 
 
 
-                        <div class="form-group">
+                      {{--  <div class="form-group">
                            {!! Form::label('paciente_id', 'Nombre del paciente que realiza la encuesta') !!}
                              {!! Form::select('paciente_id', $pacientes, ['class' => 'form-control', 'required']) !!}
 
-                         </div>
-                        <div class="form-group">
+                         </div>--}}
+                       {{-- <div class="form-group">
                             {!! Form::label('medico_id', 'Nombre del medico sobre el que se realiza la encuesta') !!}
                             {!! Form::select('medico_id',$medicos,['class'=>'form-control', 'required']) !!}
-                        </div>
+                        </div>--}}
 
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
