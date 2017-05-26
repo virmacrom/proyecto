@@ -72,7 +72,7 @@
 
                                     @elseif (Auth::user()->sas)
                                          <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
-                                         <a href="{{ url('/medicos') }}"> Medicos</a></li>
+                                         <li><a href="{{ url('/medicos') }}"> Medicos</a></li>
                                          <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
                                          <li><a href="{{ url('/enfermedades') }}">Enfermedades</a></li>
                                          <li><a href="{{ url('tipoencuestas') }}">Tipo de Encuestas</a></li>

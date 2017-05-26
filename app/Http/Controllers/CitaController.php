@@ -137,4 +137,5 @@ class CitaController extends Controller
 
         return redirect()->route('citas.index');
     }
+
 }
