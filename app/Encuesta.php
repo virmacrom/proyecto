@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Encuesta extends Model
 {
-    protected $fillable = ['medico_id','paciente_id','tipoencuesta_id'];
+    protected $fillable = ['tipoencuesta_id','paciente_id'];  //'medico_id','paciente_id',
 
     public function tipoencuesta(){
         return $this->belongsTo('App\TipoEncuesta');
@@ -24,7 +24,7 @@ class Encuesta extends Model
     }
 
     public function getFullnameAttribute(){
-        return $this->tipoencuesta->fullname;
+        return $this->tipoencuesta->fullname . ' ' . $this->paciente->fullname;
     }
 
 }

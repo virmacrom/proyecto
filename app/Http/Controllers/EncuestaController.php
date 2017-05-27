@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Encuesta;
 use App\Tipoencuesta;
-
+use App\Pregunta;
 use App\Medico;
 use App\Paciente;
 use Illuminate\Http\Request;
@@ -153,7 +153,8 @@ class EncuestaController extends Controller
 
     public function createConTipoEncuesta($id){
         $tipoencuesta = Tipoencuesta::find($id);
+        $pregunta = Pregunta:: find($id);
         //dd($tipoencuesta);
-        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
+        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta, 'pregunta'=>$pregunta]);
     }
 }

@@ -10,13 +10,28 @@
                     <div class="panel-body">
                         @include('flash::message')
 
+                       {{-- <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                Seleccionar pregunta <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu">
+                                @foreach ($preguntas as $pregunta)
+                                    <li><a href="/encuestas/create/{{$pregunta->id}}"> {{$pregunta->text}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>--}}
+
                        {!! Form::open(['route' => 'encuestas.store']) !!}
 
-                   <div class="form-group" >
+                            <input type="hidden" name="tipoencuesta_id" value="<?=$tipoencuesta->id ?>">  {{--añadido --}}
+
+
+                  {{-- <div class="form-group" >
                             {!!Form::label('tipoencuesta_id', 'tipo encuesta') !!}
                             <br>
                             {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control']) !!}
-                        </div>
+                        </div>--}}
 
 
                       {{--  <div class="form-group">

@@ -28,10 +28,10 @@
                         {!! Form::close() !!}
 
                         <br><br>
-                        <table class="table table-striped table-bordered">
+                      {{--  <table class="table table-striped table-bordered">
                                 <th>TipoEncuesta</th>
                                 <th colspan="2">Acciones</th>
-                            </tr>
+                            </tr>--}}
 
                             @foreach ($encuestas as $encuesta)
                                 <tr>
