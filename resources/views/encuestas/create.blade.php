@@ -35,10 +35,13 @@
                         </select>
                         </p>
 
-                        <p>Tipo de encuesta: <input type="hidden" name="tipoencuesta_id" value="id"/></p>
+                        <p>Tipo de encuesta: <input type="hidden" name="tipoencuesta_id" value="tipoencuesta_id"/></p>
                         <p>Pregunta:
+                        <td>{{ $tipoencuesta->preguntas}}</td>
+                        </p>
 
-                            </p>
+
+
 
                             <p>Su opinión: <br/>
                                 <textarea name="comentario" rows="5" cols="50">Comentario: </textarea>

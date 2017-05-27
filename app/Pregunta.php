@@ -17,4 +17,9 @@ class Pregunta extends Model
             return $this->belongsTo('App\TipoEncuesta');
     }
 
+    public function getFullnameAttribute(){
+        return $this->respuesta->text;
+    }
+
+
 }

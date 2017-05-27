@@ -23,9 +23,6 @@
                             </ul>
                         </div>
 
-                        {!! Form::open(['route' => 'encuestas.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
-                        {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                        {!! Form::close() !!}
 
                         <br><br>
                       {{--  <table class="table table-striped table-bordered">
