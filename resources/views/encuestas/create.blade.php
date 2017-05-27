@@ -24,7 +24,8 @@
 
                        {!! Form::open(['route' => 'encuestas.store']) !!}
 
-                            <input type="hidden" name="tipoencuesta_id" value="<?=$tipoencuesta->id ?>">  {{--añadido --}}
+                            <input type="hidden" name="tipoencuesta_id" value="<?=$tipoencuesta->id ?>">{{--añadido --}}
+                           {{-- <input type="hidden" name="pregunta_id" value="<?=$pregunta->id ?>">--}}
 
 
                   {{-- <div class="form-group" >
