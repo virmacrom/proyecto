@@ -12,9 +12,10 @@
                     <div class="panel-body">
                         @include('flash::message')
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 Crear encuesta <span class="caret"></span>
                             </button>
+
                             <ul class="dropdown-menu">
                                 @foreach ($tipoencuestas as $tipoencuesta)
                                     <li><a href="/encuestas/create/{{$tipoencuesta->id}}"> {{$tipoencuesta->name}}</a></li>
@@ -28,9 +29,8 @@
 
                         <br><br>
                         <table class="table table-striped table-bordered">
-                            <tr>
-                                {{--<th>TipoEncuesta</th>
-                                <th colspan="2">Acciones</th>  --}}
+                                <th>TipoEncuesta</th>
+                                <th colspan="2">Acciones</th>
                             </tr>
 
                             @foreach ($encuestas as $encuesta)

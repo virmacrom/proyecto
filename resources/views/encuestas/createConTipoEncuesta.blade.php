@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Rellenar encuesta</div>
+                    <div class="panel-heading">Rellenar encuesta1</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
                        {!! Form::open(['route' => 'encuestas.store']) !!}
 
-                   <div class="form-group" >
+                   <div class="form-group">
                             {!!Form::label('tipoencuesta_id', 'tipo encuesta') !!}
                             <br>
                             {!! Form::select('tipoencuesta_id', $tipoencuesta, ['class' => 'form-control']) !!}

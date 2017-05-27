@@ -34,7 +34,7 @@ class EncuestaController extends Controller
     {
       //  $medicos = Medico::all()->pluck('code','id');
        // $pacientes = Paciente::all()->pluck('nuhsa','id');
-       $tipoencuesta = Tipoencuesta::all();
+       $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
 
 
         return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);//'medicos'=>$medicos, 'pacientes'=>$pacientes,[
@@ -51,13 +51,16 @@ class EncuestaController extends Controller
     {
         $this->validate($request, [
            // 'name' => 'required|max:255',
-            'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
+           'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
            // 'medico_id'=>'required|exists:medicos,id',
             //'paciente_id'=>'required|exists:pacientes,id',
 
-        ]);
+       ]);
 
         $encuesta = new Encuesta($request->all());
+
+       // $encuesta->tipoencuesta_id = TipoEncuesta::tipoencuesta()->tipoencuesta->id;
+
         $encuesta->save();
 
 
@@ -91,12 +94,11 @@ class EncuestaController extends Controller
 
        // $pacientes = Paciente::all()->pluck('nuhsa','id');
 
-     //   $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
+     $tipoencuesta = Tipoencuesta::all()->pluck('name','id');
 
 
 
-        return view('encuestas/edit',['encuesta'=> $encuesta
-       ]      );//, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'tipoencuesta'=>$tipoencuesta]
+        return view('encuestas/edit',['encuesta'=> $encuesta, 'tipoencuesta'=>$tipoencuesta]);//, 'medicos'=>$medicos, 'pacientes'=>$pacientes
     }
 
     /**
@@ -119,8 +121,7 @@ class EncuestaController extends Controller
         ]);
         $encuesta = Encuesta::find($id);
         $encuesta->fill($request->all());
-
-        $encuesta->save();
+      //  $encuesta->tipoencuesta_id = TipoEncuesta::tipoencuesta()->tipoencuesta->id;
 
         flash('Encuesta modificada correctamente');
 

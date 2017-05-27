@@ -24,7 +24,7 @@ class Encuesta extends Model
     }
 
     public function getFullnameAttribute(){
-        return $this->tipoencuesta->name;
+        return $this->tipoencuesta->fullname;
     }
 
 }
