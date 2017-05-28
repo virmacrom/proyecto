@@ -74,7 +74,9 @@ class CitaController extends Controller
      */
     public function show($id)
     {
-        //
+        $citas = Cita::find($id);
+
+        return view('citas/show',['citas'=>$citas]);
     }
 
     /**

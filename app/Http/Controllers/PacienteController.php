@@ -73,9 +73,10 @@ class PacienteController extends Controller
      */
    public function show($paciente_id)
     {
-        $citas = Paciente::find(paciente_id);
+        $pacientes = Paciente::find($paciente_id);
 
-        return view('pacientes/show')->with('citas',$citas);
+
+        return view('pacientes/show',['pacientes'=>$pacientes]);
     }
 
     /**
