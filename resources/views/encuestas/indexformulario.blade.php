@@ -9,7 +9,8 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::model(['route' => 'encuestas.create', 'method' => 'get']) !!}
+                        {!! Form::model(['route' => '/encuestas.create', 'method' => 'get']) !!}
+
                         {!! Form::close() !!}
 
                         <br><br>
@@ -17,7 +18,7 @@
 
 
                             <tr>
-                            @forach ($tipoencuesta as $tipoencuesta)
+                           @foreach ($tipoencuestas as $tipoencuesta)
                                     <th>Tipo encuesta</th>
                                 <td><{{$tipoencuesta->name}}></td>
                             </tr>
@@ -64,4 +65,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

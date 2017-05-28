@@ -21,7 +21,7 @@ class EncuestaController extends Controller
     public function index()
     {
         $encuestas = Encuesta::all();
-      $tipoencuestas = Tipoencuesta::all();
+      $tipoencuestas = Tipoencuesta::all();//->pluck('name','id');
         return view('encuestas/index',['encuestas'=>$encuestas,'tipoencuestas'=>$tipoencuestas]);
 
     }
@@ -77,7 +77,10 @@ class EncuestaController extends Controller
      */
     public function show($id)
     {
-        //
+        $encuestas = Encuesta::all();
+        $tipoencuestas = Tipoencuesta::find($id);
+        return view('encuestas/indexformulario',['encuestas'=>$encuestas,'tipoencuestas'=>$tipoencuestas]);
+
     }
 
     /**
@@ -158,9 +161,10 @@ class EncuestaController extends Controller
     }
 
    public function indexformulario(){
-        $tipoencuesta = Tipoencuesta::all();//->pluck('name', 'id');
+       // $encuestas=Encuesta::all();
+        $tipoencuestas = Tipoencuesta::all();//pluck('name', 'id');
       // dd($tipoencuesta);
-        return view('encuestas/indexformulario',['tipoencuesta'=>$tipoencuesta]);
+        return view('encuestas/indexformulario',['tipoencuestas'=>$tipoencuestas]);
 
     }
 }

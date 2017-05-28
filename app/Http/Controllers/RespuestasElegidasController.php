@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Encuesta;
 use App\Respuestas;
-use App\respuestas_elegidas;
-use App\RespuestasElegidas;
+
+use App\Respuestaselegidas;
 use Illuminate\Http\Request;
 
 class RespuestasElegidasController extends Controller
@@ -22,7 +22,7 @@ class RespuestasElegidasController extends Controller
      */
     public function index()
     {
-        $respuestaselegidas= RespuestasElegidas::all();
+        $respuestaselegidas= Respuestaselegidas::all();
         return view('respuestaselegidas/index',['respuestaselegidas'=>$respuestaselegidas]);
     }
 
@@ -55,8 +55,8 @@ class RespuestasElegidasController extends Controller
 
         ]);
 
-        $respuesta_elegida = new RespuestasElegidas($request->all());
-        $respuesta_elegida->save();
+        $respuestaselegida = new Respuestaselegidas($request->all());
+        $respuestaselegida->save();
 
 
         flash('Respuesta Elegida creada correctamente');
@@ -81,16 +81,16 @@ class RespuestasElegidasController extends Controller
      * @param  \App\respuestas_elegidas  $respuestas_elegidas
      * @return \Illuminate\Http\Response
      */
-    public function edit(respuestas_elegidas $respuestas_elegidas)
+    public function edit(respuestaselegidas $respuestaselegidas)
     {
-        $respuestas_elegidas = RespuestasElegidas::find($respuestas_elegidas);
+        $respuestaselegidas = Respuestaselegidas::find($respuestaselegidas);
 
         $encuestas = Encuesta::all()->pluck('full_name','id');
 
         $respuestas = Respuestas::all()->pluck('full_name','id');
 
 
-        return view('respuestas_elegidas/edit',['respuesta_elegida'=> $respuestas_elegidas, 'encuestas'=>$encuestas, 'respuestas'=>$respuestas]);
+        return view('respuestaselegidas/edit',['respuesta_elegida'=> $respuestaselegidas, 'encuestas'=>$encuestas, 'respuestas'=>$respuestas]);
 
     }
 
@@ -101,7 +101,7 @@ class RespuestasElegidasController extends Controller
      * @param  \App\respuestas_elegidas  $respuestas_elegidas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, respuestas_elegidas $respuestas_elegidas)
+    public function update(Request $request, respuestaselegidas $respuestaselegidas)
     {
         $this->validate($request, [
 
@@ -111,10 +111,10 @@ class RespuestasElegidasController extends Controller
 
 
         ]);
-        $respuestas_elegidas = RespuestasElegidas::find($respuestas_elegidas);
-        $respuestas_elegidas->fill($request->all());
+        $respuestaselegidas = RespuestasElegidas::find($respuestaselegidas);
+        $respuestaselegidas->fill($request->all());
 
-        $respuestas_elegidas->save();
+        $respuestaselegidas->save();
 
         flash('Respuestas Elegidas modificada correctamente');
 
@@ -127,12 +127,12 @@ class RespuestasElegidasController extends Controller
      * @param  \App\respuestas_elegidas  $respuestas_elegidas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(respuestas_elegidas $respuestas_elegidas)
+    public function destroy(respuestaselegidas $respuestaselegidas)
     {
-        $respuestas_elegidas = RespuestasElegidas::find($respuestas_elegidas);
-        $respuestas_elegidas->delete();
+        $respuestaselegidas = Respuestaselegidas::find($respuestaselegidas);
+        $respuestaselegidas->delete();
         flash('Respuestas elegidas borrada correctamente');
 
-        return redirect()->route('respuestas_elegidas.index');
+        return redirect()->route('respuestaselegidas.index');
     }
 }

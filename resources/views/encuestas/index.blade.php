@@ -35,7 +35,7 @@
                                   <td>{{ $encuesta->tipoencuesta->name}}</td>
                                     <td>
                                         {!! Form::open(['route' => ['encuestas.edit',$encuesta->id], 'method' => 'get']) !!}
-                                        {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+
                                         {!! Form::close() !!}
                                     </td>
                                     <td>
