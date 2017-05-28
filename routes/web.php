@@ -34,6 +34,9 @@ Route::resource('especialidades', 'EspecialidadController');
 Route::delete('enfermedades/destroyAll', 'EnfermedadController@destroyAll')->name('enfermedades.destroyAll');
 Route::resource('enfermedades', 'EnfermedadController');
 
+Route::get('citas/create',['middleware'=>'auth->user()->paciente', function(){
+    return "puedes crear una cita";
+}]);
 Route::resource('citas', 'CitaController');
 
 Route::delete('tipoencuestas/destroyAll', 'TipoEncuestaController@destroyAll')->name('tipoencuestas.destroyAll');

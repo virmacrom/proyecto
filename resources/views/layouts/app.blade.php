@@ -62,8 +62,6 @@
                                     {{--{{dd(Auth::user())}}--}}
                                     @if (Auth::user()->medico)   {{--hacer que solo vea sus cosas--}}
                                         <li><a href="{{ url('/pacientes') }}"> Pacientes</a></li>
-                                        <li><a href="{{ url ('/enfermedades') }}"> Enfermedades</a></li>
-                                        <li><a href="{{ url('/especialidades') }}">Especialidades</a></li>
                                         <li><a href="{{ url('/citas') }}">Citas</a></li>
 
                                     @elseif (Auth::user()->paciente)

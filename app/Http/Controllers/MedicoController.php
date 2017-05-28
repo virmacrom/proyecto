@@ -133,4 +133,25 @@ class MedicoController extends Controller
 
         return redirect()->route('medicos.index');
     }
+
+    public function pacientesdeunmedico($id){
+        $pacientes=Medico::find($id)->pacientes;
+
+
+        foreach($pacientes as $paciente){
+            $paciente->valido=true;
+            $pacientes->save();
+        }
+
+
+    }
+
+    public function citasdeunmedico($id){
+
+        $citas=Medico::find($id)->citas;
+            $citas->save();
+
+
+
+    }
 }
