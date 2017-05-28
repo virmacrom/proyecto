@@ -23,9 +23,9 @@
                                 <td>
                                     sexo<br/>
                                     <input type="radio" name="sexo" value="V"/> Varón<br/>
-                                    <input type="radio" name="sexo" value="M"/> Mujer</p>
-                        </td>
-                        </tr>
+                                    <br><input type="radio" name="sexo" value="M"/> Mujer<br/>
+                                </td>
+                            </tr>
                         </table>
                         <p>¿Está operado?:</p>
                         <select name="operado">
@@ -35,22 +35,44 @@
                         </select>
                         </p>
 
-                        <p>Tipo de encuesta: <input type="hidden" name="tipoencuesta_id" value="tipoencuesta_id"/></p>
-                        <p>Pregunta:
-                        <td>{{ $tipoencuesta->preguntas}}</td>
-                        </p>
+                        <p>Tipo de encuesta: {{--<input type="hidden" name="tipoencuesta_id" value="tipoencuesta_id"/>--}}
+                                 <td>{{ $tipoencuesta->name}}</td>
+                         </p>
+
+
+                        Formulario:
+
+                            <br> <br/>
+
+                        @foreach ($tipoencuesta->preguntas as $pregunta)
+
+                                <td>{{ $pregunta->text}}</td>
+                                <div class="form-group">
+
+                                    @foreach ($pregunta->respuestas as $respuesta)
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="{{$respuesta->text}}">
+                                                <td>{{ $respuesta->text}}</td>
+                                            </label>
+                                        </div>
+                                    @endforeach
+
+                                </div>
+
+                            @endforeach
 
 
 
-
-                            <p>Su opinión: <br/>
+                            <p>Su opinión: <p/>
                                 <textarea name="comentario" rows="5" cols="50">Comentario: </textarea>
                             <p><input type="submit" value="Guardar">
                                 <input type="reset" value="borrar todo"></p>
+
                             </form>
 
 
-          {{--              {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}--}}
+                     {{--{!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}--}}
 
                         {!! Form::close() !!}
                     </div>
