@@ -23,7 +23,7 @@ class RespuestasElegidasController extends Controller
     public function index()
     {
         $respuestaselegidas= RespuestasElegidas::all();
-        return view('respuestaselegidas/index',['respuestas'=>$respuestaselegidas]);
+        return view('respuestaselegidas/index',['respuestaselegidas'=>$respuestaselegidas]);
     }
 
     /**
@@ -70,7 +70,7 @@ class RespuestasElegidasController extends Controller
      * @param  \App\respuestas_elegidas  $respuestas_elegidas
      * @return \Illuminate\Http\Response
      */
-    public function show(respuestas_elegidas $respuestas_elegidas)
+    public function show()
     {
         //
     }

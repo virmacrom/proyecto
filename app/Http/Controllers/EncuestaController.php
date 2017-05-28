@@ -40,7 +40,7 @@ class EncuestaController extends Controller
 
 
         return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);//'medicos'=>$medicos, 'pacientes'=>$pacientes,[
-       // 'tipoencuesta'=>$tipoencuesta] ,'preguntas'=>$preguntas
+       //'preguntas'=>$preguntas
     }
 
     /**
@@ -66,7 +66,7 @@ class EncuestaController extends Controller
 
         flash('Encuesta creada correctamente');
 
-        return redirect()->route('encuestas.indexformulario');
+        return redirect()->route('encuestas.indexformulario');  //formulario
     }
 
     /**
@@ -125,7 +125,7 @@ class EncuestaController extends Controller
 
         flash('Encuesta modificada correctamente');
 
-        return redirect()->route('encuestas.indexformulario');
+        return redirect()->route('encuestas.indexformulario');  //formulario
     }
 
     /**
@@ -153,14 +153,14 @@ class EncuestaController extends Controller
 
     public function createConTipoEncuesta($id){
         $tipoencuesta = Tipoencuesta::find($id);
-      //  $pregunta = Pregunta:: find($id);
         //dd($tipoencuesta);
-        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);  //, 'pregunta'=>$pregunta
+        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);
     }
 
-    public function indexformulario(){
-        $encuestas = Encuesta::all();
-        $tipoencuestas = Tipoencuesta::all()->pluck('name', 'id');
-        return view('encuestas/indexformulario',['encuestas'=>$encuestas,'tipoencuestas'=>$tipoencuestas]);
+   public function indexformulario(){
+        $tipoencuesta = Tipoencuesta::all();//->pluck('name', 'id');
+      // dd($tipoencuesta);
+        return view('encuestas/indexformulario',['tipoencuesta'=>$tipoencuesta]);
+
     }
 }

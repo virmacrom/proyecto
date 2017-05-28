@@ -17,6 +17,8 @@ class CreateRespuestaselegidasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('encuesta_id');
             $table->foreign('encuesta_id')->references('id')->on('encuestas')->onDelete('cascade');
+            $table->unsignedInteger('pregunta_id');
+            $table->foreign('respuesta_id')->references('id')->on('respuestas')->onDelete('cascade');
             $table->timestamps();
         });
     }

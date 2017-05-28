@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Paciente;
+use App\Citas;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -52,11 +53,9 @@ class PacienteController extends Controller
 
         ]);
 
-        //TODO: crear validación propia para nuhsa
         $paciente = new Paciente($request->all());
         $paciente->save();
 
-        // return redirect('especialidades');
 
         flash('Paciente creado correctamente');
 
@@ -66,16 +65,17 @@ class PacienteController extends Controller
     }
 
 
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+   public function show($paciente_id)
     {
-        //
+        $citas = Paciente::find(paciente_id);
+
+        return view('pacientes/show')->with('citas',$citas);
     }
 
     /**

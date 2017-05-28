@@ -13,7 +13,7 @@
                         <p>Nota: Este es un formulario de ejemplo en el que los datos aquí escritos se
                             trasladan a otra página.</p>
                        {{-- <form action="formulario.php" method="post"/>--}}
-                        {!! Form::open(['route' => 'encuestas.store', 'class'=>'form-inline']) !!}
+                        {!! Form::open(['route' => 'encuestas.store', 'method' => 'post','class'=>'form-inline']) !!}
 
 
                         <p>Nombre: <input type="text" name="name"/>
@@ -49,7 +49,7 @@
                         @foreach ($tipoencuesta->preguntas as $pregunta)
                             <table>
                                 <br><br/>
-                                <td>{{ $pregunta->text}}</td>
+                                <b>{{ $pregunta->text}}</b>
                             </table>
                             </tr>
 

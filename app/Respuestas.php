@@ -11,5 +11,9 @@ class Respuestas extends Model
     public function pregunta(){
         return $this->belongsTo('App\Pregunta');
     }
+  //anadido esto
+    public function encuesta(){
+        return $this->belongsTo('App\Encuesta');
+    }
 
 }

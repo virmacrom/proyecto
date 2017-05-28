@@ -33,7 +33,6 @@
                             @foreach ($encuestas as $encuesta)
                                 <tr>
                                   <td>{{ $encuesta->tipoencuesta->name}}</td>
-
                                     <td>
                                         {!! Form::open(['route' => ['encuestas.edit',$encuesta->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
@@ -48,11 +47,6 @@
                                 </tr>
 
                             @endforeach
-
-
-
-
-
                     </div>
                 </div>
             </div>
