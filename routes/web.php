@@ -40,6 +40,7 @@ Route::delete('tipoencuestas/destroyAll', 'TipoEncuestaController@destroyAll')->
 Route::resource('tipoencuestas', 'TipoEncuestaController');
 
 Route::get('encuestas/create/{id}','EncuestaController@createConTipoEncuesta')->name('encuestas.createConTipoEncuesta');
+Route::get('encuestas/indexformulario','EncuestaController@indexformulario')->name('encuestas.indexformulario');
 Route::delete('encuestas/destroyAll', 'EncuestaController@destroyAll')->name('encuestas.destroyAll');
 Route::resource('encuestas', 'EncuestaController');
 

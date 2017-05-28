@@ -12,7 +12,9 @@
                         <h1>Rellenar encuesta.</h1>
                         <p>Nota: Este es un formulario de ejemplo en el que los datos aquí escritos se
                             trasladan a otra página.</p>
-                        <form action="formulario.php" method="post"/>
+                       {{-- <form action="formulario.php" method="post"/>--}}
+                        {!! Form::open(['route' => 'encuestas.store', 'class'=>'form-inline']) !!}
+
 
                         <p>Nombre: <input type="text" name="name"/>
                             Apellidos: <input type="text" surname="surname" size="40"/>
@@ -23,7 +25,8 @@
                                 <td>
                                     sexo<br/>
                                     <input type="radio" name="sexo" value="V"/> Varón<br/>
-                                    <br><input type="radio" name="sexo" value="M"/> Mujer<br/>
+                                    <input type="radio" name="sexo" value="M"/> Mujer<br/>
+                                    <br>
                                 </td>
                             </tr>
                         </table>
@@ -35,44 +38,49 @@
                         </select>
                         </p>
 
-                        <p>Tipo de encuesta: {{--<input type="hidden" name="tipoencuesta_id" value="tipoencuesta_id"/>--}}
-                                 <td>{{ $tipoencuesta->name}}</td>
-                         </p>
+                        <p>Tipo de encuesta:
+                        <td>{{ $tipoencuesta->name}}</td>
+                        </p>
 
+                        <br><br/>
+                        <b>FORMULARIO:</b>
 
-                        Formulario:
-
-                            <br> <br/>
-
+                            <tr>
                         @foreach ($tipoencuesta->preguntas as $pregunta)
-
+                            <table>
+                                <br><br/>
                                 <td>{{ $pregunta->text}}</td>
-                                <div class="form-group">
+                            </table>
+                            </tr>
 
+
+                            <tr>
+                                <div class="form-group">
                                     @foreach ($pregunta->respuestas as $respuesta)
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="{{$respuesta->text}}">
+                                                <input type="checkbox" id="respuestas" name="respuestas_id" value="{{$respuesta->text}}">
                                                 <td>{{ $respuesta->text}}</td>
                                             </label>
                                         </div>
                                     @endforeach
-
                                 </div>
-
+                            </tr>
                             @endforeach
 
 
-
+                            <br><br/>
                             <p>Su opinión: <p/>
                                 <textarea name="comentario" rows="5" cols="50">Comentario: </textarea>
-                            <p><input type="submit" value="Guardar">
+                            <p> {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
+
+                        {{--<input type="submit" value="Guardar">
                                 <input type="reset" value="borrar todo"></p>
 
-                            </form>
+                            </form>--}}
 
 
-                     {{--{!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}--}}
+                 {{--    {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}--}}
 
                         {!! Form::close() !!}
                     </div>

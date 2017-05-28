@@ -7,6 +7,7 @@ use App\Tipoencuesta;
 use App\Pregunta;
 use App\Medico;
 use App\Paciente;
+use App\Respuesta;
 use Illuminate\Http\Request;
 
 class EncuestaController extends Controller
@@ -52,22 +53,20 @@ class EncuestaController extends Controller
     {
         $this->validate($request, [
            // 'name' => 'required|max:255',
-           'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
+           'tipoencuesta_id' => 'exists:tipoencuestas,id',
            // 'medico_id'=>'required|exists:medicos,id',
             //'paciente_id'=>'required|exists:pacientes,id',
+            'respuesta_id'=>'exists:respuestas,id',
 
        ]);
 
         $encuesta = new Encuesta($request->all());
-
-       // $encuesta->tipoencuesta_id = TipoEncuesta::tipoencuesta()->tipoencuesta->id;
-
-        $encuesta->save();
+       // $encuesta->save();
 
 
         flash('Encuesta creada correctamente');
 
-        return redirect()->route('encuestas.index');
+        return redirect()->route('encuestas.indexformulario');
     }
 
     /**
@@ -113,10 +112,10 @@ class EncuestaController extends Controller
     {
         $this->validate($request, [
            // 'name' => 'required|max:255',
-            'tipoencuesta_id' => 'required|exists:tipoencuestas,id',
+            'tipoencuesta_id' => 'exists:tipoencuestas,id',
           //  'medico_id'=>'required|exists:medicos,id',
          //   'paciente_id'=>'required|exists:pacientes,id',
-
+            'respuesta_id'=>'exists:respuestas,id',
 
 
         ]);
@@ -126,7 +125,7 @@ class EncuestaController extends Controller
 
         flash('Encuesta modificada correctamente');
 
-        return redirect()->route('encuestas.index');
+        return redirect()->route('encuestas.indexformulario');
     }
 
     /**
@@ -154,8 +153,14 @@ class EncuestaController extends Controller
 
     public function createConTipoEncuesta($id){
         $tipoencuesta = Tipoencuesta::find($id);
-        $pregunta = Pregunta:: find($id);
+      //  $pregunta = Pregunta:: find($id);
         //dd($tipoencuesta);
-        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta, 'pregunta'=>$pregunta]);
+        return view('encuestas/create',['tipoencuesta'=>$tipoencuesta]);  //, 'pregunta'=>$pregunta
+    }
+
+    public function indexformulario(){
+        $encuestas = Encuesta::all();
+        $tipoencuestas = Tipoencuesta::all()->pluck('name', 'id');
+        return view('encuestas/indexformulario',['encuestas'=>$encuestas,'tipoencuestas'=>$tipoencuestas]);
     }
 }
