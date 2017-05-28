@@ -14,6 +14,7 @@
                         <table class="table table-striped table-bordered">
                             <tr>
 
+                                <th>Nombre</th>
                                 <th>Nuhsa</th>
                                 <th>Dni</th>
                                 <th>Operado</th>
@@ -26,6 +27,7 @@
 
                                 <tr>
 
+                                    <td>{{ $paciente->fullname }}</td>
                                     <td>{{ $paciente->nuhsa }}</td>
                                     <td>{{ $paciente->dni }}</td>
                                     <td>{{ $paciente->operado }}</td>

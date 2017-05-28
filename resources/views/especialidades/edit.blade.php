@@ -16,12 +16,7 @@
                         {!! Form::label('name', 'Nombre de la especialidad') !!}
                         {!! Form::text('name',$especialidad->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
-                        {{--<div class="form-group">
 
-                            {!!Form::label('sas_id', 'Sas que edita la especialidad') !!}
-                            <br>
-                            {!! Form::select('sas_id', $sas, $especialidad->sas_id, ['class' => 'form-control', 'required']) !!}
-                        </div>--}}
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
                     </div>

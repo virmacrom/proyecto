@@ -69,13 +69,12 @@ class MedicoController extends Controller
      * @param  \App\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function show( $id)
+    public function show($id)
     {
-        $medicos = Medico::find($id);
-        dd($medicos);
-        die();
+        /*$medicos = Medico::find($id);
+          comentado por que no esta bien
+        return redirect()->route('medicos.index');*/
 
-        return view('medicos.index',['medicos'=>$medicos->citas]);
     }
 
     /**

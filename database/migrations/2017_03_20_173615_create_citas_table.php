@@ -15,7 +15,7 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fechacita');
+            $table->dateTime('fechacita');
             $table->unsignedInteger('medico_id');
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->unsignedInteger('paciente_id');

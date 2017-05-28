@@ -14,9 +14,9 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
+                                <th>Nombre y especialidad</th>
                                 <th>Codigo</th>
                                 <th>Consulta</th>
-                                <th>Especialidad</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
 
@@ -24,9 +24,9 @@
 
 
                                 <tr>
+                                    <td>{{ $medico->fullname }}</td>
                                     <td>{{ $medico->code }}</td>
                                     <td>{{ $medico->consulta }}</td>
-                                    <td>{{ $medico->especialidad->name }}</td>
 
                                     <td>
                                         {!! Form::open(['route' => ['medicos.edit',$medico->id], 'method' => 'get']) !!}

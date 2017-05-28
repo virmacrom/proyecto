@@ -9,6 +9,11 @@
 
                     <div class="panel-body">
                         @include('flash::message')
+
+                        @foreach($medico->citas as $cita)
+                            <b>{{$cita->fechacita}}</b>
+                            @endforeach
+                        dd($cita)
                         <td>
                             {!! Form::open(['route' => ['medicos.show',$medico->citas], 'method' => 'get']) !!}
                             {!!   Form::submit('show', ['class'=> 'btn btn-warning'])!!}

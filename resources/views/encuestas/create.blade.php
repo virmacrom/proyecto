@@ -10,9 +10,9 @@
                         @include('flash::message')
 
                         <h1>Rellenar encuesta.</h1>
-                        <p>Nota: Este es un formulario de ejemplo en el que los datos aquí escritos se
+                        {{-- <p>Nota: Este es un formulario de ejemplo en el que los datos aquí escritos se
                             trasladan a otra página.</p>
-                       {{-- <form action="formulario.php" method="post"/>--}}
+                       <form action="formulario.php" method="post"/>--}}
                         {!! Form::open(['route' => 'encuestas.store', 'method' => 'post','class'=>'form-inline']) !!}
 
 

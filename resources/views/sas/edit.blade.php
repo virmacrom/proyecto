@@ -15,7 +15,7 @@
 
                         <div class="form-group">
 
-                            {!! Form::label('codesas', 'codigo del medico') !!}
+                            {!! Form::label('codesas', 'codigo del sas') !!}
                             {!! Form::text('codesas',$sas->codesas,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
