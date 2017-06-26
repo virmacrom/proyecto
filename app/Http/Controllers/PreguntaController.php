@@ -115,12 +115,19 @@ class PreguntaController extends Controller
      * @param  \App\Pregunta  $pregunta
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
         $pregunta = Pregunta::find($id);
         $pregunta->delete();
-        flash('Pregunta borrada correctamente');
 
+        $message='Pregunta borrada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('preguntas.index');
     }
 }

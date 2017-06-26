@@ -146,13 +146,18 @@ class EncuestaController extends Controller
         return redirect()->route('encuestas.index');
     }
 
-    public function destroyAll()
+    public function destroyAll(Request $request)
     {
         Encuesta::truncate();
-        flash('Todas las encuestas borradas correctamente');
+        $message='Encuestas borradas correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
 
-        return redirect()->route('encuestas.index');
-    }
+        Session::flash('message',$message);
+        return redirect()->route('encuestas.index'); }
 
     public function createConTipoEncuesta($id){
         $tipoencuesta = Tipoencuesta::find($id);

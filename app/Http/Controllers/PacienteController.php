@@ -133,12 +133,19 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         $paciente = Paciente::find($id);
         $paciente->delete();
-        flash('Paciente borrado correctamente');
 
+        $message='Paciente borrado correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('pacientes.index');
     }
 }

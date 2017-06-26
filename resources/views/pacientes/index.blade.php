@@ -23,9 +23,7 @@
                             </tr>
 
                             @foreach ($pacientes as $paciente)
-
-
-                                <tr>
+                                <tr data-id="{{$paciente->id}}">
 
                                     <td>{{ $paciente->fullname }}</td>
                                     <td>{{ $paciente->nuhsa }}</td>
@@ -37,9 +35,7 @@
                                         {!! Form::close() !!}
                                     </td>
                                     <td>
-                                        {!! Form::open(['route' => ['pacientes.destroy',$paciente->id], 'method' => 'delete']) !!}
-                                        {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                                        {!! Form::close() !!}
+                                        <a href=""class="btn-delete">Eliminar</a>
 
                                     </td>
                                 </tr>
@@ -49,4 +45,39 @@
                 </div>
             </div>
         </div>
+    </div>
+        {!! Form::open(['route' => ['pacientes.destroy',':PACIENTE_ID'], 'method' => 'delete','id'=>'form-delete']) !!}
+        {!! Form::close() !!}
+
+@endsection
+
+
+@section('scripts')
+            <script>
+                $(document).ready(function () {
+                    $('.btn-delete').click(function (e) {
+
+                        //evitar que el navegador envíe la accion del enlace
+                        e.preventDefault();
+                        //obtener la fila y guardarla en una variable
+                        var row=$(this).parents('tr');
+                        //Obtener el id de la fila
+                        var id=row.data('id');
+                        var form=$('#form-delete');
+                        var url=form.attr('action').replace(':PACIENTE_ID',id);
+                        var data =form.serialize();
+//Para que se borre la fila sin tener que darle a cargar otra vez
+                        row.fadeOut();
+                        //ajax
+                        $.post(url,data,function(result){
+                            alert(result.message);
+                        }).fail(function () {
+                            alert('El paciente no fue eliminado');
+                            row.show();
+                        });
+                    });
+
+                });
+            </script>
+
 @endsection

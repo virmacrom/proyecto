@@ -25,7 +25,7 @@
                                 <th colspan="2">Acciones</th>
                             </tr>
                             @foreach ($respuestas as $respuesta)
-                            <tr>
+                            <tr data-id="{{$respuesta->id}}">
                                 <td>{{ $respuesta->text }}</td>
                                 <td>{{ $respuesta->pregunta->text }}</td>
                                 <td>
@@ -35,9 +35,7 @@
 
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['respuestas.destroy',$respuesta->id], 'method' => 'delete']) !!}
-                                    {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro de borrar la respuesta?"))event.preventDefault();'])!!}
-                                    {!! Form::close() !!}
+                                    <a href=""class="btn-delete">Eliminar</a>
 
                                 </td>
                             </tr>
@@ -48,4 +46,37 @@
         </div>
     </div>
     </div>
+    {!! Form::open(['route' => ['respuestas.destroy',':RESPUESTA_ID'], 'method' => 'delete','id'=>'form-delete']) !!}
+    {!! Form::close() !!}
+
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $('.btn-delete').click(function (e) {
+
+                //evitar que el navegador envíe la accion del enlace
+                e.preventDefault();
+                //obtener la fila y guardarla en una variable
+                var row=$(this).parents('tr');
+                //Obtener el id de la fila
+                var id=row.data('id');
+                var form=$('#form-delete');
+                var url=form.attr('action').replace(':RESPUESTA_ID',id);
+                var data =form.serialize();
+//Para que se borre la fila sin tener que darle a cargar otra vez
+                row.fadeOut();
+                //ajax
+                $.post(url,data,function(result){
+                    alert(result.message);
+                }).fail(function () {
+                    alert('La respuesta no fue eliminada');
+                    row.show();
+                });
+            });
+
+        });
+    </script>
+
 @endsection

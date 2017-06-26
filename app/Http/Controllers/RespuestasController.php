@@ -114,12 +114,19 @@ class RespuestasController extends Controller
      * @param  \App\respuestas  $respuestas
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy( $id,Request $request)
     {
         $respuesta = Respuestas::find($id);
         $respuesta->delete();
-        flash('respuesta borrada correctamente');
 
+        $message='Respuesta borrada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('respuestas.index');
     }
 }

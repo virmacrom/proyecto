@@ -122,20 +122,34 @@ class EnfermedadController extends Controller
      * @param  \App\enfermedad  $enfermedad
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
         $enfermedad = Enfermedad::find($id);
         $enfermedad->delete();
-        flash('Enfermedad borrada correctamente');
 
+        $message='Enfermedad borrada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('enfermedades.index');
     }
 
-    public function destroyAll()
+    public function destroyAll(Request $request)
     {
         Enfermedad::truncate();
-        flash('Todas las enfermedades borradas correctamente');
+        $message='Enfermedades borradas correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
 
+        Session::flash('message',$message);
         return redirect()->route('enfermedades.index');
+
     }
 }

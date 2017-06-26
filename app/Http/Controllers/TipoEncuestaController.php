@@ -104,20 +104,34 @@ class TipoEncuestaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
         $tipoencuesta = Tipoencuesta::find($id);
         $tipoencuesta->delete();
-        flash('Tipo encuesta borrada correctamente');
 
+        $message='Tipo Encuesta borrado correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('tipoencuestas.index');
     }
 
-    public function destroyAll()
+    public function destroyAll(Request $request)
     {
         Tipoencuesta::truncate();
-        flash('Todas las tipo encuestas borradas correctamente');
 
+        $message='Tipo Encuestas borrados correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('tipoencuestas.index');
     }
 }

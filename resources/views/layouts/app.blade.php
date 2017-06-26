@@ -115,5 +115,8 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    {{--<script src="/js/script.js"></script>--}}
+    {{--{!! Html::script('js/script.js') !!}--}}
+    @yield('scripts')
 </body>
 </html>

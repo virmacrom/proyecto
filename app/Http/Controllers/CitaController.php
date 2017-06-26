@@ -61,8 +61,14 @@ class CitaController extends Controller
         $cita->save();
 
 
-        flash('Cita creada correctamente');
+        $message='Cita creada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
 
+        Session::flash('message',$message);
         return redirect()->route('citas.index');
     }
 
@@ -125,12 +131,19 @@ class CitaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
         $cita = Cita::find($id);
         $cita->delete();
-        flash('Cita borrada correctamente');
 
+        $message='Cita borrada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+        Session::flash('message',$message);
         return redirect()->route('citas.index');
     }
 

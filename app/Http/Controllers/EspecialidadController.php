@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Especialidad;
 use App\Enfermedad;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class EspecialidadController extends Controller
@@ -48,7 +49,7 @@ class EspecialidadController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+      /*  $this->validate($request, [
             'name' => 'required|max:255',
         ]);
 
@@ -56,11 +57,24 @@ class EspecialidadController extends Controller
         $especialidad = new Especialidad($request->all());
         $especialidad->save();
 
-        // return redirect('especialidades');
 
-        flash('Especialidad creada correctamente');
+        if($request->ajax()){
+            return response()->json([
+                "message"=>"creado",
+            ]);
+        }
+        return redirect()->route('especialidades.index');*/
+      if($request ->ajax()){
+          $result=Especialidad::create($request->all());
+          if($result){
+              Session::flash('save', 'se ha creado correctamente');
+              return response()->json(['success'=>'true']);
+          }
+          else{
+              return response()->json(['success'=>'false']);
+          }
+      }
 
-        return redirect()->route('especialidades.index');
     }
 
     /**
@@ -108,8 +122,14 @@ class EspecialidadController extends Controller
 
         $especialidad->save();
 
-        flash('Especialidad modificada correctamente');
+        $message='Especialidad modificada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
 
+        Session::flash('message',$message);
         return redirect()->route('especialidades.index');
     }
 
@@ -119,20 +139,35 @@ class EspecialidadController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
+
+        //abort(500);
         $especialidad = Especialidad::find($id);
         $especialidad->delete();
-        flash('Especialidad borrada correctamente');
 
+        $message='Especialidad borrada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
+
+    Session::flash('message',$message);
         return redirect()->route('especialidades.index');
     }
 
-    public function destroyAll()
+    public function destroyAll(Request $request)
     {
         Especialidad::truncate();
-        flash('Todas las especialidades borradas correctamente');
+        $message='Especialidad borrada correctamente';
+        if($request->ajax()){
+            return response()->json([
+                'message'=>$message
+            ]);
+        }
 
+        Session::flash('message',$message);
         return redirect()->route('especialidades.index');
     }
 

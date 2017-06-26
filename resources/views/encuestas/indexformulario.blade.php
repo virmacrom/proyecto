@@ -17,7 +17,7 @@
                         <table class="table table-striped table-bordered">
 
 
-                            <tr>
+                          {{--  <tr>
                            @foreach ($tipoencuestas as $tipoencuesta)
                                     <th>Tipo encuesta</th>
                                 <td><{{$tipoencuesta->name}}></td>
@@ -29,7 +29,7 @@
                                         <th>Pregunta</th>
                                     <td>{{ $pregunta->text}}</td>
                                 @endforeach
-                            </tr>
+                            </tr>--}}
 
                                     {{--@foreach ($pregunta->respuestas as $respuesta)
                                         <td>{{ $respuesta->text}}</td>
@@ -59,7 +59,6 @@
                                     </td>--}}
                                 {{--</tr>--}}
 
-                            @endforeach
                         </table>
                     </div>
                 </div>
