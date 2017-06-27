@@ -19,16 +19,19 @@ class EspecialidadController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+
     public function index()
     {
 
-        $especialidades = Especialidad::all();
-
-
-        return view('especialidades/index')->with('especialidades', $especialidades);
+        return view('especialidades/index');
 
     }
 
+    public function listall(){
+        $especialidades=Especialidad::all();
+        return view ('especialdiades/listall')->with('especialidades',$especialidades);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -49,7 +52,7 @@ class EspecialidadController extends Controller
      */
     public function store(Request $request)
     {
-      /*  $this->validate($request, [
+       $this->validate($request, [
             'name' => 'required|max:255',
         ]);
 
@@ -63,17 +66,8 @@ class EspecialidadController extends Controller
                 "message"=>"creado",
             ]);
         }
-        return redirect()->route('especialidades.index');*/
-      if($request ->ajax()){
-          $result=Especialidad::create($request->all());
-          if($result){
-              Session::flash('save', 'se ha creado correctamente');
-              return response()->json(['success'=>'true']);
-          }
-          else{
-              return response()->json(['success'=>'false']);
-          }
-      }
+        return redirect()->route('especialidades.index');
+
 
     }
 

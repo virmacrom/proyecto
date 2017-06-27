@@ -5,38 +5,17 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Especialidades</div>
+                    <div class="panel-heading">Especialidades
+                        <p class="navbar-text navbar-right" style="margin-top: 1px">
+                            <button type="button" id='crear' name='crear' class="btn btn-warning navbar-btn" style="margin-bottom: 1px";margin>Crear</button>
+                        </p>
+
+                    </div>
 
                     <div class="panel-body">
                         @include('flash::message')
-                         {!! Form::open(['route' => [ 'especialidades.create',':ESPECIALIDAD_ID'], 'method' => 'get','id'=>'form-primary']) !!}
-                        {!!   Form::submit('Crear especialidad', ['class'=> 'btn btn-warning'])!!}
-                        {!! Form::close() !!}
 
-
-                        <br><br>
-                        <table class="table table-striped table-bordered">
-                            <tr>
-                                <th>Nombre</th>
-                                <th colspan="2">Acciones</th>
-                            </tr>
-                            @foreach ($especialidades as $especialidad)
-                            <tr data-id="{{$especialidad->id}}">
-                                <td>{{ $especialidad->name }}</td>
-                                <td>
-                                    <a href=""class="btn-warning">Editar</a>
-
-                                </td>
-                                <td>
-                                    <a href=""class="btn-delete">Eliminar</a>
-
-
-                                </td>
-
-
-                            </tr>
-                            @endforeach
-                        </table>
+                        <div id="list-especialidad"></div>
                 </div>
             </div>
         </div>
@@ -53,6 +32,21 @@
 
 @section('scripts')
 <script>
+    $(document).ready(function () {
+        listespecialidad();
+    });
+    $("#crear").click(function () {
+        document.location.href="{{route('especialidades.create')}}";
+    })
+    var listespecialidad=function () {
+        $.ajax({
+            type:'get',
+            url:'{{url('listall')}}',
+            success:function (data) {
+                $('#list-especialidad').empty().html(data);
+            }
+        });
+    }
     $(document).ready(function () {
        $('.btn-delete').click(function (e) {
 
