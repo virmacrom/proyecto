@@ -18,9 +18,14 @@ class TipoEncuestaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $tipoencuestas= Tipoencuesta::all();
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$tipoencuestas
+            ]);
+        }
         return view('tipoencuestas/index')->with('tipoencuestas',$tipoencuestas);
     }
 
@@ -116,7 +121,7 @@ class TipoEncuestaController extends Controller
             ]);
         }
 
-        Session::flash('message',$message);
+       // Session::flash('message',$message);
         return redirect()->route('tipoencuestas.index');
     }
 

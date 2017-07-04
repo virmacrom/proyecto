@@ -28,6 +28,7 @@
         </div>
     </div>
 
+
     <script>
         $("#Guardar").click(function (e) {
             var name=$("#name").val();
@@ -50,8 +51,8 @@
                     $("#error").html(data.responseJSON.name);
                     $("#message-error").fadeIn();
                 }
-            })
+            });
 
-        })
+        });
     </script>
 @endsection

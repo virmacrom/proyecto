@@ -17,10 +17,14 @@ class PacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $pacientes = Paciente::all();
-
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$pacientes
+            ]);
+        }
         return view('pacientes/index',['pacientes'=>$pacientes]);
     }
 

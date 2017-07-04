@@ -17,10 +17,14 @@ class PreguntaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $preguntas = Pregunta::all();
-
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$preguntas
+            ]);
+        }
         return view('preguntas/index',['preguntas'=>$preguntas]);
     }
 

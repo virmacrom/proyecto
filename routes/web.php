@@ -29,7 +29,7 @@ Route::get('/registersas', function () {
 
 Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')->name('especialidades.destroyAll');
 Route::resource('especialidades', 'EspecialidadController');
-Route::get('listall','especialidades/EspecialidadController@listall' );
+Route::get('listall','EspecialidadController@listall' );
 
 Route::delete('enfermedades/destroyAll', 'EnfermedadController@destroyAll')->name('enfermedades.destroyAll');
 Route::resource('enfermedades', 'EnfermedadController');

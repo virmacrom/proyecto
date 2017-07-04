@@ -21,16 +21,26 @@ class EspecialidadController extends Controller
 
 
 
-    public function index()
+    public function index(Request $request)
     {
-
-        return view('especialidades/index');
+        $especialidades=Especialidad::all();
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$especialidades
+            ]);
+        }
+       return view('especialidades/index')->with('especialidades',$especialidades);
 
     }
 
-    public function listall(){
+    public function listall(Request $request){
         $especialidades=Especialidad::all();
-        return view ('especialdiades/listall')->with('especialidades',$especialidades);
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$especialidades
+            ]);
+        }
+       // return view ('especialdiades/listall')->with('especialidades',$especialidades);
     }
     /**
      * Show the form for creating a new resource.
@@ -52,21 +62,16 @@ class EspecialidadController extends Controller
      */
     public function store(Request $request)
     {
-       $this->validate($request, [
-            'name' => 'required|max:255',
-        ]);
-
-        //
-        $especialidad = new Especialidad($request->all());
-        $especialidad->save();
-
 
         if($request->ajax()){
+            Especialidad::create($request->all());
             return response()->json([
-                "message"=>"creado",
+                "mensaje" => "creado"
             ]);
         }
-        return redirect()->route('especialidades.index');
+     /*  $prueba = json_encode("hola");
+        return $prueba;*/
+       // return redirect()->route('especialidades.index');
 
 
     }
@@ -79,7 +84,7 @@ class EspecialidadController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

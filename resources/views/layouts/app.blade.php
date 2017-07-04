@@ -11,8 +11,16 @@
     <title>{{ config('app.name', 'ALVIR encuestas') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    {{--<link href="/css/app.css" rel="stylesheet">--}}
+   {{-- <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/dataTables.min.css" rel="stylesheet">--}}
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -114,11 +122,34 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <!--<script src="/js/jquery.min.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+
+{{--
+    <script src="/js/bootstrap.min.js"></script>
+
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
+    <script src="/js/dataTables.min.js"></script>--}}
+    {{--<script src="/js/app.js"></script>--}}
+
+    <!--<script src="/js/bootstrap.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+
     {{--<script src="/js/script.js"></script>--}}
     {{--{!! Html::script('js/script.js') !!}--}}
-    @yield('scripts')
+
 </body>
 </html>

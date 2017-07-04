@@ -37,7 +37,6 @@
                     <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                     <li><a href="{{ url('/respuestas') }}">Respuestas</a></li>
                     <li><a href="{{ url('/citas') }}">Citas</a></li>
-                    <li><a href="{{ url('/respuestaselegidas') }}">RespuestasElegidas</a></li>
 
                 </div>
 

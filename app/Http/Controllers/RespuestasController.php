@@ -17,9 +17,14 @@ class RespuestasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $respuesta= Respuestas::all();
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$respuesta
+            ]);
+        }
         return view('respuestas/index',['respuestas'=>$respuesta]);
         //
     }

@@ -19,9 +19,14 @@ class EnfermedadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $enfermedad = Enfermedad::all();
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$enfermedad
+            ]);
+        }
         return view('enfermedades/index')->with('enfermedades', $enfermedad);
 
     }

@@ -18,10 +18,16 @@ class EncuestaController extends Controller
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
         $encuestas = Encuesta::all();
       $tipoencuestas = Tipoencuesta::all();//->pluck('name','id');
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$encuestas,
+                'data1'=>$tipoencuestas,
+            ]);
+        }
         return view('encuestas/index',['encuestas'=>$encuestas,'tipoencuestas'=>$tipoencuestas]);
 
     }

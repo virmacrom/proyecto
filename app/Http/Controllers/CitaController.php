@@ -23,10 +23,14 @@ class CitaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $citas = Cita::all();
-
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$citas
+            ]);
+        }
         return view('citas/index',['citas'=>$citas]);
     }
 
@@ -68,7 +72,6 @@ class CitaController extends Controller
             ]);
         }
 
-        Session::flash('message',$message);
         return redirect()->route('citas.index');
     }
 

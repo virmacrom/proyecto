@@ -17,10 +17,14 @@ class MedicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $medicos = Medico::all();
-
+        if($request->ajax()){
+            return response()->json([
+                'data'=>$medicos
+            ]);
+        }
         return view('medicos/index',['medicos'=>$medicos]);
     }
 
